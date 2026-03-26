@@ -4,8 +4,11 @@
 # Equipe
 
 Isabella Corrêa - DevOps/Infra
+
 Ygor Gouveia da Costa - Engenheiro de Qualidade
+
 Gabriel Ferreira de Souza da Silva - Arquiteto de Software
+
 Marcus Jhuan Epifânio Lima - Scrum Master
 
 # Site de Avaliação de filmes e séries.
