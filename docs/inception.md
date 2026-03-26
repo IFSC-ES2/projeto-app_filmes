@@ -29,7 +29,7 @@ Cinéfilos amadores e entusiastas que desejam organizar seu consumo audiovisual 
 
 ### 2.1 Objetivo do MVP
 
-Validar a proposta central: um usuário consegue registrar um filme/série assistido, atribuir uma avaliação e visualizar sua biblioteca pessoal.
+Validar a proposta central: um usuário consegue registrar um filme/série assistido, atribuir uma avaliação, escolher favoritos e visualizar sua biblioteca pessoal.
 
 ### 2.2 Funcionalidades Incluídas no MVP
 
