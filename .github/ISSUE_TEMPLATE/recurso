@@ -1,0 +1,20 @@
+---
+Nome: Nova Funcionalidade
+Contexto: Descreva uma nova feature para o CineLog
+Titulo: "AQUI"
+Melhoria: "AQUI"
+Atribuídos: 'AQUI'
+---
+
+### Usuário
+**Como** [tipo de usuário]
+**quero** [realizar tal ação]
+**para** [alcançar tal objetivo]
+
+### Critérios de Aceitação
+- [ ] O sistema deve permitir...
+- [ ] Deve validar se o campo X está preenchido.
+- [ ] [Critério técnico, ex: Resposta em tantos 200ms]
+
+### Contexto Técnico
+- Alguma dependência de banco ou API externa?
