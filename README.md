@@ -10,8 +10,30 @@ Gabriel Ferreira de Souza da Silva - Arquiteto de Software
 Marcus Jhuan Epifânio Lima - Scrum Master
 
 # Site de Avaliação de filmes e séries.
-Basicamente serve para que Cinéfilos utilizem como se fosse uma bliblioteca digital de suas avaliações para filmes e séries, serve tanto para registrar os filmes vistos como para listar futuros lançamentos em sua lista.
+### 1.1 Problema
+
+Cinéfilos não possuem uma ferramenta simples e centralizada para registrar filmes e séries assistidos, atribuir avaliações pessoais e manter uma biblioteca digital organizada. Serviços existentes (Letterboxd, IMDb) são complexos ou voltados para consumo de conteúdo, não para o registro pessoal.
+
+### 1.2 Proposta de Valor
+
+O **CineLog** é uma aplicação web que funciona como uma biblioteca digital pessoal de avaliações. O usuário registra filmes e séries assistidos, atribui sua nota e mantém um histórico organizado — simples, pessoal e focado.
+
+### 1.3 Público-Alvo
+
+Cinéfilos amadores e entusiastas que desejam organizar seu consumo audiovisual de forma prática, sem depender de redes sociais ou plataformas de streaming.
 
 # MVP
-Inicialmento o projeto perminte arquivar os filmes assistidos e a sua avaliação, listando ele em uma lista com todos os filmes já avaliados por você. Em futuras atualizações o usuário poderá dividir essa biblioteca em categorias como "Visto", "Na Lista" e "Favoritos". O usuário também poderá criar suas próprias categorias.
+### 2.1 Objetivo do MVP
 
+Validar a proposta central: um usuário consegue registrar um filme/série assistido, atribuir uma avaliação, escolher favoritos e visualizar sua biblioteca pessoal.
+
+### 2.2 Funcionalidades Incluídas no MVP
+
+Cadastro de título (filme ou série)
+Registro da avaliação (nota de 1 a 5)
+Listagem de todos os títulos avaliados
+Exclusão de um registro
+### 2.3 Funcionalidades não incluídas neste MVP
+
+Sistema de categorização
+Sistema de tags
