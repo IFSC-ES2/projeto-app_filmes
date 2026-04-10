@@ -41,3 +41,23 @@ $$V = \sum \text{Pontos de esforço das Issues concluídas no período}$$.
 **Responsável:** Marcus Jhuan Epifânio Lima (Scrum Master).
 
 **Forma de interpretação:** Se o Velocidade estiver muito abaixo do planejado, a capacidade da equipe deve ser revista ou o escopo reduzido.
+
+**3. Métrica de Projeto: Percentual de Conclusão do MVP**
+
+**Nome:** Evolução do MVP.
+
+**Classificação:** Projeto.
+
+**Objetivo:** Acompanhar o progresso físico do projeto em relação ao backlog priorizado para o MVP.
+
+**Definição ou Fórmula:**
+
+$$\% = \left( \frac{\text{Issues concluídas do MVP}}{\text{Total de Issues planejadas para o MVP}} \right) \times 100$$ 
+
+**Fonte dos dados:** Documento de Baseline e GitHub Issues.
+
+**Frequência de atualização:** Quinzenal.
+
+**Responsável:** Marcus Jhuan Epifânio Lima (Scrum Master).
+
+**Forma de interpretação:** Permite visualizar se a equipe conseguirá entregar o MVP dentro do cronograma do semestre
