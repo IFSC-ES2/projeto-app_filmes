@@ -60,7 +60,7 @@ $$V = \sum \text{Pontos de esforço das Issues concluídas no período}$$.
 
 **Definição ou Fórmula:**
 
-$$\% = \left( \frac{\text{Issues concluídas do MVP}}{\text{Total de Issues planejadas para o MVP}} \right) \times 100$$
+$$PC_{MVP} = \left( \frac{\text{Quantidade de Issues do MVP concluídas}}{\text{Total de Issues planejadas para o MVP}} \right) \times 100$$
 
 **Fonte dos dados:** Documento de Baseline e GitHub Issues.
 
