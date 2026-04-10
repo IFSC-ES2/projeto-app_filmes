@@ -52,7 +52,7 @@ $$V = \sum \text{Pontos de esforço das Issues concluídas no período}$$.
 
 **Definição ou Fórmula:**
 
-$$\% = \left( \frac{\text{Issues concluídas do MVP}}{\text{Total de Issues planejadas para o MVP}} \right) \times 100$$ 
+$$\% = \left( \frac{\text{Issues concluídas do MVP}}{\text{Total de Issues planejadas para o MVP}} \right) \times 100$$
 
 **Fonte dos dados:** Documento de Baseline e GitHub Issues.
 
@@ -61,3 +61,5 @@ $$\% = \left( \frac{\text{Issues concluídas do MVP}}{\text{Total de Issues plan
 **Responsável:** Marcus Jhuan Epifânio Lima (Scrum Master).
 
 **Forma de interpretação:** Permite visualizar se a equipe conseguirá entregar o MVP dentro do cronograma do semestre
+
+**Nossa justificativa:** A seleção destas métricas foi feita para a necessidade de estabelecer um controle objetivo sobre o desenvolvimento do MVP do CineLog, garantindo que a entrega agregue valor ao usuário final com o mínimo de falhas
