@@ -4,6 +4,8 @@ Neste documento, definimos as métricas que serão acompanhadas para garantir a 
 
 **Nossa justificativa:** A seleção destas métricas foi feita para a necessidade de estabelecer um controle objetivo sobre o desenvolvimento do MVP do CineLog, garantindo que a entrega agregue valor ao usuário final com o mínimo de falhas.
 
+
+
 **1. Métrica de Produto: Densidade de Bugs**
 
 **Nome:** Densidade de Defeitos.
@@ -24,6 +26,8 @@ $$D = \frac{\text{Total de bugs encontrados}}{\text{Total de funcionalidades ent
 
 **Forma de interpretação:** Quanto menor o índice, maior a qualidade. Um aumento súbito indica problemas na fase de desenvolvimento ou necessidade de refatoração.
 
+
+
 **2. Métrica de Processo: Velocidade da Equipe**
 
 **Nome:** Velocidade da Equipe
@@ -43,6 +47,8 @@ $$V = \sum \text{Pontos de esforço das Issues concluídas no período}$$.
 **Responsável:** Marcus Jhuan Epifânio Lima (Scrum Master).
 
 **Forma de interpretação:** Se o Velocidade estiver muito abaixo do planejado, a capacidade da equipe deve ser revista ou o escopo reduzido.
+
+
 
 **3. Métrica de Projeto: Percentual de Conclusão do MVP**
 
