@@ -21,3 +21,23 @@ $$D = \frac{\text{Total de bugs encontrados}}{\text{Total de funcionalidades ent
 **Responsável:** Isabella (Engenheira de Qualidade).
 
 **Forma de interpretação:** Quanto menor o índice, maior a qualidade. Um aumento súbito indica problemas na fase de desenvolvimento ou necessidade de refatoração.
+
+**2. Métrica de Processo: Velocidade da Equipe**
+
+**Nome:** Velocidade da Equipe
+
+**Classificação:** Processo.
+
+**Objetivo:** Medir a capacidade de entrega da equipe por período para melhorar a previsibilidade do planejamento.
+
+**Definição ou Fórmula:**
+
+$$V = \sum \text{Pontos de esforço das Issues concluídas no período}$$.
+
+**Fonte dos dados:** GitHub Project Board e Issues estimadas.
+
+**Frequência de atualização:** Por marco de entrega (baseline vs. realizado).
+
+**Responsável:** Marcus Jhuan Epifânio Lima (Scrum Master).
+
+**Forma de interpretação:** Se o Velocidade estiver muito abaixo do planejado, a capacidade da equipe deve ser revista ou o escopo reduzido.
