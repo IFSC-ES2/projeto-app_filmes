@@ -44,12 +44,10 @@ Como o professor Adriano sugeriu uma organização específica para o repositór
 
 Aqui está o código em Markdown que você deve copiar e colar no seu README.md:
 
-Documentação da Entrega 3 (9/04/2026)
+**Documentação da Entrega 3 (9/04/2026)**
 
 Para cumprir as exigências desta etapa de planejamento e baseline, os seguintes documentos foram elaborados:
 
-{docs/baseline.md} Contém o recorte do backlog, priorização e capacidade da equipe.
-
-Registro de Estimativas: Detalhamento da técnica utilizada (ex: Planning Poker) e hipóteses assumidas.
-
-Definição de Métricas: Fichas técnicas das métricas de produto, processo e projeto que serão acompanhadas.
+* **[Planejamento Inicial e Baseline](docs/baseline.md)** Contém o recorte do backlog, priorização e capacidade da equipe.
+* **[Registro de Estimativas](docs/estimativas.md)** Detalhamento da técnica utilizada e hipóteses assumidas.
+* **[Definição de Métricas](docs/metricas.md)** Fichas técnicas das métricas de produto, processo e projeto que serão acompanhadas.
