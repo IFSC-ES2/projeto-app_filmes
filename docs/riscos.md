@@ -6,7 +6,7 @@
 
 • Causa:
 
-• Consequência/Impacto esperado:
+• Consequência:
 
 • Probabilidade:
 
@@ -28,7 +28,7 @@
 
 • Causa:
 
-• Consequência/Impacto esperado:
+• Consequência:
 
 • Probabilidade:
 
@@ -48,7 +48,7 @@
 
 • Causa:
 
-• Consequência/Impacto esperado:
+• Consequência:
 
 • Probabilidade:
 
@@ -70,7 +70,7 @@
 
 • Causa:
 
-• Consequência/Impacto esperado:
+• Consequência:
 
 • Probabilidade:
 
@@ -90,7 +90,7 @@
 
 • Causa:
 
-• Consequência/Impacto esperado:
+• Consequência:
 
 • Probabilidade:
 
