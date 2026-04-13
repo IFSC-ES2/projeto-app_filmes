@@ -18,9 +18,7 @@
 
 • **Responsável pelo acompanhamento:**
 
-
 ## Riscos de Prazo
-
 
 • **Identificação do risco:** O cronograma que estipulamos pode atrasar, devido aos trabalhos externos.
 
@@ -42,60 +40,60 @@
 
 ## Riscos da Equipe
 
-•**Identificação do risco:**
+• **Identificação do risco:**
 
-•**Descrição:**
+• **Descrição:**
 
-•**Causa:**
+• **Causa:**
 
-•**Consequência:**
+• **Consequência:**
 
-•**Probabilidade:**
+• **Probabilidade:**
 
-•**Impacto:**
+• **Impacto:**
 
-•**Prioridade:**
+• **Prioridade:**
 
-•**Estratégia de mitigação:**
+• **Estratégia de mitigação:**
 
-•**Responsável pelo acompanhamento:**
+• **Responsável pelo acompanhamento:**
 
 ## Riscos da Tecnologia
 
-•**Identificação do risco:**
+• **Identificação do risco:**
 
-•**Descrição:**
+• **Descrição:**
 
-•**Causa:**
+• **Causa:**
 
-•**Consequência:**
+• **Consequência:**
 
-•**Probabilidade:**
+• **Probabilidade:**
 
-•**Impacto:**
+• **Impacto:**
 
-•**Prioridade:**
+• **Prioridade:**
 
-•**Estratégia de mitigação:**
+• **Estratégia de mitigação:**
 
-•**Responsável pelo acompanhamento:**
+• **Responsável pelo acompanhamento:**
 
 ## Riscos de Qualidade/Processo
 
-•**Identificação do risco:**
+• **Identificação do risco:**
 
-•**Descrição:**
+• **Descrição:**
 
-•**Causa:**
+• **Causa:**
 
-•**Consequência:**
+• **Consequência:**
 
-•**Probabilidade:**
+• **Probabilidade:**
 
-•**Impacto:**
+• **Impacto:**
 
-•**Prioridade:**
+• **Prioridade:**
 
-•**Estratégia de mitigação:**
+• **Estratégia de mitigação:**
 
-•**Responsável pelo acompanhamento:**
+• **Responsável pelo acompanhamento:**
