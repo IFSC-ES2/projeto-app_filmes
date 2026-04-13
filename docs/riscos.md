@@ -1,22 +1,22 @@
 ## Riscos de Escopo
 
-• Identificação do risco:
+•**Identificação do risco:**
 
-• Descrição:
+•**Descrição:**
 
-• Causa:
+•**Causa:**
 
-• Consequência:
+•**Consequência:**
 
-• Probabilidade:
+•**Probabilidade:**
 
-• Impacto:
+•**Impacto:**
 
-• Prioridade:
+•**Prioridade:**
 
-• Estratégia de mitigação:
+•**Estratégia de mitigação:**
 
-• Responsável pelo acompanhamento:
+•**Responsável pelo acompanhamento:**
 
 
 ## Riscos de Prazo
@@ -42,62 +42,60 @@
 
 ## Riscos da Equipe
 
-• Identificação do risco:
+•**Identificação do risco:**
 
-• Descrição:
+•**Descrição:**
 
-• Causa:
+•**Causa:**
 
-• Consequência:
+•**Consequência:**
 
-• Probabilidade:
+•**Probabilidade:**
 
-• Impacto:
+•**Impacto:**
 
-• Prioridade:
+•**Prioridade:**
 
-• Estratégia de mitigação:
+•**Estratégia de mitigação:**
 
-• Responsável pelo acompanhamento:
-
+•**Responsável pelo acompanhamento:**
 
 ## Riscos da Tecnologia
 
+•**Identificação do risco:**
 
-• Identificação do risco:
+•**Descrição:**
 
-• Descrição:
+•**Causa:**
 
-• Causa:
+•**Consequência:**
 
-• Consequência:
+•**Probabilidade:**
 
-• Probabilidade:
+•**Impacto:**
 
-• Impacto:
+•**Prioridade:**
 
-• Prioridade:
+•**Estratégia de mitigação:**
 
-• Estratégia de mitigação:
-
-• Responsável pelo acompanhamento:
+•**Responsável pelo acompanhamento:**
 
 ## Riscos de Qualidade/Processo
 
-• Identificação do risco:
+•**Identificação do risco:**
 
-• Descrição:
+•**Descrição:**
 
-• Causa:
+•**Causa:**
 
-• Consequência:
+•**Consequência:**
 
-• Probabilidade:
+•**Probabilidade:**
 
-• Impacto:
+•**Impacto:**
 
-• Prioridade:
+•**Prioridade:**
 
-• Estratégia de mitigação:
+•**Estratégia de mitigação:**
 
-• Responsável pelo acompanhamento:
+•**Responsável pelo acompanhamento:**
