@@ -22,23 +22,23 @@
 ## Riscos de Prazo
 
 
-• Identificação do risco:
+• Identificação do risco: O cronograma que estipulamos pode atrasar, devido aos trabalhos externos.
 
-• Descrição:
+• Descrição: A equipe pode sofrer atrasos ao decorrer o projeto, porque as tarefas e a organização do dia a dia podem afetar a a entrega.
 
-• Causa:
+• Causa: Projetos externos e trabalho.
 
-• Consequência:
+• Consequência: Atraso na entrega.
 
-• Probabilidade:
+• Probabilidade: Média.
 
-• Impacto:
+• Impacto: Médio.
 
-• Prioridade:
+• Prioridade: Alta.
 
-• Estratégia de mitigação:
+• Estratégia de mitigação: Organizar devidamente a tarefa de cada um e os trabalhos externos para que não venha ocorrer atrasos.
 
-• Responsável pelo acompanhamento:
+• Responsável pelo acompanhamento: Marcus Jhuan.
 
 ## Riscos da Equipe
 
