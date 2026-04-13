@@ -1,22 +1,22 @@
 ## Riscos de Escopo
 
-• **Identificação do risco:**
+• **Identificação do risco:** O escopo do projéto pode atrasar, devido á adição continua de pequenas funcionalidades.
 
-• **Descrição:**
+• **Descrição:** A adição de pequenas funcionalidades pode acumular descontroladamente, podendo afetar o avanço das Historias de Usuários.
 
-• **Causa:**
+• **Causa:** Mudanças frequentes de Requisitos.
 
-• **Consequência:**
+• **Consequência:** Atraso na entrega e Estouro no Orçamento.
 
-• **Probabilidade:**
+• **Probabilidade:** Baixa. 
 
-• **Impacto:**
+• **Impacto:** Alto.
 
-• **Prioridade:**
+• **Prioridade:** Média.
 
-• **Estratégia de mitigação:**
+• **Estratégia de mitigação:** Foco nas Historias de Usuários e após elas o adicionamento de pequenas funcionalidades.
 
-• **Responsável pelo acompanhamento:**
+• **Responsável pelo acompanhamento:** 
 
 ## Riscos de Prazo
 
@@ -60,23 +60,23 @@
 
 ## Riscos da Tecnologia
 
-• **Identificação do risco:**
+• **Identificação do risco:** As API's escolhidas para o projéto, podem ter falhas de comunicações.
 
-• **Descrição:**
+• **Descrição:** As API's que escolhemos para o banco de dados e bliblioteca de filmes podem ocorrer conflitos.
 
-• **Causa:**
+• **Causa:** Infraestrutura Técnica
 
-• **Consequência:**
+• **Consequência:** Atraso na entrega.
 
-• **Probabilidade:**
+• **Probabilidade:** Média
 
-• **Impacto:**
+• **Impacto:** Alto
 
-• **Prioridade:**
+• **Prioridade:** Alta
 
-• **Estratégia de mitigação:**
+• **Estratégia de mitigação:** 
 
-• **Responsável pelo acompanhamento:**
+• **Responsável pelo acompanhamento:** 
 
 ## Riscos de Qualidade/Processo
 
