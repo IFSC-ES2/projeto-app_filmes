@@ -54,7 +54,7 @@
 
 • **Prioridade:** Baixa.
 
-• **Estratégia de mitigação:** Comunicação clara entre o grupo além de apontar problemas claros em caso da saída de um membro.
+• **Estratégia de mitigação:** Redestrebuição entre funções e trabalhos do certo membro em saída.
 
 • **Responsável pelo acompanhamento:**
 
