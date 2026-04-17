@@ -40,21 +40,21 @@
 
 ## Riscos da Equipe
 
-• **Identificação do risco:**
+• **Identificação do risco:** Saída inesperada de um membro da equipe, podem levar á atrasos inesperados.
 
-• **Descrição:**
+• **Descrição:** Algum membro da equipe acabar derrepente e inesperadamente sair do grupo, causando trabalho extra para repor oque séria feito pelo mesmo e transferir as responsabilidades do mesmo para outros membros
 
-• **Causa:**
+• **Causa:** A saida de um membro.
 
-• **Consequência:**
+• **Consequência:** Atraso na entrega.
 
-• **Probabilidade:**
+• **Probabilidade:** Baixa.
 
-• **Impacto:**
+• **Impacto:** Alto.
 
-• **Prioridade:**
+• **Prioridade:** Baixa.
 
-• **Estratégia de mitigação:**
+• **Estratégia de mitigação:** Comunicação clara entre o grupo além de apontar problemas claros em caso da saída de um membro.
 
 • **Responsável pelo acompanhamento:**
 
@@ -74,26 +74,26 @@
 
 • **Prioridade:** Alta
 
-• **Estratégia de mitigação:** 
+• **Estratégia de mitigação:** Ter documentado API's extras que fazem o mesmo serviço, dessa forma se ocorrer falhas entre duas API's, basta trocar uma delas.
 
 • **Responsável pelo acompanhamento:** 
 
 ## Riscos de Qualidade/Processo
 
-• **Identificação do risco:**
+• **Identificação do risco:** Baixa Qualidade do Conteúdo
 
-• **Descrição:**
+• **Descrição:** Usuários que em suas reviews deixam comentários vagos, irrelevantes, ofensivos ou com spoilers.
 
-• **Causa:**
+• **Causa:** Decisões de Usuários Enuviadas.
 
-• **Consequência:**
+• **Consequência:** Atraso na entrega
 
-• **Probabilidade:**
+• **Probabilidade:** Baixa
 
-• **Impacto:**
+• **Impacto:** Alto
 
-• **Prioridade:**
+• **Prioridade:** Média
 
-• **Estratégia de mitigação:**
+• **Estratégia de mitigação:** Criar um filtro que impede comentários desse tipo, forçando á não ser vago, irrelevante, ofensivo ou com spoilers.
 
-• **Responsável pelo acompanhamento:**
+• **Responsável pelo acompanhamento:** 
