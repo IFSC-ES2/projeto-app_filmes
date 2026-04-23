@@ -4,8 +4,9 @@
 | ------- | ------- | -------- | -------- | ---- | ---- |
 | 1       | 511d282 | 16/03/26 | 20/03/26 | 5,5  | 2    |
 | 2       | aa09e91 | 26/03/26 | 29/03/26 | 2,5  | 2    |
+| 3       | a92dc58 | 09/04/26 | 22/04/26 | 0    | 3    |
 
-**nota:** 4
+**nota parcial:** 2,3
 
 ## Comentários
 
@@ -65,3 +66,11 @@
 6. Atualização do README: não atendido.
 
 **observação:** Vocês estão fazendo alterações diretamente na ramificação principal. Evitem isso. Criem ramificações próprias para as entregas.
+
+#### Recuperação
+
+- `README.md` gerado por IA.
+
+### Entrega 3
+
+- `README.md` gerado por IA.
