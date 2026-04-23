@@ -1,5 +1,5 @@
 
-**CineLog - Biblioteca Digital de Avaliações**
+**# CineLog - Biblioteca Digital de Avaliações**
 
 **1. Equipe**
 - Isabella Corrêa - DevOps/Infra
