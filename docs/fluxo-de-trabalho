@@ -1,1 +1,5 @@
+Branches: Proibido push direto na main. Use feature/nome-da-task ou fix/bug-nome.
+
+Code Review: Mínimo de 1 aprovação para mergear.
+
 
