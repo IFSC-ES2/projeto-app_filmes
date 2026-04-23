@@ -1,29 +1,29 @@
-# Fluxo de Trabalho 
+#Fluxo de Trabalho 
 
 Este documento descreve o fluxo de trabalho colaborativo adotado pela equipe para o desenvolvimento do projeto App de Filmes, garantindo a organização do código e a qualidade das entregas.
 
-## 1. Estratégia de Branches
+##1. Estratégia de Branches
 Adotamos o modelo de **Feature Branches**. É terminantemente proibido realizar commits diretos na branch principal (`main`).
 
 * **main**: Contém o código estável e pronto para entrega.
 * **feature/nome-da-funcionalidade**: Utilizada para o desenvolvimento de novas funcionalidades (ex: `feature/busca-filmes`).
 * **fix/nome-do-erro**: Utilizada para correção de bugs encontrados (ex: `fix/erro-login`).
 
-## 2. Processo de Integração (Pull Requests)
+##2. Processo de Integração (Pull Requests)
 Toda e qualquer mudança no código deve ser integrada via **Pull Request (PR)**. O processo segue os seguintes passos:
 
 1.  O desenvolvedor cria uma branch a partir da `main`.
 2.  Após finalizar a tarefa e realizar os testes locais, o desenvolvedor abre um PR para a `main`.
 3.  O PR deve obrigatoriamente utilizar o template padrão definido no repositório[cite: 43].
 
-## 3. Revisão e Aprovação 
+##3. Revisão e Aprovação 
 A revisão de código é uma etapa obrigatória para garantir que os critérios de qualidade sejam mantidos.
 
 * **Responsáveis pela Revisão**: Marcus Jhuan e Gabriel.
 * **Critério de Integração**: É exigida, no mínimo, **1 aprovação** de um revisor antes que o merge para a branch `main` possa ser realizado[cite: 41].
 * O autor do PR não pode aprovar a própria alteração.
 
-## 4. Checklist de Revisão
+##4. Checklist de Revisão
 Os revisores devem observar os seguintes pontos antes de aprovar um PR:
 
 * [ ] O código segue os padrões de estilo do projeto?
@@ -32,7 +32,7 @@ Os revisores devem observar os seguintes pontos antes de aprovar um PR:
 * [ ] A documentação (README ou docs/) foi atualizada se necessário?
 * [ ] O código está livre de comentários desnecessários ou logs de depuração?
 
-## 5. Evidências da Etapa
+##5. Evidências da Etapa
 Os links para os Pull Requests realizados e aprovados durante esta etapa serão listados no arquivo `README.md` principal como evidência da execução do processo definido[cite: 57, 93].
 
 
