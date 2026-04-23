@@ -98,7 +98,7 @@
 
 • **Responsável pelo acompanhamento:** Gabriel 
 
-## 1. Análise e Priorização dos Riscos
+## 2. Análise e Priorização dos Riscos
 
 **1.1 Critérios de Classificação**
 
@@ -131,7 +131,7 @@ A prioridade final de cada risco é calculada através da combinação entre Pro
 | **Médio** | Evento possível, com 20% a 60% de hipótese de ocorrer. | Atrasos perceptíveis ou afetação de funções secundárias. |
 | **Alto** | Evento muito provável, com mais de 60% de hipótese de ocorrer. | Impede a entrega do MVP ou compromete a estabilidade do sistema. |
 
-### 2.1 Matriz de Priorização
+### 2. Matriz de Priorização
 A prioridade é definida pelo cruzamento da Probabilidade com o Impacto:
 
 | Probabilidade \ Impacto | Baixo | Médio | Alto |
@@ -140,6 +140,6 @@ A prioridade é definida pelo cruzamento da Probabilidade com o Impacto:
 | **Média** | Prioridade Baixa | Prioridade Média | **Prioridade Alta** |
 | **Alta** | Prioridade Média | **Prioridade Alta** | **Prioridade Crítica** |
 
-**2.2 Justificativa da Priorização**
+**2.1 Justificativa da Priorização**
 
 Os riscos de **Tecnologia (R04)** e **Prazo (R02)** foram classificados com **Prioridade Alta**. Isso deve-se ao facto de possuírem um Impacto Alto (podem impedir a entrega do MVP) e uma Probabilidade Média de ocorrência devido à dependência de APIs externas e à carga de trabalho da equipa.
