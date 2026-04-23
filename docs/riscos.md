@@ -80,7 +80,7 @@
 
 ## Riscos de Qualidade/Processo
 
-• **Identificação do risco:** Baixa Qualidade do Conteúdo
+• **Identificação do risco:** Baixa Qualidade do Conteúdo.
 
 • **Descrição:** Usuários que em suas reviews deixam comentários vagos, irrelevantes, ofensivos ou com spoilers.
 
@@ -97,3 +97,49 @@
 • **Estratégia de mitigação:** Criar um filtro que impede comentários desse tipo, forçando á não ser vago, irrelevante, ofensivo ou com spoilers.
 
 • **Responsável pelo acompanhamento:** Gabriel 
+
+## 1. Análise e Priorização dos Riscos
+
+**1.1 Critérios de Classificação**
+
+- Para padronizar a análise, adotamos os seguintes critérios para avaliar a Probabilidade e o Impacto:
+
+**Probabilidade:**
+
+- Baixa: O evento é considerado raro e tem poucas chances de ocorrer durante o ciclo de vida deste MVP (ex: < 20% de chance).
+
+- Média: O evento é possível e pode ocorrer em algum momento do desenvolvimento, especialmente em fases de integração (ex: 20% a 60% de chance).
+
+- Alta: O evento é muito provável e quase certo de ocorrer se nenhuma ação preventiva for tomada (ex: > 60% de chance).
+
+
+**Impacto:**
+
+- Baixo: Causa um desconforto mínimo ou um atraso desprezível que não compromete as metas da Sprint.
+
+- Médio: Causa atrasos perceptíveis no cronograma ou afeta funcionalidades secundárias do app, exigindo readequação de tarefas.
+
+- Alto: Impede a entrega de uma funcionalidade principal do MVP, compromete a segurança dos dados ou gera instabilidade total no sistema.
+
+**1.2 Matriz de Priorização**
+
+A prioridade final de cada risco é calculada através da combinação entre Probabilidade e Impacto, seguindo a lógica abaixo:
+
+| Nível | Probabilidade  | Impacto |
+| :--- | :--- | :--- |
+| **Baixo** | Evento raro, com menos de 20% de hipótese de ocorrer. | Impacto mínimo que não compromete o cronograma ou o MVP. |
+| **Médio** | Evento possível, com 20% a 60% de hipótese de ocorrer. | Atrasos perceptíveis ou afetação de funções secundárias. |
+| **Alto** | Evento muito provável, com mais de 60% de hipótese de ocorrer. | Impede a entrega do MVP ou compromete a estabilidade do sistema. |
+
+### 2.1 Matriz de Priorização
+A prioridade é definida pelo cruzamento da Probabilidade com o Impacto:
+
+| Probabilidade \ Impacto | Baixo | Médio | Alto |
+| :--- | :--- | :--- | :--- |
+| **Baixa** | Prioridade Baixa | Prioridade Baixa | Prioridade Média |
+| **Média** | Prioridade Baixa | Prioridade Média | **Prioridade Alta** |
+| **Alta** | Prioridade Média | **Prioridade Alta** | **Prioridade Crítica** |
+
+**2.2 Justificativa da Priorização**
+
+Os riscos de **Tecnologia (R04)** e **Prazo (R02)** foram classificados com **Prioridade Alta**. Isso deve-se ao facto de possuírem um Impacto Alto (podem impedir a entrega do MVP) e uma Probabilidade Média de ocorrência devido à dependência de APIs externas e à carga de trabalho da equipa.
