@@ -16,7 +16,7 @@
 
 • **Estratégia de mitigação:** Foco nas Historias de Usuários e após elas o adicionamento de pequenas funcionalidades.
 
-• **Responsável pelo acompanhamento:** Marcus Jhun (Scrum Master)
+• **Responsável pelo acompanhamento:** Marcus Jhuan (Scrum Master)
 
 ## Riscos de Prazo
 
