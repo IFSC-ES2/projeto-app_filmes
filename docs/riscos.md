@@ -16,7 +16,7 @@
 
 • **Estratégia de mitigação:** Foco nas Historias de Usuários e após elas o adicionamento de pequenas funcionalidades.
 
-• **Responsável pelo acompanhamento:** 
+• **Responsável pelo acompanhamento:** Marcus Jhun (Scrum Master)
 
 ## Riscos de Prazo
 
@@ -56,7 +56,7 @@
 
 • **Estratégia de mitigação:** Redestrebuição entre funções e trabalhos do certo membro em saída.
 
-• **Responsável pelo acompanhamento:**
+• **Responsável pelo acompanhamento:** Isabella Corrêa
 
 ## Riscos da Tecnologia
 
@@ -76,7 +76,7 @@
 
 • **Estratégia de mitigação:** Ter documentado API's extras que fazem o mesmo serviço, dessa forma se ocorrer falhas entre duas API's, basta trocar uma delas.
 
-• **Responsável pelo acompanhamento:** 
+• **Responsável pelo acompanhamento:** Gabriel
 
 ## Riscos de Qualidade/Processo
 
@@ -96,4 +96,4 @@
 
 • **Estratégia de mitigação:** Criar um filtro que impede comentários desse tipo, forçando á não ser vago, irrelevante, ofensivo ou com spoilers.
 
-• **Responsável pelo acompanhamento:** 
+• **Responsável pelo acompanhamento:** Gabriel 
