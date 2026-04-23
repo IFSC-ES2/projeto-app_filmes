@@ -45,15 +45,21 @@ Marque com um x as opções que se aplicam:
 ---
 
 ### Checklist de Qualidade
+
 [ ] O código segue os padrões de estilo do projeto.
+
 [ ] Realizei um self-review do meu próprio código.
+
 [ ] Foram adicionados testes unitários ou de integração (se necessário).
+
 [ ] Verifiquei a responsividade em dispositivos móveis.
+
 [ ] Não existem warnings de lint ou erros de console introduzidos por este PR.
 
 ---
 
 ### Notas Técnicas / Observações
+
 Alguma decisão de arquitetura ou biblioteca nova que o time precise saber?
 Exemplo: "Utilizei a biblioteca X para o efeito de blur nos pôsteres de fundo."
 
