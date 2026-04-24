@@ -1,29 +1,33 @@
 
-**# CineLog - Biblioteca Digital de Avaliações**
+## CineLog - Biblioteca Digital de Avaliações
 
 **1. Equipe**
+
 - Isabella Corrêa - DevOps/Infra
 
 - Gabriel Ferreira de Souza da Silva - Arquiteto de Software
 
 - Marcus Jhuan Epifânio Lima - Scrum Master
 
-Cinéfilos não possuem uma ferramenta simples e centralizada para registrar filmes e séries assistidos, atribuir avaliações pessoais e manter uma biblioteca digital organizada. Serviços existentes (Letterboxd, IMDb) são complexos ou voltados para consumo de conteúdo, não para o registro pessoal.
-
 **2. O Projeto**
 
 **2.1 Problema**
-Cinéfilos não possuem uma ferramenta simples e centralizada para registrar filmes e séries assistidos, atribuir avaliações pessoais e manter uma biblioteca digital organizada. Serviços existentes (Letterboxd, IMDb) são complexos ou voltados para consumo de conteúdo, não para o registro pessoal.
+
+- Cinéfilos não possuem uma ferramenta simples e centralizada para registrar filmes e séries assistidos, atribuir avaliações pessoais e manter uma biblioteca digital organizada. Serviços existentes (Letterboxd, IMDb) são complexos ou voltados para consumo de conteúdo, não para o registro pessoal.
 
 **2.2 Proposta de Valor**
-O CineLog é uma aplicação web que funciona como uma biblioteca digital pessoal de avaliações. O usuário registra filmes e séries assistidos, atribui sua nota e mantém um histórico organizado — simples, pessoal e focado.
+
+- O CineLog é uma aplicação web que funciona como uma biblioteca digital pessoal de avaliações. O usuário registra filmes e séries assistidos, atribui sua nota e mantém um histórico organizado — simples, pessoal e focado.
 
 **2.3 Público-Alvo**
-Cinéfilos amadores e entusiastas que desejam organizar seu consumo audiovisual de forma prática, sem depender de redes sociais ou plataformas de streaming.
 
-3. MVP (Minimum Viable Product)
-3.1 Objetivo do MVP
-Validar a proposta central: um usuário consegue registrar um filme/série assistido, atribuir uma avaliação, escolher favoritos e visualizar sua biblioteca pessoal.
+- Cinéfilos amadores e entusiastas que desejam organizar seu consumo audiovisual de forma prática, sem depender de redes sociais ou plataformas de streaming.
+
+**3. MVP**
+
+**3.1 Objetivo do MVP**
+
+- Validar a proposta: um usuário consegue registrar um filme/série assistido, atribuir uma avaliação, escolher favoritos e visualizar sua biblioteca pessoal.
 
 **3.2 Funcionalidades Incluídas**
 
@@ -51,7 +55,7 @@ Validar a proposta central: um usuário consegue registrar um filme/série assis
 
 - Definição de Métricas: Fichas técnicas das métricas de produto, processo e projeto.
 
-## 4. Documentação das Entregas
+**4. Documentação das Entregas**
 
 ### **Entrega 3 - Planejamento e Baseline (09/04/2026)**
 
