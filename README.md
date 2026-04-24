@@ -57,7 +57,7 @@
 
 **4. Documentação das Entregas**
 
-### **Entrega 3 - Planejamento e Baseline (09/04/2026)**
+ **Entrega 3 - Planejamento e Baseline (09/04/2026)**
 
 * **[Planejamento Inicial e Baseline](docs/baseline.md)**: Recorte do backlog, priorização e capacidade da equipe.
 
@@ -65,7 +65,7 @@
 
 * **[Definição de Métricas](docs/metricas.md)**: Fichas técnicas das métricas de produto, processo e projeto.
 
-### **Entrega 4 - Riscos e Consolidação (16/04/2026)**
+ **Entrega 4 - Riscos e Consolidação (16/04/2026)**
 Esta etapa foca na segurança do projeto, na formalização do fluxo de trabalho colaborativo e na definição de critérios de qualidade.
 
 * **[Registro e Análise de Riscos](docs/riscos.md)**: Identificação de 5 riscos críticos, matriz de prioridade (Probabilidade x Impacto) e plano de resposta (ações preventivas e reativas).
