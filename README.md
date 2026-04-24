@@ -47,16 +47,6 @@
 
 **4. Documentação das Entregas**
 
-**Entrega 3 - Planejamento e Baseline (09/04/2026)**
-
-- Planejamento Inicial e Baseline: Recorte do backlog, priorização e capacidade da equipe.
-
-- Registro de Estimativas: Detalhamento da técnica utilizada e hipóteses assumidas.
-
-- Definição de Métricas: Fichas técnicas das métricas de produto, processo e projeto.
-
-**4. Documentação das Entregas**
-
  **Entrega 3 - Planejamento e Baseline (09/04/2026)**
 
 * **[Planejamento Inicial e Baseline](docs/baseline.md)**: Recorte do backlog, priorização e capacidade da equipe.
