@@ -1,4 +1,3 @@
-
 ## CineLog - Biblioteca Digital de Avaliações
 
 **1. Equipe**
