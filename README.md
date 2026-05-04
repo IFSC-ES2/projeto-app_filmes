@@ -47,16 +47,6 @@
 
 **4. Documentação das Entregas**
 
-**Entrega 3 - Planejamento e Baseline (09/04/2026)**
-
-- Planejamento Inicial e Baseline: Recorte do backlog, priorização e capacidade da equipe.
-
-- Registro de Estimativas: Detalhamento da técnica utilizada e hipóteses assumidas.
-
-- Definição de Métricas: Fichas técnicas das métricas de produto, processo e projeto.
-
-**4. Documentação das Entregas**
-
  **Entrega 3 - Planejamento e Baseline (09/04/2026)**
 
 * **[Planejamento Inicial e Baseline](docs/baseline.md)**: Recorte do backlog, priorização e capacidade da equipe.
@@ -73,3 +63,6 @@ Esta etapa foca na segurança do projeto, na formalização do fluxo de trabalho
 * **[Fluxo de Trabalho](docs/fluxo-de-trabalho.md)**: Documentação da estratégia de *branching*, política de Pull Requests e regras de aprovação de código.
 
 * **[Critérios Iniciais de Qualidade](docs/qualidade.md)**: Seleção de 4 atributos baseados na norma **ISO/IEC 25010**, justificativa de relevância para o MVP e relação direta com os riscos identificados.
+
+ **Entrega 5 - Sprint 1 (04/052026)**
+ Esta etapa foca na entrega do primeiro encremento funcional (vertical slice), na atualização de documentações e release/tag do marco.
