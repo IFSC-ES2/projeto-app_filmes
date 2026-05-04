@@ -1,4 +1,3 @@
-
 ## CineLog - Biblioteca Digital de Avaliações
 
 **1. Equipe**
@@ -47,16 +46,6 @@
 
 **4. Documentação das Entregas**
 
-**Entrega 3 - Planejamento e Baseline (09/04/2026)**
-
-- Planejamento Inicial e Baseline: Recorte do backlog, priorização e capacidade da equipe.
-
-- Registro de Estimativas: Detalhamento da técnica utilizada e hipóteses assumidas.
-
-- Definição de Métricas: Fichas técnicas das métricas de produto, processo e projeto.
-
-**4. Documentação das Entregas**
-
  **Entrega 3 - Planejamento e Baseline (09/04/2026)**
 
 * **[Planejamento Inicial e Baseline](docs/baseline.md)**: Recorte do backlog, priorização e capacidade da equipe.
@@ -73,3 +62,18 @@ Esta etapa foca na segurança do projeto, na formalização do fluxo de trabalho
 * **[Fluxo de Trabalho](docs/fluxo-de-trabalho.md)**: Documentação da estratégia de *branching*, política de Pull Requests e regras de aprovação de código.
 
 * **[Critérios Iniciais de Qualidade](docs/qualidade.md)**: Seleção de 4 atributos baseados na norma **ISO/IEC 25010**, justificativa de relevância para o MVP e relação direta com os riscos identificados.
+
+ **Entrega 5 - Sprint 1 (04/05/2026)**
+ Esta etapa foca na entrega do primeiro incremento funcional (vertical slice), na atualização de documentações e release/tag do marco.
+ - Entrega atual: vertical slice de autenticação de usuário com registro, login, persistência H2, página de entrada estática e testes automatizados.
+ - Mais detalhes da entrega estão em [docs/entrega-sprint1.md](docs/entrega-sprint1.md).
+ - Registro de participação individual está em [docs/contribuicoes-individuais.md](docs/contribuicoes-individuais.md).
+ - Backlog de issues planejado está em [docs/backlog-issues.md](docs/backlog-issues.md).
+
+## Como executar
+
+- Abra o terminal na pasta `cinelog`.
+- Rode `./gradlew.bat bootRun` para iniciar a aplicação.
+- Abra o navegador em `http://localhost:8080/login.html`.
+- O frontend de login/registro usa os endpoints `POST /api/auth/register` e `POST /api/auth/login`.
+- Para rodar os testes automatizados, execute `./gradlew.bat test`.
