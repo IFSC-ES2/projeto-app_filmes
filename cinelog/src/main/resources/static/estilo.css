@@ -108,8 +108,7 @@ label {
   margin-bottom: 8px;
 }
 
-input[type="email"],
-input[type="password"] {
+input {
   width: 100%;
   background: rgba(255,255,255,0.05);
   border: 1px solid rgba(255,255,255,0.1);
@@ -152,4 +151,63 @@ button {
 
 button:hover {
   background: #6b96ff;
+}
+
+.hidden {
+  display: none;
+}
+
+.tabs {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 24px;
+}
+
+.welcome-screen {
+  margin-top: 12px;
+}
+
+.secondary-button {
+  width: 100%;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: #fff;
+  padding: 13px;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-top: 16px;
+}
+
+.secondary-button:hover {
+  background: rgba(255, 255, 255, 0.14);
+}
+
+.tab-button {
+  flex: 1;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: rgba(255, 255, 255, 0.7);
+  border-radius: 8px;
+  padding: 12px 0;
+  cursor: pointer;
+}
+
+.tab-button.active {
+  background: #5382ff;
+  color: #fff;
+}
+
+.message {
+  min-height: 22px;
+  margin-bottom: 20px;
+  color: #fff;
+  font-size: 14px;
+}
+
+.message.error {
+  color: #ff6b6b;
+}
+
+.message.success {
+  color: #7bed9f;
 }

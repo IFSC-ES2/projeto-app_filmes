@@ -66,3 +66,14 @@ Esta etapa foca na segurança do projeto, na formalização do fluxo de trabalho
 
  **Entrega 5 - Sprint 1 (04/05/2026)**
  Esta etapa foca na entrega do primeiro incremento funcional (vertical slice), na atualização de documentações e release/tag do marco.
+ - Entrega atual: vertical slice de autenticação de usuário com registro, login, persistência H2, página de entrada estática e testes automatizados.
+ - Mais detalhes da entrega estão em [docs/entrega-sprint1.md](docs/entrega-sprint1.md).
+
+## Como executar
+
+- Abra o terminal na pasta `cinelog`.
+- Rode `./gradlew.bat bootRun` para iniciar a aplicação.
+- Abra o navegador em `http://localhost:8080/login.html`.
+- O frontend de login/registro usa os endpoints `POST /api/auth/register` e `POST /api/auth/login`.
+- Para rodar os testes automatizados, execute `./gradlew.bat test`.
+
