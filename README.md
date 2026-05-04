@@ -67,8 +67,6 @@ Esta etapa foca na segurança do projeto, na formalização do fluxo de trabalho
  Esta etapa foca na entrega do primeiro incremento funcional (vertical slice), na atualização de documentações e release/tag do marco.
  - Entrega atual: vertical slice de autenticação de usuário com registro, login, persistência H2, página de entrada estática e testes automatizados.
  - Mais detalhes da entrega estão em [docs/entrega-sprint1.md](docs/entrega-sprint1.md).
- - Registro de participação individual está em [docs/contribuicoes-individuais.md](docs/contribuicoes-individuais.md).
- - Backlog de issues planejado está em [docs/backlog-issues.md](docs/backlog-issues.md).
 
 ## Como executar
 
@@ -77,3 +75,4 @@ Esta etapa foca na segurança do projeto, na formalização do fluxo de trabalho
 - Abra o navegador em `http://localhost:8080/login.html`.
 - O frontend de login/registro usa os endpoints `POST /api/auth/register` e `POST /api/auth/login`.
 - Para rodar os testes automatizados, execute `./gradlew.bat test`.
+
