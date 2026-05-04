@@ -64,5 +64,5 @@ Esta etapa foca na segurança do projeto, na formalização do fluxo de trabalho
 
 * **[Critérios Iniciais de Qualidade](docs/qualidade.md)**: Seleção de 4 atributos baseados na norma **ISO/IEC 25010**, justificativa de relevância para o MVP e relação direta com os riscos identificados.
 
- **Entrega 5 - Sprint 1 (04/052026)**
+ **Entrega 5 - Sprint 1 (04/05/2026)**
  Esta etapa foca na entrega do primeiro encremento funcional (vertical slice), na atualização de documentações e release/tag do marco.
