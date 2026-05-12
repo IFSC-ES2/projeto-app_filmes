@@ -23,5 +23,6 @@ jobs:
       run: chmod +x ./cinelog/gradlew
 
     - name: Run tests
-      run: ./cinelog/gradlew test --no-daemon
-      working-directory: ./cinelog
+      run: |
+        cd cinelog
+        ./gradlew test --no-daemon
