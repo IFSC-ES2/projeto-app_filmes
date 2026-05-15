@@ -2,37 +2,42 @@ name: CineLog CI - Sprint 2
 
 on:
   pull_request:
-    [cite_start] types: [opened, synchronize, reopened]
+    types: [opened, synchronize, reopened]
 
 jobs:
-  build-and-test:
+  quality-gate:
     runs-on: ubuntu-latest
 
     steps:
       - name: Checkout do código
-        [cite_start]uses: actions/checkout@v4 
+        uses: actions/checkout@v4 
 
-      - name: Configurar Node.js (ou sua linguagem)
+      - name: Configurar JDK 21
+        uses: actions/setup-java@v4
+        with:
+          java-version: '21'
+          distribution: 'temurin'
+          cache: 'gradle'
+
+      - name: Permissão no Gradle
+        run: chmod +x gradlew
+
+      - name: Verificação de Build e Testes Automatizados
+        run: ./gradlew build
+
+      - name: Configurar Node.js para validação YAML
         uses: actions/setup-node@v4
         with:
           node-version: '20'
 
-      - name: Instalação de dependências
-        [cite_start]run: npm install 
-
-      - name: Verificação de Build
-        [cite_start]run: npm run build --if-present
-
-      - name: Execução dos testes automatizados
-        [cite_start]run: npm test 
-
-      - name: Validação sintática de arquivos YAML
+      - name: Validação Sintática de arquivos YAML
         run: |
-          find . -name "*.yml" -o -name "*.yaml" | xargs -I {} npx yaml-lint {} # [cite: 30]
+          npm install -g yaml-lint
+          find . -name "*.yml" -o -name "*.yaml" | xargs -I {} yaml-lint {}
 
-      - name: Verificação de arquivos mínimos obrigatórios
+      - name: Verificação de Arquivos Obrigatórios
         run: |
-          test -f README.md || (echo "Faltando README.md" && exit 1)
-          test -d .github/workflows/ || (echo "Faltando diretório de workflows" && exit 1)
-          test -f docs/riscos.md || (echo "Faltando documento de riscos" && exit 1)
-          test -f .github/PULL_REQUEST_TEMPLATE.md || (echo "Faltando template de PR" && exit 1)
+          test -f README.md || (echo "Erro: README.md não encontrado" && exit 1)
+          test -d .github/workflows/ || (echo "Erro: pasta de workflows não encontrada" && exit 1)
+          test -f docs/riscos.md || (echo "Erro: documento de riscos não encontrado" && exit 1)
+          test -f .github/PULL_REQUEST_TEMPLATE.md || (echo "Erro: template de PR não encontrado" && exit 1)
