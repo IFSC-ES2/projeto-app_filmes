@@ -2,11 +2,11 @@
 
 **1. Equipe**
 
-- Isabella Corrêa - DevOps/Infra
+- Isabella Corrêa - Scrum Master
 
 - Gabriel Ferreira de Souza da Silva - Arquiteto de Software
 
-- Marcus Jhuan Epifânio Lima - Scrum Master
+- Marcus Jhuan Epifânio Lima - DevOps/Infra
 
 **2. O Projeto**
 
@@ -68,6 +68,9 @@ Esta etapa foca na segurança do projeto, na formalização do fluxo de trabalho
  - Entrega atual: vertical slice de autenticação de usuário com registro, login, persistência H2, página de entrada estática e testes automatizados.
  - Mais detalhes da entrega estão em [docs/entrega-sprint1.md](docs/entrega-sprint1.md).
 
+**Entrega 6 - Sprint 2 (14/05/2026)**
+Esta etapa foca na entrega das funcionalidades centrais do MVP evoluídas, aplicação justificada de padrões OO, atualização das métricas e riscos e release/tag do marco.
+ 
 ## Como executar
 
 - Abra o terminal na pasta `cinelog`.
