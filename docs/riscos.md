@@ -1,4 +1,4 @@
-## Riscos de Escopo
+## Riscos de Escopo #01
 
 • **Identificação do risco:** O escopo do projéto pode atrasar, devido á adição continua de pequenas funcionalidades.
 
@@ -18,7 +18,7 @@
 
 • **Responsável pelo acompanhamento:** Marcus Jhuan (Scrum Master)
 
-## Riscos de Prazo
+## Riscos de Prazo #02
 
 • **Identificação do risco:** O cronograma que estipulamos pode atrasar, devido aos trabalhos externos.
 
@@ -38,7 +38,7 @@
 
 • **Responsável pelo acompanhamento:** Marcus Jhuan.
 
-## Riscos da Equipe
+## Riscos da Equipe #03
 
 • **Identificação do risco:** Saída inesperada de um membro da equipe, podem levar á atrasos inesperados.
 
@@ -58,7 +58,7 @@
 
 • **Responsável pelo acompanhamento:** Isabella Corrêa
 
-## Riscos da Tecnologia
+## Riscos da Tecnologia #04
 
 • **Identificação do risco:** As API's escolhidas para o projéto, podem ter falhas de comunicações.
 
@@ -74,11 +74,11 @@
 
 • **Prioridade:** Alta
 
-• **Estratégia de mitigação:** Ter documentado API's extras que fazem o mesmo serviço, dessa forma se ocorrer falhas entre duas API's, basta trocar uma delas.
+• **Estratégia de mitigação:** Evitar uso de muitas API'S e garantir o uso de redundância, para evitar a perda de funcionalidade.
 
 • **Responsável pelo acompanhamento:** Gabriel
 
-## Riscos de Qualidade/Processo
+## Riscos de Qualidade/Processo #05
 
 • **Identificação do risco:** Baixa Qualidade do Conteúdo.
 
@@ -94,9 +94,30 @@
 
 • **Prioridade:** Média
 
-• **Estratégia de mitigação:** Criar um filtro que impede comentários desse tipo, forçando á não ser vago, irrelevante, ofensivo ou com spoilers.
+• **Estratégia de mitigação:** Criação de uma opção para adicionar comentarios com spoilers e também uma forma dos usuários denunciarem comentários vagos, irrelevantes ou ofensivos.
 
 • **Responsável pelo acompanhamento:** Gabriel 
+
+## Riscos da Tecnologia/2 #06
+
+• **Identificação do risco:** Falta de conhecimento a respeito da tecnologia usada.
+
+• **Descrição:** Ao desenvolver o código, percebemos certas dificuldades em algumas implementações, onde precisamos pesquisar como resolver.
+
+• **Causa:** Baixa experiência em programação.
+
+• **Consequência:** Atraso na entrega
+
+• **Probabilidade:** Média
+
+• **Impacto:** Alto
+
+• **Prioridade:** Alta
+
+• **Estratégia de mitigação:** Implementações simples e diretas e times de programadores, ao invés de fazer o código sozinho.
+
+• **Responsável pelo acompanhamento:** Marcus
+
 
 ## 2. Análise e Priorização dos Riscos
 
@@ -142,4 +163,24 @@ A prioridade é definida pelo cruzamento da Probabilidade com o Impacto:
 
 **2.1 Justificativa da Priorização**
 
-Os riscos de **Tecnologia (R04)** e **Prazo (R02)** foram classificados com **Prioridade Alta**. Isso deve-se ao facto de possuírem um Impacto Alto (podem impedir a entrega do MVP) e uma Probabilidade Média de ocorrência devido à dependência de APIs externas e à carga de trabalho da equipa.
+Os riscos de **Tecnologia (R04)** foi classificado com **Prioridade Alta**. Isso deve-se ao facto de possuír um Impacto Alto (pode impedir a entrega do MVP) e uma Probabilidade Média de ocorrência devido à dependência de APIs externas.
+O risco de de **Tecnologia/2 (R06)** também foi classificado como **Prioridade Alta** pois acaba atrasando a entrega dos códigos. Está sendo priorizada e usado a estratégia de mitigação.
+
+
+**3.1 Riscos ativos**
+No momento todos os riscos anteriores continuam ativos.
+**3.2 Riscos Mitigados**
+Ainda não houve risco mitigado, apesar do risco 03 ter mínima chance de ocorrer.
+O risco 06 embora sendo aplicado a estratégia de mitigação, não foi mitigado por ter códigos complexos mesmo para 2 alunos.
+**3.3 Riscos Concretizados**
+Risco 01 e Risco 02 ocorreram devido à altas demandas nas últimas semanas.
+Risco 06 ocorreu algumas vezes.
+**3.4 Novos riscos identificados**
+O Risco 06 foi adicionado.
+**3.5 Ações de mitigações**
+Risco 01: Está sendo priorizado funcionalidades já pensadas ou funcionalidades essenciais para o projeto.
+Risco 02: Divisão de tarefas em time para que o projeto não fique parado quando ocorrer indisponibilidade de alguem.
+Risco 03: Este risco não deverá ocorrer.
+Risco 04: Será usado apenas API's necessárias e consolidadas para que a funcionalidade não seja afetada com frequência.
+Risco 05: Este risco não está tendo foco pois está longe da implementação desta funcionalidade.
+Risco 06: Para mitigar este risco, estamos trabalhando entre duplas para facilitar a troca de informação, também estamos implementando o código de forma mais simples, sem muitas funcionalidades que não foram apresentadas em aula.
