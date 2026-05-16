@@ -46,9 +46,13 @@
 * **Responsável:** Isabella Corrêa.
 
 ### R03: Saída inesperada de membros da equipe
+
 * **Descrição:** Desistência da disciplina ou desligamento de um dos integrantes do grupo.
+
 * **Causa:** Fatores pessoais ou acadêmicos externos ao projeto.
+
 * **Consequência:** Sobrecarga de trabalho nos integrantes remanescentes e atraso no cronograma.
+
 * **Probabilidade:** Baixa 
 
   - **Impacto:** Alto.
@@ -58,26 +62,44 @@
 * **Plano de Resposta:**
   * *Ação para prever:* Manter a documentação técnica atualizada e código bem comentado para que qualquer um consiga assumir a tarefa do outro.
   * *Ação Reativa:* Redistribuição imediata das tarefas essenciais do MVP entre os dois membros restantes.
+  
 * **Responsável:** Isabella Corrêa.
 
 ### R04: Problemas de persistência com o banco de dados H2
+
 * **Descrição:** Erros de configuração ou perda de dados em memória no banco H2 durante a integração com o Spring Boot.
+
 * **Causa:** Falta de familiaridade com o ciclo de vida do banco H2 em memória durante os testes automatizados.
+
 * **Consequência:** Falha na build do CI e impossibilidade de testar a listagem e o cadastro de filmes.
-* **Probabilidade:** Média | **Impacto:** Alto | **Prioridade:** Alta.
+
+* **Probabilidade:** Média
+  - **Impacto:** Alto
+  - **Prioridade:** Alta.
+
 * **Plano de Resposta:**
-  * *Ação Preventiva:* Utilizar a configuração padrão do Spring Data JPA e testar o isolamento das tabelas localmente antes de subir o código.
+  * *Ação para prever:* Utilizar a configuração padrão do Spring Data JPA e testar o isolamento das tabelas localmente antes de subir o código.
   * *Ação Reativa:* Usar scripts `schema.sql` e `data.sql` simples para resetar e forçar o estado correto do banco a cada execução de teste.
+  
 * **Responsável:** Gabriel Ferreira.
 
 ### R05: Baixa cobertura ou falha nos testes automatizados
+
 * **Descrição:** Dificuldade em criar testes de integração simples que passem na esteira de CI do GitHub Actions.
+
 * **Causa:** Pouca experiência prática com a escrita de asserções de teste automatizados no Spring Boot.
+
 * **Consequência:** Reprovação nos critérios obrigatórios da entrega e quebra do pipeline de CI.
-* **Probabilidade:** Média | **Impacto:** Alto | **Prioridade:** Alta.
+
+* **Probabilidade:** Média
+
+  - **Impacto:** Alto
+  - **Prioridade:** Alta.
+
 * **Plano de Resposta:**
-  * *Ação Preventiva:* Criar uma estrutura base de teste funcional logo no início da sprint para servir de modelo para o restante do time.
+  * *Ação para prever* Criar uma estrutura base de teste funcional logo no início da sprint para servir de modelo para o restante do time.
   * *Ação Reativa:* Realizar sessões de alinhamento técnico síncronas para resolver problemas de configuração de teste em conjunto.
+  
 * **Responsável:** Marcus Jhuan.
 
 ---
@@ -96,20 +118,28 @@ A prioridade é definida pelo cruzamento da Probabilidade com o Impacto, conform
 
 ## 3. Acompanhamento dos Riscos (Fechamento da Sprint 2)
 
-### 3.1 Riscos Ativos
+### 3.A Riscos Ativos
+
 * **R01 (Escopo):** Continua ativo, mas controlado pelo rigor no foco do MVP.
+
 * **R02 (Agenda):** Permanece ativo devido às rotinas de trabalho dos integrantes.
 
-### 3.2 Riscos Mitigados
+### 3.B Riscos Mitigados
+
 * **R03 (Saída de Membros):** Mitigado. A equipe se consolidou e dividiu bem as frentes de trabalho para a Sprint 2.
 
-### 3.3 Riscos Concretizados
+### 3.C Riscos Concretizados
+
 * **R02 (Conflito de Agenda):** Concretizou-se parcialmente no início da sprint, gerando atraso nas primeiras tarefas de backend. A estratégia de divisão em pares evitou que o projeto ficasse travado.
+
 * **R05 (Falha nos Testes):** Concretizou-se. Tivemos problemas para fazer os testes rodarem de forma limpa no GitHub Actions por falta de configuração correta do ambiente de teste, o que demandou esforço focado de infraestrutura.
 
-### 3.4 Novos Riscos Identificados
-* Não foram mapeados novos riscos nesta sprint; o foco total se manteve na estabilização dos riscos técnicos de persistência e ambiente de integração contínua (CI).
+### 3.D Novos Riscos Identificados
 
-### 3.5 Ações de Mitigação Planejadas para a Próxima Sprint
+* Não foram mapeados novos riscos nesta sprint; o foco total se manteve na estabilização dos riscos técnicos de persistência e foco para atualizar o projeto com base nos feedbacks que o professor fez na avaliacao.
+
+### 3.E Ações de Mitigação Planejadas para a Próxima Sprint
+
 * **Foco no R02:** Estabelecer commits menores e mais frequentes para evitar o acúmulo de revisões de Pull Request na véspera da entrega.
+
 * **Foco no R04:** Deixar o banco de dados H2 configurado para salvar em arquivo local de desenvolvimento para facilitar a depuração visual do frontend.
