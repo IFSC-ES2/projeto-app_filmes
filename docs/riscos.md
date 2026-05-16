@@ -30,7 +30,11 @@
 
 * **Consequência:** Atraso na entrega da Sprint dentro do prazo regulamentar.
 
-* **Probabilidade:** Média | **Impacto:** Alto | **Prioridade:** Alta.
+* **Probabilidade:** Média 
+
+  - **Impacto:** Alto
+  
+  - **Prioridade:** Alta.
 
 * **Justificativa da Prioridade:** O impacto foi elevado para Alto porque a perda de um prazo de sprint compromete diretamente a nota parcial e a aprovação no semestre.
 
@@ -45,9 +49,14 @@
 * **Descrição:** Desistência da disciplina ou desligamento de um dos integrantes do grupo.
 * **Causa:** Fatores pessoais ou acadêmicos externos ao projeto.
 * **Consequência:** Sobrecarga de trabalho nos integrantes remanescentes e atraso no cronograma.
-* **Probabilidade:** Baixa | **Impacto:** Alto | **Prioridade:** Média.
+* **Probabilidade:** Baixa 
+
+  - **Impacto:** Alto.
+  
+  - **Prioridade:** Média.
+  
 * **Plano de Resposta:**
-  * *Ação Preventiva:* Manter a documentação técnica atualizada e código bem comentado para que qualquer um consiga assumir a tarefa do outro.
+  * *Ação para prever:* Manter a documentação técnica atualizada e código bem comentado para que qualquer um consiga assumir a tarefa do outro.
   * *Ação Reativa:* Redistribuição imediata das tarefas essenciais do MVP entre os dois membros restantes.
 * **Responsável:** Isabella Corrêa.
 
