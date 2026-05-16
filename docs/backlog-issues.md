@@ -2,7 +2,7 @@
 
 Este documento detalha o estado das issues do projeto, cobrindo o histórico da Sprint 1 e as entregas centrais finalizadas na Sprint 2.
 
-## Issues Concluídas na Sprint 2 (Core do MVP)
+## Issues Concluídas na Sprint 2
 
 ### Issue #06: Cadastro de título (filme/série)
 
