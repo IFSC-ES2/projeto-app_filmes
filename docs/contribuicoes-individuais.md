@@ -1,7 +1,5 @@
 # Registro de Contribuições Individuais
 
-## Contribuições
-
 ## Objetivo
 Registrar de forma objetiva a contribuição de cada integrante da equipe para cadaa Sprint, incluindo implementação, testes, documentação, revisão e organização do trabalho.
 
