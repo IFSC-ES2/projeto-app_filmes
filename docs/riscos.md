@@ -11,8 +11,9 @@
 * **Consequência:** Atraso na entrega das funcionalidades principais da sprint.
 
 * **Probabilidade:** Baixa
-  **Impacto:** Alto | 
-  **Prioridade:** Média.
+  - **Impacto:** Alto 
+  
+  - **Prioridade:** Média.
 
 * **Plano de Resposta:**
 
