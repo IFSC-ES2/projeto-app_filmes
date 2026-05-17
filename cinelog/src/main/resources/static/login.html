@@ -99,7 +99,7 @@
           email: document.getElementById('loginEmail').value,
           senha: document.getElementById('loginSenha').value,
         };
-        await postAuth('/api/auth/login', payload, true);
+        await postAuth('/api/auth/login', payload, true);  // true = é login, redireciona
       });
 
       registerForm.addEventListener('submit', async (event) => {
@@ -121,7 +121,7 @@
         message.textContent = '';
       });
 
-      async function postAuth(url, data, showWelcome = false) {
+      async function postAuth(url, data, isLogin = false) {
         try {
           const response = await fetch(url, {
             method: 'POST',
@@ -134,8 +134,10 @@
             return;
           }
           showMessage(body.message, true);
-          if (showWelcome) {
-            showWelcomeScreen(body.nome);
+          if (isLogin) {
+            localStorage.setItem('usuarioId', body.id);
+            localStorage.setItem('usuarioNome', body.nome);
+            setTimeout(() => { window.location.href = 'catalogo.html'; }, 800);
           } else {
             showLogin.click();
           }

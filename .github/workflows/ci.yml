@@ -1,28 +1,43 @@
-name: CI
+name: CineLog CI - Sprint 2
 
 on:
-  push:
-    branches: [ main ]
   pull_request:
-    branches: [ main ]
+    types: [opened, synchronize, reopened]
 
 jobs:
-  test:
+  quality-gate:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v4
+      - name: Checkout do código
+        uses: actions/checkout@v4 
 
-    - name: Set up JDK 21
-      uses: actions/setup-java@v4
-      with:
-        java-version: '21'
-        distribution: 'temurin'
+      - name: Configurar JDK 21
+        uses: actions/setup-java@v4
+        with:
+          java-version: '21'
+          distribution: 'temurin'
+          cache: 'gradle'
 
-    - name: Make gradlew executable
-      run: chmod +x ./cinelog/gradlew
+      - name: Permissão no Gradle
+        run: chmod +x gradlew
 
-    - name: Run tests
-      run: |
-        cd cinelog
-        ./gradlew test --no-daemon
+      - name: Verificação de Build e Testes Automatizados
+        run: ./gradlew build
+
+      - name: Configurar Node.js para validação YAML
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Validação Sintática de arquivos YAML
+        run: |
+          npm install -g yaml-lint
+          find . -name "*.yml" -o -name "*.yaml" | xargs -I {} yaml-lint {}
+
+      - name: Verificação de Arquivos Obrigatórios
+        run: |
+          test -f README.md || (echo "Erro: README.md não encontrado" && exit 1)
+          test -d .github/workflows/ || (echo "Erro: pasta de workflows não encontrada" && exit 1)
+          test -f docs/riscos.md || (echo "Erro: documento de riscos não encontrado" && exit 1)
+          test -f .github/PULL_REQUEST_TEMPLATE.md || (echo "Erro: template de PR não encontrado" && exit 1)

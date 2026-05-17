@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8" />
+  <title>CineLog - Catálogo</title>
+  <link rel="stylesheet" href="estilo.css" />
+  <style>
+    .catalogo-container {
+      max-width: 700px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+
+    .saudacao {
+      font-size: 1.1rem;
+      margin-bottom: 24px;
+      color: var(--text-secondary, #aaa);
+    }
+
+    .form-adicionar {
+      background: #1e1e2e;
+      border-radius: 12px;
+      padding: 24px;
+      margin-bottom: 32px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .form-adicionar h2 {
+      margin: 0 0 8px 0;
+      font-size: 1.1rem;
+      color: #e2e2e2;
+    }
+
+    .form-row {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .form-row input,
+    .form-row select {
+      flex: 1;
+      min-width: 120px;
+      padding: 10px 14px;
+      border-radius: 8px;
+      border: 1px solid #333;
+      background: #111;
+      color: #eee;
+      font-size: 0.95rem;
+    }
+
+    .form-row input[type="number"] {
+      max-width: 80px;
+    }
+
+    .btn-adicionar {
+      background: #e50914;
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      padding: 11px 24px;
+      font-size: 0.95rem;
+      cursor: pointer;
+      align-self: flex-end;
+    }
+
+    .btn-adicionar:hover {
+      background: #c40812;
+    }
+
+    .lista-titulos {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .lista-titulos h2 {
+      font-size: 1.1rem;
+      color: #e2e2e2;
+      margin-bottom: 8px;
+    }
+
+    .titulo-card {
+      background: #1e1e2e;
+      border-radius: 10px;
+      padding: 16px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+    }
+
+    .titulo-info {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .titulo-nome {
+      font-weight: 600;
+      font-size: 1rem;
+      color: #f0f0f0;
+    }
+
+    .titulo-meta {
+      font-size: 0.82rem;
+      color: #888;
+    }
+
+    .titulo-nota {
+      font-size: 1.4rem;
+    }
+
+    .btn-excluir {
+      background: transparent;
+      border: 1px solid #555;
+      border-radius: 6px;
+      color: #aaa;
+      padding: 6px 12px;
+      cursor: pointer;
+      font-size: 0.85rem;
+      transition: all 0.2s;
+    }
+
+    .btn-excluir:hover {
+      border-color: #e50914;
+      color: #e50914;
+    }
+
+    .lista-vazia {
+      color: #666;
+      font-size: 0.95rem;
+      text-align: center;
+      padding: 32px 0;
+    }
+
+    .msg-feedback {
+      font-size: 0.9rem;
+      margin-top: 4px;
+      min-height: 20px;
+    }
+
+    .msg-feedback.erro { color: #e50914; }
+    .msg-feedback.ok { color: #4caf50; }
+
+    #semSessao {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.85);
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      gap: 16px;
+      z-index: 100;
+    }
+    #semSessao p { color: #ccc; font-size: 1rem; }
+    #semSessao a {
+      background: #e50914;
+      color: #fff;
+      padding: 10px 28px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-size: 0.95rem;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- exibido se o usuário acessar sem estar logado -->
+  <div id="semSessao">
+    <p>Você precisa estar logado para acessar o catálogo.</p>
+    <a href="login.html">Ir para o Login</a>
+  </div>
+
+  <header>
+    <a class="logo" href="login.html">
+      <div class="logo-icone">🍿</div>
+      <span class="logo-texto">Cine<span>log</span></span>
+    </a>
+    <nav>
+      <span id="nomeUsuario" style="color: #aaa; font-size: 0.9rem;"></span>
+      <a href="login.html" class="nav-btn" id="btnSair">Sair</a>
+    </nav>
+  </header>
+
+  <div class="catalogo-container">
+    <p class="saudacao">Sua biblioteca pessoal de filmes e séries.</p>
+
+    <div class="form-adicionar">
+      <h2>Adicionar título</h2>
+      <div class="form-row">
+        <input type="text" id="inputNome" placeholder="Nome do filme ou série" />
+        <select id="inputTipo">
+          <option value="FILME">Filme</option>
+          <option value="SERIE">Série</option>
+        </select>
+        <input type="number" id="inputNota" placeholder="Nota" min="1" max="5" />
+      </div>
+      <div class="msg-feedback" id="msgAdicionar"></div>
+      <button class="btn-adicionar" onclick="adicionarTitulo()">Adicionar</button>
+    </div>
+
+    <div class="lista-titulos">
+      <h2>Títulos registrados</h2>
+      <div id="listagem"></div>
+    </div>
+  </div>
+
+  <script>
+    const usuarioId = localStorage.getItem('usuarioId');
+    const usuarioNome = localStorage.getItem('usuarioNome');
+
+    // se não tiver sessão ativa, mostra overlay de aviso em vez de redirecionar direto
+    if (!usuarioId || usuarioId === 'undefined' || usuarioId === 'null') {
+      document.getElementById('semSessao').style.display = 'flex';
+    }
+
+    document.getElementById('nomeUsuario').textContent = usuarioNome || '';
+
+    document.getElementById('btnSair').addEventListener('click', () => {
+      localStorage.removeItem('usuarioId');
+      localStorage.removeItem('usuarioNome');
+      window.location.href = 'login.html';
+    });
+
+    async function carregarTitulos() {
+      try {
+        const res = await fetch(`/api/titulos?usuarioId=${usuarioId}`);
+        const titulos = await res.json();
+        renderizarLista(titulos);
+      } catch (e) {
+        document.getElementById('listagem').innerHTML = '<p class="lista-vazia">Erro ao carregar títulos.</p>';
+      }
+    }
+
+    function renderizarLista(titulos) {
+      const container = document.getElementById('listagem');
+      if (!titulos || titulos.length === 0) {
+        container.innerHTML = '<p class="lista-vazia">Nenhum título registrado ainda. Adicione o primeiro!</p>';
+        return;
+      }
+
+      container.innerHTML = titulos.map(t => {
+        const estrelas = '⭐'.repeat(t.nota);
+        const tipoLabel = t.tipo === 'SERIE' ? 'Série' : 'Filme';
+        const data = t.dataRegistro ? new Date(t.dataRegistro).toLocaleDateString('pt-BR') : '';
+        return `
+          <div class="titulo-card">
+            <div class="titulo-info">
+              <span class="titulo-nome">${escapeHtml(t.nome)}</span>
+              <span class="titulo-meta">${tipoLabel} · Registrado em ${data}</span>
+            </div>
+            <span class="titulo-nota">${estrelas}</span>
+            <button class="btn-excluir" onclick="excluirTitulo(${t.id})">Remover</button>
+          </div>
+        `;
+      }).join('');
+    }
+
+    async function adicionarTitulo() {
+      const nome = document.getElementById('inputNome').value.trim();
+      const tipo = document.getElementById('inputTipo').value;
+      const nota = parseInt(document.getElementById('inputNota').value);
+      const msgEl = document.getElementById('msgAdicionar');
+
+      if (!nome) {
+        mostrarMsg(msgEl, 'Informe o nome do título.', false);
+        return;
+      }
+      if (!nota || nota < 1 || nota > 5) {
+        mostrarMsg(msgEl, 'A nota deve ser entre 1 e 5.', false);
+        return;
+      }
+
+      try {
+        const res = await fetch('/api/titulos', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ nome, tipo, nota, usuarioId: parseInt(usuarioId) })
+        });
+        const body = await res.json();
+        if (!res.ok) {
+          mostrarMsg(msgEl, body.message || 'Erro ao adicionar.', false);
+          return;
+        }
+        mostrarMsg(msgEl, 'Título adicionado!', true);
+        document.getElementById('inputNome').value = '';
+        document.getElementById('inputNota').value = '';
+        carregarTitulos();
+      } catch (e) {
+        mostrarMsg(msgEl, 'Erro de conexão.', false);
+      }
+    }
+
+    async function excluirTitulo(id) {
+      if (!confirm('Remover este título?')) return;
+      try {
+        const res = await fetch(`/api/titulos/${id}`, { method: 'DELETE' });
+        if (res.ok) {
+          carregarTitulos();
+        }
+      } catch (e) {
+        alert('Erro ao remover título.');
+      }
+    }
+
+    function mostrarMsg(el, texto, sucesso) {
+      el.textContent = texto;
+      el.className = sucesso ? 'msg-feedback ok' : 'msg-feedback erro';
+    }
+
+    function escapeHtml(str) {
+      const div = document.createElement('div');
+      div.appendChild(document.createTextNode(str));
+      return div.innerHTML;
+    }
+
+    carregarTitulos();
+  </script>
+</body>
+
+</html>

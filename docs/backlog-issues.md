@@ -1,76 +1,54 @@
-# Backlog de Issues
+# Backlog de Issues — CineLog
 
-Este documento apresenta as issues planejadas para evidenciar o backlog do projeto, incluindo o trabalho da Sprint 1 e itens do MVP pendentes.
+Este documento detalha o estado das issues do projeto, cobrindo o histórico da Sprint 1 e as entregas centrais finalizadas na Sprint 2.
 
-## Issues da Sprint 1 (vertical slice de autenticação)
+## Issues Concluídas na Sprint 2
 
-1. **Implementar registro de usuário**
-   - Descrição: Criar endpoint de cadastro de usuário com validação de e-mail único.
-   - Critérios de aceitação:
-     - o usuário pode se registrar com nome, e-mail e senha
-     - e-mail duplicado é rejeitado
-     - dados são persistidos em H2
-   - Status: concluído
-   - Evidências: `UsuarioService`, `UsuarioRepository`, `Usuario`.
+### Issue #06: Cadastro de título (filme/série)
 
-2. **Implementar login de usuário**
-   - Descrição: Criar endpoint de autenticação com verificação de senha.
-   - Critérios de aceitação:
-     - usuário existente pode logar com e-mail e senha
-     - senha incorreta retorna erro apropriado
-   - Status: concluído
-   - Evidências: `AuthController`, `UsuarioService`.
+* **Descrição:** Criar funcionalidade e rotas no backend para que o usuário consiga registrar um título assistido em sua biblioteca digital.
 
-3. **Criar testes automatizados de unidade**
-   - Descrição: Adicionar testes unitários para regras de negócio de autenticação.
-   - Critérios de aceitação:
-     - testes executam com `./gradlew.bat test`
-     - validam cadastro, duplicidade de e-mail e login
-   - Status: concluído
-   - Evidências: `cinelog/src/test/java/com/example/cinelog/UsuarioServiceTests.java`.
+* **Prioridade Relativa:** **Alta** (Item fundamental da proposta de valor do MVP).
 
-4. **Configurar CI no GitHub Actions**
-   - Descrição: Configurar pipeline para executar testes automaticamente em push/PR.
-   - Critérios de aceitação:
-     - workflow `CI` em `.github/workflows/ci.yml`
-     - roda `./gradlew test`
-   - Status: concluído
-   - Evidências: `.github/workflows/ci.yml`.
+* **Critérios de Aceitação:**
+  * O sistema deve permitir o cadastro informando nome do título e o tipo (filme ou série).
+  * Os dados inseridos devem ser persistidos corretamente no banco H2.
+  
+* **Status:** Concluído.
+* **Evidências no Repositório:** `MidiaController.java`, `MidiaService.java`, classe factory de criação de mídias.
 
-5. **Documentar entrega de Sprint 1**
-   - Descrição: Criar artefato com o que foi entregue e como testar.
-   - Critérios de aceitação:
-     - documento com escopo e instruções de teste
-     - link no README
-   - Status: concluído
-   - Evidências: `docs/entrega-sprint1.md`, `README.md`.
+### Issue #07: Registro de avaliação por nota
 
-## Issues pendentes para o MVP
+* **Descrição:** Permitir que o usuário adicione uma nota de avaliação de 1 a 5 para um filme ou série cadastrado.
 
-6. **Cadastro de título (filme/série)**
-   - Descrição: Criar funcionalidade para o usuário registrar um título assistido.
-   - Critérios de aceitação:
-     - o usuário pode cadastrar título com nome e tipo
-     - o registro é salvo no banco
-   - Status: pendente
+* **Prioridade Relativa:** **Alta** (Core business do sistema de notas).
+* **Critérios de Aceitação:**
+  * A nota deve estar vinculada de forma íntegra ao ID do título.
+  * Lógicas de validação devem rejeitar notas que estejam fora do intervalo numérico de 1 a 5.
+  
+* **Status:** Concluído.
+* **Evidências no Repositório:** Validador na classe `Avaliacao` e implementação do padrão Builder.
 
-7. **Registro de avaliação**
-   - Descrição: Permitir que o usuário atribua nota de 1 a 5 a um título.
-   - Critérios de aceitação:
-     - nota é associada ao título e ao usuário
-     - nota inválida é rejeitada
-   - Status: pendente
+### Issue #08: Listagem de títulos avaliados
 
-8. **Listagem de títulos avaliados**
-   - Descrição: Exibir os títulos registrados com suas avaliações.
-   - Critérios de aceitação:
-     - lista é retornada por endpoint ou interface
-     - inclui título, nota e data de registro
-   - Status: pendente
+* **Descrição:** Exibir em tela ou retornar via endpoint todos os títulos registrados na biblioteca pessoal com suas respectivas notas de avaliação.
 
-9. **Exclusão de registro**
-   - Descrição: Permitir remoção de um título/avaliação.
-   - Critérios de aceitação:
-     - o usuário pode excluir um registro existente
-     - exclusão não afeta outros registros
-   - Status: pendente
+* **Prioridade Relativa:** **Média** (Depende do cadastro para fazer sentido).
+* **Critérios de Aceitação:**
+  * Retornar os dados estruturados com nome do título, nota atribuída e tipo de mídia.
+  
+* **Status:** Concluído.
+* **Evidências no Repositório:** Rota `GET /api/avaliacoes`.
+
+### Issue #09: Exclusão de registro da biblioteca
+
+* **Descrição:** Permitir que o usuário delete permanentemente um registro de filme ou série da sua listagem pessoal.
+
+* **Prioridade Relativa:** **Média**.
+
+* **Critérios de Aceitação:**
+  * O usuário pode disparar a remoção de um registro por ID através da interface.
+  * A exclusão de uma mídia não pode comprometer a integridade dos demais dados salvos no banco H2.
+  
+* **Status:** Concluído.
+* **Evidências no Repositório:** Rota `DELETE /api/avaliacoes/{id}`.
