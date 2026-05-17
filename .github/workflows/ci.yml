@@ -20,10 +20,10 @@ jobs:
           cache: 'gradle'
 
       - name: Permissão no Gradle
-        run: chmod +x gradlew
+        run: chmod +x ./cinelog/gradlew
 
       - name: Verificação de Build e Testes Automatizados
-        run: ./gradlew build
+        run: ./cinelog/gradlew build
 
       - name: Configurar Node.js para validação YAML
         uses: actions/setup-node@v4
