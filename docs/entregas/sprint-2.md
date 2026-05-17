@@ -1,46 +1,32 @@
-# Fechamento da Sprint 2 - CineLog
+# Relatório da Sprint 2 — CineLog
 
 ## 1. Incremento Funcional do MVP
-Nesta sprint, saímos da página estática de login da Sprint 1 e evoluímos o CineLog. Implementamos as seguintes funcionalidades centrais diretamente ligadas às nossas issues:
 
-* **Cadastrar Filme/Série (Issue #12):** O usuário agora consegue salvar um título informando nome e tipo, persistindo os dados no banco H2.
+Nesta sprint, nos realizamos a migração da interface estática da Sprint 1 para uma arquitetura baseada em **React**. Conseguimos evoluir o core business do CineLog entregando um incremento real e funcional das seguintes histórias do backlog:
 
-* **Avaliação de 1 a 5 (Issue #13):** Implementação da lógica de negócio que valida e atribui notas aos títulos salvos.
+* **Cadastrar Filme/Série (Issue #06):** Tela com formulário em React que captura os dados e envia para persistência no banco H2 do backend.
+* **Registro de Avaliação (Issue #07):** Lógica no backend que valida notas de 1 a 5 e rejeita valores inconsistentes enviados pelo frontend.
+* **Listagem de Avaliações (Issue #08):** Componente React que consome o endpoint GET do Spring Boot e renderiza dinamicamente a biblioteca do usuário.
+* **Exclusão de Títulos (Issue #09):** Ação direta na interface (botão de deletar) que dispara uma rota DELETE para limpar o registro do banco.
 
-* **Listagem e Exclusão (Issue #14 e #15):** Tela para visualização da biblioteca pessoal e rota HTTP DELETE para remover títulos.
+## 2. Padrões de Projeto Orientados a Objetos Aplicados
 
-## 2. Padrões de Projeto OO Aplicados
+No backend em Spring Boot, aplicamos dois padrões criacionais para garantir as boas práticas exigidas:
 
-Para cumprir as boas práticas de engenharia de software e evitar código macarrônico, aplicamos dois padrões de projeto de forma justificada:
+* **Builder (`AvaliacaoBuilder`):** Essencial para construir o objeto `Avaliacao` de forma fluída. Como o formulário em React permite ou não enviar comentários opcionais, o Builder evita sobrecarga de construtores na classe Java.
+* **Factory Method (`MidiaFactory`):** Centraliza a lógica de criação de mídias baseado na String recebida do React (`"filme"` ou `"serie"`), retornando a instância correta com suas respectivas regras de validação.
 
-### Padrão 1: Builder (Criacional)
+## 3. Situação da Integração Contínua
 
-* **Problema identificado:** A classe de entidade `Avaliacao` começou a crescer. Tínhamos campos obrigatórios (título, nota) e opcionais (comentário, tags, data de visualização). Criar múltiplos construtores estava deixando o código confuso.
+O nosso workflow do GitHub Actions (`ci.yml`) está totalmente operacional e rodando de forma automática a cada Pull Request aberto ou atualizado. 
 
-* **Solução e Classes Afetadas:** Criamos a classe interna `AvaliacaoBuilder`.
+**Nota de Transparência:** Devido ao esforço concentrado na migração do frontend para React e na resolução de conflitos de CORS, a esteira de CI nesta sprint continuou validando estritamente o ecossistema do backend Java (checkout, JDK 21, build do Gradle, testes automatizados, sintaxe YAML e existência de documentos obrigatórios). A automação de linters e testes do ecossistema Node/React ficou listada como pendência técnica para a Sprint 3.
 
-* **Benefício/Trade-off:** O código de criação de instâncias nos controladores e nos testes ficou muito mais legível. 
+## 4. Análise de Métricas
 
-### Padrão 2: Factory Method (Criacional)
+Substituímos o método de tamanho de camisetas pelo **Planning Poker com a sequência de Fibonacci**. 
 
-* **Problema identificado:** O sistema precisa diferenciar o comportamento e regras de validação ao instanciar um "Filme" ou uma "Série" (ex: Séries exigem contagem de temporadas, Filmes não).
+* **Planejado para a Sprint:** 10 Story Points (Cadastro: 3, Avaliação: 3, Listagem: 2, Exclusão: 2).
+* **Executado/Entregue:** 10 Story Points.
 
-* **Solução e Classes Afetadas:** Criamos a classe `MidiaFactory` com o método `criarMidia(String tipo)`.
-
-* **Benefício/Trade-off:** Centralizamos a lógica de criação de objetos, facilitando caso decidamos adicionar novos tipos (como Documentários) no futuro.
-
-## 3. Atualização de Métricas e Riscos
-
-* **Métrica de Produtividade (Velocity):** Planejamos 18 pontos de story points para esta sprint e conseguimos entregar 14. O desvio aconteceu porque o grupo teve dificuldade inicial para configurar os testes de integração simples integrados ao banco H2.
-
-* **Riscos:** O risco de "Atraso na configuração do CI" foi totalmente mitigado, pois a esteira do GitHub Actions rodou com sucesso em todos os PRs abertos. O risco de "Erros de concorrência no banco H2" foi identificado como novo risco baixo para a próxima etapa.
-
-## 4. Registro de Contribuições Individuais
-
-Seguindo os papéis definidos na governança do time, a divisão de trabalho nesta sprint foi:
-
-* **Isabella Corrêa (Scrum Master):** Organização do board do GitHub, revisão de critérios de aceitação das issues #12 e #13, escrita do relatório da sprint e revisão final dos Pull Requests (#22 e #25).
-
-* **Gabriel Ferreira (Arquiteto):** Refatoração do modelo de dados para suportar os padrões Builder e Factory Method, implementação do endpoint `POST /api/avaliacoes` e criação dos testes (com ajuda do Marcua) de unidade das entidades.
-
-* **Marcus Jhuan (DevOps/Infra):** Configuração final do arquivo `ci.yml` no GitHub Actions (ajuste do linter de YAML e checagem de arquivos obrigatórios), implementação do endpoint `DELETE /api/avaliacoes` e escrita das instruções de execução de testes no README.
+**Resumo da nossa análise:** Embora tenhamos completado a pontuação planejada, o tempo de desenvolvimento individual de cada tarefa foi maior do que o esperado. O fator que influenciou esse resultado foi o bloqueio inicial de requisições por causa do CORS entre as portas do React e do Spring Boot, exigindo que a equipe gastasse algumas horas de alinhamento técnico para liberar as rotas da API.
