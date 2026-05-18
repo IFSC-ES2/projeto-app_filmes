@@ -20,9 +20,10 @@ jobs:
           cache: 'gradle'
 
       - name: Permissão no Gradle
-        run: chmod +x gradlew
+        run: chmod +x ./cinelog/gradlew
 
       - name: Verificação de Build e Testes Automatizados
+        working-directory: cinelog
         run: ./gradlew build
 
       - name: Configurar Node.js para validação YAML
@@ -33,7 +34,8 @@ jobs:
       - name: Validação Sintática de arquivos YAML
         run: |
           npm install -g yaml-lint
-          find . -name "*.yml" -o -name "*.yaml" | xargs -I {} yaml-lint {}
+          find . -name "*.yml" -o -name "*.yaml" | xargs -I {} yamllint {}
+
 
       - name: Verificação de Arquivos Obrigatórios
         run: |

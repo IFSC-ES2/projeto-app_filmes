@@ -1,159 +1,112 @@
-## Riscos de Escopo #01
+# Registro de Riscos — CineLog
 
-• **Identificação do risco:** O escopo do projéto pode atrasar, devido á adição continua de pequenas funcionalidades.
+## 1. Identificação dos Riscos
 
-• **Descrição:** A adição de pequenas funcionalidades pode acumular descontroladamente, podendo afetar o avanço das Historias de Usuários.
+### R01: Crescimento descontrolado do escopo
 
-• **Causa:** Mudanças frequentes de Requisitos.
+* **Descrição:** Inclusão de pequenas funcionalidades não planejadas que acumulam e atrasam o desenvolvimento das histórias de usuário centrais do MVP.
 
-• **Consequência:** Atraso na entrega e Estouro no Orçamento.
+* **Causa:** Mudanças frequentes de ideias ou falta de apego ao planejamento do MVP.
 
-• **Probabilidade:** Baixa. 
+* **Consequência:** Atraso na entrega das funcionalidades principais da sprint.
 
-• **Impacto:** Alto.
+* **Probabilidade:** Baixa
+  - **Impacto:** Alto 
+  
+  - **Prioridade:** Média.
 
-• **Prioridade:** Média.
+* **Plano de Resposta:**
 
-• **Estratégia de mitigação:** Foco nas Historias de Usuários e após elas o adicionamento de pequenas funcionalidades.
+  * *Ação para prever:* Bloquear qualquer nova feature que não esteja listada nas funcionalidades do MVP (Cadastro, Nota, Listagem e Exclusão).
+  * *Ação Reativa:* Caso uma tarefa atrase por excesso de escopo, congelar a feature secundária e focar exclusivamente no funcionamento do CRUD básico.
+  
+* **Responsável:** Isabella Corrêa (Scrum Master).
 
-• **Responsável pelo acompanhamento:** Marcus Jhuan (Scrum Master)
+### R02: Conflito de agenda e indisponibilidade da equipe
 
-## Riscos de Prazo #02
+* **Descrição:** A equipe sofrer atrasos nas entregas devido a demandas de trabalho externo e outras disciplinas da faculdade.
 
-• **Identificação do risco:** O cronograma que estipulamos pode atrasar, devido aos trabalhos externos.
+* **Causa:** Projetos externos, emprego e rotina fora do IFSC.
 
-• **Descrição:** A equipe pode sofrer atrasos ao decorrer o projeto, porque as tarefas e a organização do dia a dia podem afetar a a entrega.
+* **Consequência:** Atraso na entrega da Sprint dentro do prazo regulamentar.
 
-• **Causa:** Projetos externos e trabalho.
+* **Probabilidade:** Média 
 
-• **Consequência:** Atraso na entrega.
+  - **Impacto:** Alto
+  
+  - **Prioridade:** Alta.
 
-• **Probabilidade:** Média.
+* **Justificativa da Prioridade:** O impacto foi elevado para Alto porque a perda de um prazo de sprint compromete diretamente a nota parcial e a aprovação no semestre.
 
-• **Impacto:** Médio.
+* **Plano de Resposta:**
 
-• **Prioridade:** Alta.
+  * *Ação para prever:* Quebrar as issues em tarefas muito pequenas para que possam ser feitas em blocos de 30 minutos ao longo da semana.
+  * *Ação Reativa:* Adotar programação em dupla assim que um integrante sinalizar que está sem tempo.
+  
+* **Responsável:** Isabella Corrêa.
 
-• **Estratégia de mitigação:** Organizar devidamente a tarefa de cada um e os trabalhos externos para que não venha ocorrer atrasos.
+### R03: Saída inesperada de membros da equipe
 
-• **Responsável pelo acompanhamento:** Marcus Jhuan.
+* **Descrição:** Desistência da disciplina ou desligamento de um dos integrantes do grupo.
 
-## Riscos da Equipe #03
+* **Causa:** Fatores pessoais ou acadêmicos externos ao projeto.
 
-• **Identificação do risco:** Saída inesperada de um membro da equipe, podem levar á atrasos inesperados.
+* **Consequência:** Sobrecarga de trabalho nos integrantes remanescentes e atraso no cronograma.
 
-• **Descrição:** Algum membro da equipe acabar derrepente e inesperadamente sair do grupo, causando trabalho extra para repor oque séria feito pelo mesmo e transferir as responsabilidades do mesmo para outros membros
+* **Probabilidade:** Baixa 
 
-• **Causa:** A saida de um membro.
+  - **Impacto:** Alto.
+  
+  - **Prioridade:** Média.
+  
+* **Plano de Resposta:**
+  * *Ação para prever:* Manter a documentação técnica atualizada e código bem comentado para que qualquer um consiga assumir a tarefa do outro.
+  * *Ação Reativa:* Redistribuição imediata das tarefas essenciais do MVP entre os dois membros restantes.
+  
+* **Responsável:** Isabella Corrêa.
 
-• **Consequência:** Atraso na entrega.
+### R04: Problemas de persistência com o banco de dados H2
 
-• **Probabilidade:** Baixa.
+* **Descrição:** Erros de configuração ou perda de dados em memória no banco H2 durante a integração com o Spring Boot.
 
-• **Impacto:** Alto.
+* **Causa:** Falta de familiaridade com o ciclo de vida do banco H2 em memória durante os testes automatizados.
 
-• **Prioridade:** Baixa.
+* **Consequência:** Falha na build do CI e impossibilidade de testar a listagem e o cadastro de filmes.
 
-• **Estratégia de mitigação:** Redestrebuição entre funções e trabalhos do certo membro em saída.
+* **Probabilidade:** Média
+  - **Impacto:** Alto
+  - **Prioridade:** Alta.
 
-• **Responsável pelo acompanhamento:** Isabella Corrêa
+* **Plano de Resposta:**
+  * *Ação para prever:* Utilizar a configuração padrão do Spring Data JPA e testar o isolamento das tabelas localmente antes de subir o código.
+  * *Ação Reativa:* Usar scripts `schema.sql` e `data.sql` simples para resetar e forçar o estado correto do banco a cada execução de teste.
+  
+* **Responsável:** Gabriel Ferreira.
 
-## Riscos da Tecnologia #04
+### R05: Baixa cobertura ou falha nos testes automatizados
 
-• **Identificação do risco:** As API's escolhidas para o projéto, podem ter falhas de comunicações.
+* **Descrição:** Dificuldade em criar testes de integração simples que passem na esteira de CI do GitHub Actions.
 
-• **Descrição:** As API's que escolhemos para o banco de dados e bliblioteca de filmes podem ocorrer conflitos.
+* **Causa:** Pouca experiência prática com a escrita de asserções de teste automatizados no Spring Boot.
 
-• **Causa:** Infraestrutura Técnica
+* **Consequência:** Reprovação nos critérios obrigatórios da entrega e quebra do pipeline de CI.
 
-• **Consequência:** Atraso na entrega.
+* **Probabilidade:** Média
 
-• **Probabilidade:** Média
+  - **Impacto:** Alto
+  - **Prioridade:** Alta.
 
-• **Impacto:** Alto
+* **Plano de Resposta:**
+  * *Ação para prever* Criar uma estrutura base de teste funcional logo no início da sprint para servir de modelo para o restante do time.
+  * *Ação Reativa:* Realizar sessões de alinhamento técnico síncronas para resolver problemas de configuração de teste em conjunto.
+  
+* **Responsável:** Marcus Jhuan.
 
-• **Prioridade:** Alta
+---
 
-• **Estratégia de mitigação:** Evitar uso de muitas API'S e garantir o uso de redundância, para evitar a perda de funcionalidade.
+## 2. Matriz de Priorização
 
-• **Responsável pelo acompanhamento:** Gabriel
-
-## Riscos de Qualidade/Processo #05
-
-• **Identificação do risco:** Baixa Qualidade do Conteúdo.
-
-• **Descrição:** Usuários que em suas reviews deixam comentários vagos, irrelevantes, ofensivos ou com spoilers.
-
-• **Causa:** Decisões de Usuários Enuviadas.
-
-• **Consequência:** Atraso na entrega
-
-• **Probabilidade:** Baixa
-
-• **Impacto:** Alto
-
-• **Prioridade:** Média
-
-• **Estratégia de mitigação:** Criação de uma opção para adicionar comentarios com spoilers e também uma forma dos usuários denunciarem comentários vagos, irrelevantes ou ofensivos.
-
-• **Responsável pelo acompanhamento:** Gabriel 
-
-## Riscos da Tecnologia/2 #06
-
-• **Identificação do risco:** Falta de conhecimento a respeito da tecnologia usada.
-
-• **Descrição:** Ao desenvolver o código, percebemos certas dificuldades em algumas implementações, onde precisamos pesquisar como resolver.
-
-• **Causa:** Baixa experiência em programação.
-
-• **Consequência:** Atraso na entrega
-
-• **Probabilidade:** Média
-
-• **Impacto:** Alto
-
-• **Prioridade:** Alta
-
-• **Estratégia de mitigação:** Implementações simples e diretas e times de programadores, ao invés de fazer o código sozinho.
-
-• **Responsável pelo acompanhamento:** Marcus
-
-
-## 2. Análise e Priorização dos Riscos
-
-**1.1 Critérios de Classificação**
-
-- Para padronizar a análise, adotamos os seguintes critérios para avaliar a Probabilidade e o Impacto:
-
-**Probabilidade:**
-
-- Baixa: O evento é considerado raro e tem poucas chances de ocorrer durante o ciclo de vida deste MVP (ex: < 20% de chance).
-
-- Média: O evento é possível e pode ocorrer em algum momento do desenvolvimento, especialmente em fases de integração (ex: 20% a 60% de chance).
-
-- Alta: O evento é muito provável e quase certo de ocorrer se nenhuma ação preventiva for tomada (ex: > 60% de chance).
-
-
-**Impacto:**
-
-- Baixo: Causa um desconforto mínimo ou um atraso desprezível que não compromete as metas da Sprint.
-
-- Médio: Causa atrasos perceptíveis no cronograma ou afeta funcionalidades secundárias do app, exigindo readequação de tarefas.
-
-- Alto: Impede a entrega de uma funcionalidade principal do MVP, compromete a segurança dos dados ou gera instabilidade total no sistema.
-
-**1.2 Matriz de Priorização**
-
-A prioridade final de cada risco é calculada através da combinação entre Probabilidade e Impacto, seguindo a lógica abaixo:
-
-| Nível | Probabilidade  | Impacto |
-| :--- | :--- | :--- |
-| **Baixo** | Evento raro, com menos de 20% de hipótese de ocorrer. | Impacto mínimo que não compromete o cronograma ou o MVP. |
-| **Médio** | Evento possível, com 20% a 60% de hipótese de ocorrer. | Atrasos perceptíveis ou afetação de funções secundárias. |
-| **Alto** | Evento muito provável, com mais de 60% de hipótese de ocorrer. | Impede a entrega do MVP ou compromete a estabilidade do sistema. |
-
-### 2. Matriz de Priorização
-A prioridade é definida pelo cruzamento da Probabilidade com o Impacto:
+A prioridade é definida pelo cruzamento da Probabilidade com o Impacto, conforme a tabela abaixo:
 
 | Probabilidade \ Impacto | Baixo | Médio | Alto |
 | :--- | :--- | :--- | :--- |
@@ -161,26 +114,32 @@ A prioridade é definida pelo cruzamento da Probabilidade com o Impacto:
 | **Média** | Prioridade Baixa | Prioridade Média | **Prioridade Alta** |
 | **Alta** | Prioridade Média | **Prioridade Alta** | **Prioridade Crítica** |
 
-**2.1 Justificativa da Priorização**
+---
 
-Os riscos de **Tecnologia (R04)** foi classificado com **Prioridade Alta**. Isso deve-se ao facto de possuír um Impacto Alto (pode impedir a entrega do MVP) e uma Probabilidade Média de ocorrência devido à dependência de APIs externas.
-O risco de de **Tecnologia/2 (R06)** também foi classificado como **Prioridade Alta** pois acaba atrasando a entrega dos códigos. Está sendo priorizada e usado a estratégia de mitigação.
+## 3. Acompanhamento dos Riscos (Fechamento da Sprint 2)
 
+### 3.A Riscos Ativos
 
-**3.1 Riscos ativos**
-No momento todos os riscos anteriores continuam ativos.
-**3.2 Riscos Mitigados**
-Ainda não houve risco mitigado, apesar do risco 03 ter mínima chance de ocorrer.
-O risco 06 embora sendo aplicado a estratégia de mitigação, não foi mitigado por ter códigos complexos mesmo para 2 alunos.
-**3.3 Riscos Concretizados**
-Risco 01 e Risco 02 ocorreram devido à altas demandas nas últimas semanas.
-Risco 06 ocorreu algumas vezes.
-**3.4 Novos riscos identificados**
-O Risco 06 foi adicionado.
-**3.5 Ações de mitigações**
-Risco 01: Está sendo priorizado funcionalidades já pensadas ou funcionalidades essenciais para o projeto.
-Risco 02: Divisão de tarefas em time para que o projeto não fique parado quando ocorrer indisponibilidade de alguem.
-Risco 03: Este risco não deverá ocorrer.
-Risco 04: Será usado apenas API's necessárias e consolidadas para que a funcionalidade não seja afetada com frequência.
-Risco 05: Este risco não está tendo foco pois está longe da implementação desta funcionalidade.
-Risco 06: Para mitigar este risco, estamos trabalhando entre duplas para facilitar a troca de informação, também estamos implementando o código de forma mais simples, sem muitas funcionalidades que não foram apresentadas em aula.
+* **R01 (Escopo):** Continua ativo, mas controlado pelo rigor no foco do MVP.
+
+* **R02 (Agenda):** Permanece ativo devido às rotinas de trabalho dos integrantes.
+
+### 3.B Riscos Mitigados
+
+* **R03 (Saída de Membros):** Mitigado. A equipe se consolidou e dividiu bem as frentes de trabalho para a Sprint 2.
+
+### 3.C Riscos Concretizados
+
+* **R02 (Conflito de Agenda):** Concretizou-se parcialmente no início da sprint, gerando atraso nas primeiras tarefas de backend. A estratégia de divisão em pares evitou que o projeto ficasse travado.
+
+* **R05 (Falha nos Testes):** Concretizou-se. Tivemos problemas para fazer os testes rodarem de forma limpa no GitHub Actions por falta de configuração correta do ambiente de teste, o que demandou esforço focado de infraestrutura.
+
+### 3.D Novos Riscos Identificados
+
+* Não foram mapeados novos riscos nesta sprint; o foco total se manteve na estabilização dos riscos técnicos de persistência e foco para atualizar o projeto com base nos feedbacks que o professor fez na avaliacao.
+
+### 3.E Ações de Mitigação Planejadas para a Próxima Sprint
+
+* **Foco no R02:** Estabelecer commits menores e mais frequentes para evitar o acúmulo de revisões de Pull Request na véspera da entrega.
+
+* **Foco no R04:** Deixar o banco de dados H2 configurado para salvar em arquivo local de desenvolvimento para facilitar a depuração visual do frontend.

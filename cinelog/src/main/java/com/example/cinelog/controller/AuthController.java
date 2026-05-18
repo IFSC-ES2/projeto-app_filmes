@@ -42,6 +42,7 @@ public class AuthController {
         body.put("status", "success");
         body.put("message", "Bem-vindo, " + usuario.getNome() + "!");
         body.put("nome", usuario.getNome());
+        body.put("id", String.valueOf(usuario.getId()));
         return ResponseEntity.ok(body);
     }
 
