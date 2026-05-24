@@ -1,13 +1,22 @@
 # Avaliação - Engenharia de Software II
 
-| entrega | commit  | data     | correção | nota | peso |
-| ------- | ------- | -------- | -------- | ---- | ---- |
-| 1       | 511d282 | 16/03/26 | 20/03/26 | 5,5  | 2    |
-| 2       | aa09e91 | 26/03/26 | 29/03/26 | 2,5  | 2    |
-| 3       | a92dc58 | 09/04/26 | 22/04/26 | 7,6  | 3    |
-| 4       | 5539a83 | 23/04/26 | 09/05/26 | 8,2  | 3    |
+| entrega | aluno                              | commit  | data     | correção | nota | peso |
+| ------- | ---------------------------------- | ------- | -------- | -------- | ---- | ---- |
+| 1       | equipe                             | 511d282 | 16/03/26 | 20/03/26 | 5,5  | 2    |
+| 2       | equipe                             | aa09e91 | 26/03/26 | 29/03/26 | 2,5  | 2    |
+| 3       | equipe                             | a92dc58 | 09/04/26 | 22/04/26 | 7,6  | 3    |
+| 4       | equipe                             | 5539a83 | 23/04/26 | 09/05/26 | 8,2  | 3    |
+| 5       | Isabella Corrêa                    | ac429eb | 04/05/26 | 24/05/26 | 6,6  | 10   |
+| 5       | Gabriel Ferreira de Souza da Silva | ac429eb | 04/05/26 | 24/05/26 | 6,1  | 10   |
+| 5       | Marcus Jhuan Epifânio Lima         | ac429eb | 04/05/26 | 24/05/26 | 7,0  | 10   |
 
-**nota parcial:** 6,3
+## Nota parcial
+
+| aluno                              | nota parcial |
+| ---------------------------------- | ------------ |
+| Isabella Corrêa                    | 6,4          |
+| Gabriel Ferreira de Souza da Silva | 6,2          |
+| Marcus Jhuan Epifânio Lima         | 6,6          |
 
 ## Comentários
 
@@ -109,3 +118,42 @@
 6. Relação entre riscos e qualidade: atendido
 7. Definição preliminar de avaliação da qualidade: atendido
 8. Atualização da documentação do projeto: atendido
+
+### Entrega 5
+
+1. Primeiro incremento funcional do sistema: parcial.
+   - Foi implementado um vertical slice de autenticação, com página `login.html`, endpoints `POST /api/auth/register` e `POST /api/auth/login`, serviço de usuário, repositório JPA e persistência H2.
+   - A aplicação inicia corretamente com `./gradlew bootRun` e o incremento é demonstrável quando usado o comando correto.
+   - O comando documentado no README e em `entrega-sprint1.md` é `./gradlew.bat bootRun`, que falha em ambiente Linux com `Permissão negada`.
+   - A funcionalidade escolhida não aparece claramente como item do MVP nas entregas anteriores, que priorizavam cadastro, avaliação, listagem e exclusão de filmes/séries. A escolha da autenticação foi registrada na Sprint 1, mas não foi suficientemente justificada com base na priorização já definida.
+2. Testes de unidade automatizados: parcial.
+   - Há testes automatizados em `UsuarioServiceTests.java`, cobrindo cadastro, duplicidade de e-mail, autenticação e senha incorreta.
+   - Os testes passam com `./gradlew test`.
+   - O comando documentado para testes é `./gradlew.bat test`, que falha em Linux com `Permissão negada`.
+3. Escopo da Sprint 1 explicitado e justificado: parcial.
+   - `entrega-sprint1.md` descreve o vertical slice entregue e como testar.
+   - `backlog-issues.md` lista itens concluídos e pendentes.
+   - Não há justificativa suficiente de por que autenticação foi o incremento mais adequado em relação ao backlog/MVP priorizado anteriormente.
+   - As issues reais da Sprint 1 no GitHub tinham descrições vazias em vários casos e algumas permaneceram abertas, como `#18` e `#20`.
+4. Backlog e board atualizados: parcial.
+   - Há registro documental do backlog em `backlog-issues.md`.
+   - As issues reais verificadas no GitHub não trazem critérios de aceitação em parte relevante dos itens da Sprint 1.
+   - Não ficou clara a vinculação entre issues, commits e pull request.
+5. Fluxo de trabalho evidenciado no repositório: parcial.
+   - Houve desenvolvimento em branch e merge do PR `#26`.
+   - O PR `#26` foi mesclado sem reviews registrados; o GitHub indicou `reviewDecision: REVIEW_REQUIRED` e `reviews: []`.
+   - O workflow de CI versionado está incorreto: com `working-directory: ./cinelog`, o passo `./cinelog/gradlew test --no-daemon` procura `cinelog/cinelog/gradlew` e falha.
+6. Registro das contribuições individuais: parcial.
+   - Há registro em `contribuicoes-individuais.md`.
+   - O registro não associa de forma objetiva cada contribuição a issues, commits, PRs ou reviews.
+   - Contribuições individuais:
+     - Gabriel: contribuiu com frontend HTML/CSS, ajustes de README e criação/organização de issues. A participação é rastreável, mas menos ligada à lógica/testes centrais, e as issues criadas para a Sprint 1 ficaram incompletas.
+     - Isabella Corrêa: contribuiu com setup inicial do Spring Boot, entidade/repositório de usuário e documentação de backlog/contribuições. A participação foi relevante, mas o PR da entrega foi mesclado sem review e parte da documentação/processo ficou insuficiente.
+     - Marcus: maior contribuição técnica no incremento, concentrando controller, DTOs, serviço, testes, documentação da sprint e workflow de CI.
+7. Documentação atualizada: parcial.
+   - O README descreve a entrega e aponta para `entrega-sprint1.md`.
+   - As instruções de execução e de testes usam `gradlew.bat`, que não funcionou no ambiente de correção.
+   - O que já funciona no MVP aparece de forma resumida, mas a relação com o MVP priorizado anteriormente ficou frágil.
+8. Release do marco: parcial.
+   - A tag `v0.1.0` existe.
+   - Não foi encontrada uma GitHub Release publicada para `v0.1.0`.
