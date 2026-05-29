@@ -28,6 +28,7 @@ $$D = \frac{\text{Total de bugs encontrados}}{\text{Total de funcionalidades ent
 
 **Análise Sprint 2:** Atualmente o foco da equipe se encontra mais focada no desenvolvimento do código e seu MVP dévido á sua velocidade baixa desplanejada, a criação dos testes é existente, porém, secundaria.
 
+**Análise Sprint 3:** O foco da equipe se mantém no desenvolvimento do código e seu MVP, a criação de testes é sim existente, porém é novamente, secundaria.
 
 
 **2. Métrica de Processo: Velocidade da Equipe**
@@ -52,6 +53,7 @@ $$V = \sum \text{Pontos de esforço das Issues concluídas no período}$$.
 
 **Análise Sprint 2:** A equipe se encontra com a velocidade abaixa da analisada dévido á fatores fora do controle da mesma, como um dos computadores dos membros acabar tendo morrido, o escopo portanto foi reduzido.
 
+**Análise Sprint 3:** A equipe se encontra com a velocidade mais abaixa do que quanto á da Sprint 2, dévido á fatores fora do controle, como dois membros da equipe trabalharem além de estudar e também os membros se encontrarem com mais trabalhos além desse próprio.
 
 
 **3. Métrica de Projeto: Percentual de Conclusão do MVP**
@@ -75,3 +77,5 @@ $$PC_{MVP} = \left( \frac{\text{Quantidade de Issues do MVP concluídas}}{\text{
 **Forma de interpretação:** Permite visualizar se a equipe conseguirá entregar o MVP dentro do cronograma do semestre.
 
 **Análise Sprint 2:** A equipe se encontra atrasáda com as entregas e estando em um constante estado de atraso das entregas planejadas dévido á ser planejado para quatro membros mas o grupo se encontra em apenas três membros.
+
+**Análise Sprint 3:** A equipe se encontra altamente atrasáda com as entregas, tendo que gastar foco e tempo precioso em problemas de Sprint's anteriores.
