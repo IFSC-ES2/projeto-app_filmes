@@ -6,17 +6,20 @@
 | 2       | equipe                             | aa09e91 | 26/03/26 | 29/03/26 | 2,5  | 2    |
 | 3       | equipe                             | a92dc58 | 09/04/26 | 22/04/26 | 7,6  | 3    |
 | 4       | equipe                             | 5539a83 | 23/04/26 | 09/05/26 | 8,2  | 3    |
-| 5       | Isabella Corrêa                    | ac429eb | 04/05/26 | 24/05/26 | 6,6  | 10   |
 | 5       | Gabriel Ferreira de Souza da Silva | ac429eb | 04/05/26 | 24/05/26 | 6,1  | 10   |
+| 5       | Isabella Corrêa                    | ac429eb | 04/05/26 | 24/05/26 | 6,6  | 10   |
 | 5       | Marcus Jhuan Epifânio Lima         | ac429eb | 04/05/26 | 24/05/26 | 7,0  | 10   |
+| 6       | Gabriel Ferreira de Souza da Silva | 292ccb5 | 17/05/26 | 27/05/26 | 2,4  | 10   |
+| 6       | Isabella Corrêa                    | 292ccb5 | 17/05/26 | 27/05/26 | 2,8  | 10   |
+| 6       | Marcus Jhuan Epifânio Lima         | 292ccb5 | 17/05/26 | 27/05/26 | 2,6  | 10   |
 
 ## Nota parcial
 
 | aluno                              | nota parcial |
 | ---------------------------------- | ------------ |
-| Isabella Corrêa                    | 6,4          |
-| Gabriel Ferreira de Souza da Silva | 6,2          |
-| Marcus Jhuan Epifânio Lima         | 6,6          |
+| Gabriel Ferreira de Souza da Silva | 4,9          |
+| Isabella Corrêa                    | 5,2          |
+| Marcus Jhuan Epifânio Lima         | 5,3          |
 
 ## Comentários
 
@@ -144,8 +147,7 @@
    - O PR `#26` foi mesclado sem reviews registrados; o GitHub indicou `reviewDecision: REVIEW_REQUIRED` e `reviews: []`.
    - O workflow de CI versionado está incorreto: com `working-directory: ./cinelog`, o passo `./cinelog/gradlew test --no-daemon` procura `cinelog/cinelog/gradlew` e falha.
 6. Registro das contribuições individuais: parcial.
-   - Há registro em `contribuicoes-individuais.md`.
-   - O registro não associa de forma objetiva cada contribuição a issues, commits, PRs ou reviews.
+   - O registro em `contribuicoes-individuais.md` não associa de forma objetiva cada contribuição a issues, commits, PRs ou reviews.
    - Contribuições individuais:
      - Gabriel: contribuiu com frontend HTML/CSS, ajustes de README e criação/organização de issues. A participação é rastreável, mas menos ligada à lógica/testes centrais, e as issues criadas para a Sprint 1 ficaram incompletas.
      - Isabella Corrêa: contribuiu com setup inicial do Spring Boot, entidade/repositório de usuário e documentação de backlog/contribuições. A participação foi relevante, mas o PR da entrega foi mesclado sem review e parte da documentação/processo ficou insuficiente.
@@ -157,3 +159,46 @@
 8. Release do marco: parcial.
    - A tag `v0.1.0` existe.
    - Não foi encontrada uma GitHub Release publicada para `v0.1.0`.
+
+### Entrega 6
+
+1. Incremento funcional do MVP: não atendido.
+   - Funcionalidades declaradas para entrega na Sprint 2:
+     - Cadastrar Filme/Série (Issue #06)
+     - Registro de Avaliação (Issue #07)
+     - Listagem de Avaliações (Issue #08)
+     - Exclusão de Títulos (Issue #09)
+   - A documentação associa essas funcionalidades às issues `#06`, `#07`, `#08` e `#09`, mas essa associação não corresponde claramente às issues reais do GitHub: `#6` é favoritar, `#7` é um PR, `#8` permanece aberta, e `#9` foi fechada em abril.
+   - As issues reais do backlog não dão evidência consistente de critérios de aceitação para as funcionalidades da Sprint 2. O documento `backlog-issues.md` registra critérios, mas cita arquivos e rotas que não existem no código da tag, como `MidiaController`, `MidiaService`, `Avaliacao`, `GET /api/avaliacoes` e `DELETE /api/avaliacoes/{id}`.
+   - O backend não compila na tag avaliada: `Titulo.java` usa `TipoTitulo`, mas o enum foi versionado como arquivo sem extensão `.java`, por isso não é compilado. O mesmo problema ocorre com outros artefatos novos, como `TituloController`, `TituloService`, `TituloRequest`, `TituloResponse` e `TituloRepository`, que também estão sem extensão `.java`.
+   - O README informa que houve frontend React desacoplado e manda executar uma pasta `/frontend`, mas não há `frontend/` nem `package.json`. O que existe é HTML estático em `cinelog/src/main/resources/static/`.
+   - Como a aplicação não compila, o incremento não é demonstrável para o cliente e não representa uma evolução funcional executável em relação à Sprint 1.
+2. Testes automatizados: não atendido.
+   - O comando `./gradlew test` falha ainda na compilação, antes de executar os testes.
+   - Há arquivo `TituloServiceTests.java`, mas ele não é executável porque depende de classes que não compilaram.
+   - Não há teste de integração de controller ou fluxo HTTP demonstrável para as funcionalidades declaradas.
+   - Não há testes de frontend.
+3. Integração contínua mínima: não atendido.
+   - O workflow executa `chmod +x gradlew` e `./gradlew build` na raiz do repositório, onde não existe `gradlew`; o Gradle Wrapper está em `cinelog/`.
+   - O PR `#29`, que gerou a tag `v0.2.0`, foi mesclado com o check `quality-gate` em falha.
+   - A release afirma que o CI estava verde, mas isso não corresponde ao check do PR da tag.
+   - O CI não valida frontend React porque esse frontend não existe na tag avaliada.
+4. Pull requests com revisão: parcial.
+   - O PR principal da entrega (`#29`) possui descrição, referência a issues e uma aprovação registrada por outro integrante, mas foi integrado com CI falhando.
+5. Aplicação justificada de padrões OO: não atendido.
+   - A documentação registra os padrões Builder e Factory Method, mas as classes citadas (`AvaliacaoBuilder`, `MidiaFactory`, `Avaliacao`) não existem no código da tag.
+   - `padroes-de-projeto.md` contém apenas `pdp`, sem justificativa, problema de projeto, classes afetadas, benefícios ou trade-offs.
+   - As ADRs tratam arquitetura desacoplada e H2, mas não registram adequadamente a decisão de uso dos padrões OO declarados.
+6. Atualização das métricas: parcial.
+   - A atualização é qualitativa e pouco objetiva: não registra valores observados completos para as métricas definidas, nem demonstra cálculo consistente de planejado versus executado.
+   - O relatório da sprint informa 10 story points planejados e 10 executados, mas essa informação contradiz a impossibilidade de compilar e demonstrar o incremento na tag.
+7. Atualização dos riscos: atendido.
+   - A análise reconhece risco concretizado de falha nos testes/CI, embora a release e o relatório da sprint afirmem situação mais positiva do que a evidência real.
+8. Release do marco: parcial.
+   - A release `v0.2.0` foi publicada com descrição afirmando entrega de React, CI verde, Builder, Factory Method e fluxo funcional de cadastro/listagem/exclusão, mas esses pontos não são comprovados pelo código.
+9. Registro das contribuições individuais: parcial.
+   - As contribuições individuais foram registradas, mas há divergências entre o que foi descrito e o estado final da release.
+   - Contribuições individuais
+      - Gabriel: contribuiu com README, métricas, ADR e registro de contribuições, além de aprovar/mesclar o PR `#29`. A participação é rastreável, mas menor na implementação funcional e agravada pelo merge de um PR com CI falhando e por documentação/release divergentes do estado real.
+      - Isabella: teve participação rastreável e relevante em documentação e em muitos commits de código da Sprint 2, incluindo arquivos de título, catálogo e testes. A nota individual fica um pouco acima dos demais pela quantidade de contribuição, mas é limitada porque os arquivos centrais foram versionados de forma incorreta e quebraram a compilação.
+      - Marcus: contribuiu com estrutura documental, riscos e ajustes de CI, coerente com DevOps/Infra. A nota é limitada porque o CI presente na tag `v0.2.0` está incorreto e o PR com correções só foi integrado depois do marco avaliado.
