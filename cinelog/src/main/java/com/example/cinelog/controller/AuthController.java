@@ -53,4 +53,17 @@ public class AuthController {
         body.put("message", ex.getMessage());
         return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(body);
     }
+
+      @PutMapping("/{id}/mudar-senha")
+    public ResponseEntity<Map<String, String>> mudarSenha(
+            @PathVariable Long id, 
+            @Valid @RequestBody MudarSenhaRequest request) {
+        
+        usuarioService.alterarSenha(id, request.getSenhaAtual(), request.getNovaSenha());
+        
+        Map<String, String> body = new HashMap<>();
+        body.put("status", "success");
+        body.put("message", "Senha alterada com sucesso!");
+        return ResponseEntity.ok(body);
+    }
 }
