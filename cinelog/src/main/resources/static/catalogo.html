@@ -204,6 +204,15 @@
       <div class="msg-feedback" id="msgAdicionar"></div>
       <button class="btn-adicionar" onclick="adicionarTitulo()">Adicionar</button>
     </div>
+    <div class="form-adicionar">
+  <h2>Alterar Minha Senha</h2>
+  <div class="form-row">
+    <input type="password" id="inputSenhaAtual" placeholder="Senha Atual" style="flex: 1; min-width: 150px;" />
+    <input type="password" id="inputNovaSenha" placeholder="Nova Senha (mín. 6 caracteres)" style="flex: 1; min-width: 150px;" />
+    <button onclick="alterarSenha()" style="flex: 0 0 150px;">Atualizar Senha</button>
+  </div>
+  <div id="msgSenha" class="msg-feedback"></div>
+</div>
 
     <div class="lista-titulos">
       <h2>Títulos registrados</h2>
