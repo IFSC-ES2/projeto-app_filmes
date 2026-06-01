@@ -1,6 +1,6 @@
 # CineLog — Biblioteca Digital de Avaliações
 
-## 1. Equipe e Papéis
+## 1. Equipes
 **Isabella Corrêa** — DevOps / Infra
 
 **Gabriel Ferreira de Souza da Silva** — Scrum Master
