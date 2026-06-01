@@ -2,7 +2,9 @@
 
 ## 1. Equipe e Papéis
 **Isabella Corrêa** — DevOps / Infra
+
 **Gabriel Ferreira de Souza da Silva** — Scrum Master
+
 **Marcus Jhuan Epifânio Lima** — Arquiteto do software
 
 ---
@@ -16,7 +18,9 @@ O **CineLog** é uma aplicação web focada em cinéfilos que desejam organizar 
 A aplicação adota uma estratégia híbrida e leve de desenvolvimento para o MVP, eliminando a necessidade de builds complexos de frontend:
 
 **Frontend:** Interface SPA parcial construída com **React (via CDN)** para o fluxo de autenticação reativa, integrada com páginas dinâmicas em **Vanilla JavaScript**. A comunicação de estado e sessão entre os escopos é gerenciada de forma persistente através de localStorage.
+
 **Backend:** RESTful API robusta construída com **Spring Boot 3 (Java 21)**, aplicando padrões de validação de dados (jakarta.validation) e tratamento global de exceções.
+
 **Banco de Dados:** **H2 Database**, operando em memória para garantir rapidez no ciclo de desenvolvimento e testes.
 
 ---
@@ -24,9 +28,13 @@ A aplicação adota uma estratégia híbrida e leve de desenvolvimento para o MV
 ## 4. Documentação das Entregas
 
 **Entrega 3:** [Planejamento Inicial](docs/baseline.md) | [Estimativas](docs/estimativas.md) | [Métricas](docs/metricas.md)
+
 **Entrega 4:** [Análise de Riscos](docs/riscos.md) | [Fluxo de Trabalho](docs/fluxo-de-trabalho.md) | [Critérios de Qualidade](docs/qualidade.md)
+
 **Entrega 5 (Sprint 1):** [Relatório Sprint 1](docs/entrega-sprint1.md)
+
 **Entrega 6 (Sprint 2):** [Relatório Sprint 2](docs/entregas/sprint-2.md) | [Arquitetura](docs/arquitetura.md) | [Definition of Done](docs/dod.md)
+
 **Entrega 7 (Sprint 3):** [Relatório Sprint 3](docs/entregas/sprint-3.md)
 
 ---
@@ -37,6 +45,7 @@ Em resposta aos critérios de qualidade e governança arquitetural estabelecidos
 
 **Issue #01 — Ajuste no Vínculo de Usuário no Catálogo:**
   * Justificativa: O MVP possuía uma vulnerabilidade relacional onde os títulos eram criados de forma órfã no banco de dados. A amarração via localStorage foi implementada para garantir a integridade referencial (Data Integrity). Sem este ajuste, o sistema violaria o critério de isolamento de dados, permitindo que um usuário visualizasse ou alterasse avaliações de terceiros.
+    
 **Issue #16 — Implementação da Funcionalidade de Mudar Senha:**
   * Justificativa: O gerenciamento de credenciais é um requisito não-funcional crítico de segurança para qualquer sistema com barreira de autenticação. Esta issue garante o princípio de Self-Service cadastral e mitiga os riscos de exposição ou obsolescência de senhas no ecossistema, validando os dados diretamente na regra de negócio do Spring Boot antes da persistência.
 
@@ -66,5 +75,6 @@ sh
 
 ### 2. Acessando a Aplicação
 
-*om o servidor ativo, abra o seu navegador e aceda diretamente a: **`http://localhost:8080/index.html`**
+*Com o servidor ativo, abra o seu navegador e aceda diretamente a: **`http://localhost:8080/index.html`**
+
 *Caso queira testar alterações visuais em tempo real no frontend sem reiniciar o servidor Java, você também pode abrir o arquivo `ndex.html`utilizando a extensão **Live Server** do VS Code.
