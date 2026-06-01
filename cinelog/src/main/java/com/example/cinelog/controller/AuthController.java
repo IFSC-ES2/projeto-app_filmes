@@ -1,13 +1,16 @@
 package com.example.cinelog.controller;
 
 import com.example.cinelog.dto.LoginRequest;
+import com.example.cinelog.dto.MudarSenhaRequest;
 import com.example.cinelog.dto.RegistroRequest;
 import com.example.cinelog.service.UsuarioService;
 import jakarta.validation.Valid;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ExceptionHandler;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
