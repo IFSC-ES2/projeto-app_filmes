@@ -316,6 +316,43 @@ window.addEventListener('DOMContentLoaded', () => {
       }
     }
 
+    async function alterarSenha() {
+  const senhaAtual = document.getElementById('inputSenhaAtual').value;
+  const novaSenha = document.getElementById('inputNovaSenha').value;
+  const msgEl = document.getElementById('msgSenha');
+
+  if (!senhaAtual || !novaSenha) {
+    mostrarMsg(msgEl, 'Por favor, preencha ambos os campos.', false);
+    return;
+  }
+
+  if (novaSenha.length < 6) {
+    mostrarMsg(msgEl, 'A nova senha deve ter pelo menos 6 caracteres.', false);
+    return;
+  }
+
+  try {
+    const res = await fetch(`/api/auth/${usuarioId}/mudar-senha`, {
+      method: 'PUT',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ senhaAtual, novaSenha })
+    });
+    
+    const body = await res.json();
+    
+    if (!res.ok) {
+      mostrarMsg(msgEl, body.message || 'Erro ao alterar senha.', false);
+      return;
+    }
+    
+    mostrarMsg(msgEl, 'Senha alterada com sucesso!', true);
+    document.getElementById('inputSenhaAtual').value = '';
+    document.getElementById('inputNovaSenha').value = '';
+  } catch (e) {
+    mostrarMsg(msgEl, 'Erro de conexão ao alterar senha.', false);
+  }
+}
+
     function mostrarMsg(el, texto, sucesso) {
       el.textContent = texto;
       el.className = sucesso ? 'msg-feedback ok' : 'msg-feedback erro';
