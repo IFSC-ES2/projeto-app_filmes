@@ -212,21 +212,19 @@
   </div>
 
   <script>
-    const usuarioId = localStorage.getItem('usuarioId');
-    const usuarioNome = localStorage.getItem('usuarioNome');
+const usuarioId = localStorage.getItem("usuarioId");
+const usuarioNome = localStorage.getItem("usuarioNome");
 
-    // se não tiver sessão ativa, mostra overlay de aviso em vez de redirecionar direto
-    if (!usuarioId || usuarioId === 'undefined' || usuarioId === 'null') {
-      document.getElementById('semSessao').style.display = 'flex';
-    }
+if (!usuarioId) {
+  window.location.href = "index.html";
+}
 
-    document.getElementById('nomeUsuario').textContent = usuarioNome || '';
-
-    document.getElementById('btnSair').addEventListener('click', () => {
-      localStorage.removeItem('usuarioId');
-      localStorage.removeItem('usuarioNome');
-      window.location.href = 'login.html';
-    });
+window.addEventListener('DOMContentLoaded', () => {
+  const saudacaoEl = document.querySelector('.saudacao');
+  if (saudacaoEl && usuarioNome) {
+    saudacaoEl.textContent = `Olá, ${usuarioNome}! Gerencie seu catálogo abaixo.`;
+  }
+});
 
     async function carregarTitulos() {
       try {
