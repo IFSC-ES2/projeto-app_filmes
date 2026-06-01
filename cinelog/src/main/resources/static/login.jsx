@@ -24,11 +24,13 @@ function LoginPage() {
       }
       setMensagem({ texto: body.message, sucesso: true });
       if (mostrarBemVindo) {
-        setNomeUsuario(body.nome);
-        setLogado(true);
+        localStorage.setItem("usuarioId", body.id);
+        localStorage.setItem("usuarioNome", body.nome);
+  
+        window.location.href = "catalogo.html";
       } else {
         setAba("login");
-      }
+}
     } catch {
       setMensagem({ texto: "Erro de conexão. Tente novamente.", sucesso: false });
     }

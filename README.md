@@ -34,7 +34,7 @@ Como o projeto agora é desacoplado, você precisa iniciar o backend e o fronten
 1. Abra o terminal na pasta raiz do backend `/backend` (ou `cinelog`).
 2. Execute o comando para iniciar a aplicação:
    ```bash
-   ./gradlew bootRun
+   (No Linux, use chmod +x gradlew) depois use ./gradlew bootRun
 
    (No Windows, use ./gradlew.bat bootRun)
    

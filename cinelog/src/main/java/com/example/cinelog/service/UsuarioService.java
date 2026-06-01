@@ -15,17 +15,31 @@ public class UsuarioService {
     }
 
     @Transactional
-    public Usuario registrarUsuario(String nome, String email, String senha) {
-        if (usuarioRepository.findByEmail(email).isPresent()) {
-            throw new IllegalArgumentException("E-mail já cadastrado");
+    public void alterarSenha(Long usuarioId, String senhaAtual, String novaSenha) {
+        Usuario usuario = usuarioRepository.findById(usuarioId)
+                .orElseThrow(() -> new IllegalArgumentException("Usuário não encontrado"));
+
+        if (!usuario.getSenha().equals(senhaAtual)) {
+            throw new IllegalArgumentException("A senha atual digitada está incorreta");
         }
-        Usuario usuario = new Usuario(nome, email, senha);
-        return usuarioRepository.save(usuario);
+
+        usuario.setSenha(novaSenha);
+        usuarioRepository.save(usuario);
     }
 
     public Usuario autenticarUsuario(String email, String senha) {
         return usuarioRepository.findByEmail(email)
                 .filter(usuario -> usuario.getSenha().equals(senha))
                 .orElseThrow(() -> new IllegalArgumentException("E-mail ou senha inválidos"));
+    }
+
+    @Transactional
+    public Usuario registrarUsuario(String nome, String email, String senha) {
+        if (usuarioRepository.findByEmail(email).isPresent()) {
+            throw new IllegalArgumentException("E-mail já cadastrado");
+        }
+
+        Usuario usuario = new Usuario(nome, email, senha);
+        return usuarioRepository.save(usuario);
     }
 }

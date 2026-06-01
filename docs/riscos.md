@@ -134,6 +134,8 @@ A prioridade é definida pelo cruzamento da Probabilidade com o Impacto, conform
 
 * **R05 (Falha nos Testes):** Concretizou-se. Tivemos problemas para fazer os testes rodarem de forma limpa no GitHub Actions por falta de configuração correta do ambiente de teste, o que demandou esforço focado de infraestrutura.
 
+* **R02 (Indisponibilidade da Equipe):** Concretizou-se. Durante o desenvolvimento da Sprint 1 ocorreu-se a indisponibilidade da membra Isabela dévido á uma falha inesperada no seu notebook, o que causou menos processos planejados entregues.
+
 ### 3.D Novos Riscos Identificados
 
 * Não foram mapeados novos riscos nesta sprint; o foco total se manteve na estabilização dos riscos técnicos de persistência e foco para atualizar o projeto com base nos feedbacks que o professor fez na avaliacao.
