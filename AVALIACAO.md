@@ -12,14 +12,21 @@
 | 6       | Gabriel Ferreira de Souza da Silva | 292ccb5 | 17/05/26 | 27/05/26 | 2,4  | 10   |
 | 6       | Isabella Corrêa                    | 292ccb5 | 17/05/26 | 27/05/26 | 2,8  | 10   |
 | 6       | Marcus Jhuan Epifânio Lima         | 292ccb5 | 17/05/26 | 27/05/26 | 2,6  | 10   |
+| 7       | Gabriel Ferreira de Souza da Silva | 5254097 | 01/06/26 | 03/06/26 | 4,4  | 10   |
+| 7       | Isabella Corrêa                    | 5254097 | 01/06/26 | 03/06/26 | 4,9  | 10   |
+| 7       | Marcus Jhuan Epifânio Lima         | 5254097 | 01/06/26 | 03/06/26 | 4,5  | 10   |
+| 8       |                                    |         |          |          |      | 10   |
+| 9       |                                    |         |          |          |      | 10   |
+| 10      |                                    |         |          |          |      | 10   |
+| 11/12   |                                    |         |          |          |      | 30   |
 
 ## Nota parcial
 
 | aluno                              | nota parcial |
 | ---------------------------------- | ------------ |
-| Gabriel Ferreira de Souza da Silva | 4,9          |
+| Gabriel Ferreira de Souza da Silva | 4,8          |
 | Isabella Corrêa                    | 5,2          |
-| Marcus Jhuan Epifânio Lima         | 5,3          |
+| Marcus Jhuan Epifânio Lima         | 5,1          |
 
 ## Comentários
 
@@ -199,6 +206,54 @@
 9. Registro das contribuições individuais: parcial.
    - As contribuições individuais foram registradas, mas há divergências entre o que foi descrito e o estado final da release.
    - Contribuições individuais
-      - Gabriel: contribuiu com README, métricas, ADR e registro de contribuições, além de aprovar/mesclar o PR `#29`. A participação é rastreável, mas menor na implementação funcional e agravada pelo merge de um PR com CI falhando e por documentação/release divergentes do estado real.
-      - Isabella: teve participação rastreável e relevante em documentação e em muitos commits de código da Sprint 2, incluindo arquivos de título, catálogo e testes. A nota individual fica um pouco acima dos demais pela quantidade de contribuição, mas é limitada porque os arquivos centrais foram versionados de forma incorreta e quebraram a compilação.
-      - Marcus: contribuiu com estrutura documental, riscos e ajustes de CI, coerente com DevOps/Infra. A nota é limitada porque o CI presente na tag `v0.2.0` está incorreto e o PR com correções só foi integrado depois do marco avaliado.
+     - Gabriel: contribuiu com README, métricas, ADR e registro de contribuições, além de aprovar/mesclar o PR `#29`. A participação é rastreável, mas menor na implementação funcional e agravada pelo merge de um PR com CI falhando e por documentação/release divergentes do estado real.
+     - Isabella: teve participação rastreável e relevante em documentação e em muitos commits de código da Sprint 2, incluindo arquivos de título, catálogo e testes. A nota individual fica um pouco acima dos demais pela quantidade de contribuição, mas é limitada porque os arquivos centrais foram versionados de forma incorreta e quebraram a compilação.
+     - Marcus: contribuiu com estrutura documental, riscos e ajustes de CI, coerente com DevOps/Infra. A nota é limitada porque o CI presente na tag `v0.2.0` está incorreto e o PR com correções só foi integrado depois do marco avaliado.
+
+### Entrega 7
+
+1. Incremento funcional da Sprint 3: parcial.
+   - Funcionalidades declaradas para entrega na Sprint 3:
+     - Integração e Vínculo de Utilizador no Catálogo (Issue #01)
+     - Alteração de Senha Segura (Issue #16)
+   - Há implementação de `usuarioId`/`usuarioNome` em `localStorage` no login e uso de `usuarioId` em `catalogo.html` para listar e cadastrar títulos por usuário.
+   - Há endpoint `PUT /api/auth/{id}/mudar-senha`, DTO `MudarSenhaRequest`, validação de senha atual no serviço e formulário de alteração de senha no catálogo.
+   - A aplicação passou a compilar, corrigindo o problema grave da Sprint 2, e os fluxos de cadastro/listagem/exclusão de títulos ficam demonstráveis.
+   - A solução de segurança é frágil: a identidade do usuário é controlada apenas por `localStorage`, qualquer usuário pode alterar o `usuarioId` no navegador, e o endpoint de alteração de senha não tem autenticação/autorização real.
+   - A senha continua armazenada e comparada em texto puro, inclusive na nova funcionalidade de alteração de senha.
+   - A issue `#16` possui critérios de aceitação, mas a issue `#1` é uma história ampla de cadastro de filmes/séries, não uma issue específica para a refatoração de vínculo de usuário descrita na Sprint 3.
+   - Os PRs `#37`, `#38` e `#39` foram vinculados à entrega e tiveram aprovação e checks verdes.
+   - O README contém instruções quebradas (`hmod +x gradlew`, `/gradlew bootRun`, `htp://localhost:8080`, `ndex.html` e referência a `/backend`), mas o comando correto indicado na release funciona quando executado em `cinelog/`.
+   - O build Java compila, mas não há ferramenta de análise estática configurada no projeto além da compilação/testes do Gradle.
+   - O código mantém senha em texto puro em `UsuarioService` e `Usuario`.
+   - O controle de sessão/identidade por `localStorage` é inseguro e permite manipulação do `usuarioId` pelo cliente.
+   - O frontend usa `innerHTML` para renderização dinâmica; há escape manual do nome do título, mas a abordagem continua frágil.
+   - Há inconsistências de organização e nomenclatura, como diretórios `Model`/`Repository` com pacotes `model`/`repository`, workflow ainda nomeado como Sprint 2 e arquivos React/JS em locais pouco convencionais.
+2. Documentação da arquitetura: atendido.
+3. ADRs consolidados: não atendido.
+   - Existem apenas `ADR-0001.md` e `ADR-0002.md`, ambos datados de 14/05/2026.
+   - Não há evidência de revisão/consolidação dos ADRs para a Sprint 3.
+   - Não foi criado ADR para decisões relevantes da Sprint 3, como uso de `localStorage` para sessão, unificação do frontend estático no Spring Boot ou alteração de senha.
+   - Os ADRs existentes continuam divergentes do estado real do sistema, especialmente a decisão de frontend React desacoplado.
+4. Atualização das métricas: parcial.
+   - `metricas.md` recebeu seções de análise da Sprint 3.
+   - A atualização é majoritariamente qualitativa e não registra valores observados completos para as métricas definidas.
+   - A documentação afirma 15 story points planejados e 15 executados, mas o relatório da sprint lista apenas 2 pontos para a issue `#01` e 5 pontos para a issue `#16`, gerando inconsistência interna.
+   - Não há comparação objetiva antes/depois que evidencie melhoria ou regressão a partir de números coletados.
+5. Testes automatizados integrados ao pipeline: parcial.
+   - Os testes não cobrem a nova funcionalidade de alteração de senha (`alterarSenha`) nem o endpoint `PUT /api/auth/{id}/mudar-senha`.
+   - Não há testes de frontend nem testes de integração HTTP para os fluxos principais.
+6. Integração contínua mínima: parcial.
+   - O workflow ainda se chama `CineLog CI - Sprint 2`, indicando documentação/configuração não atualizada.
+   - A etapa de YAML instala `yaml-lint` via npm, mas executa `yamllint`; a evidência dos PRs mostra check verde, mas a configuração é confusa e frágil.
+   - O pipeline não valida qualidade estática de JavaScript/HTML e não há linter/checkstyle para o código Java.
+7. Release/tag do marco: parcial.
+   - A tag usa o nome `v.0.3.0`, diferente do `v0.3.0` solicitado no enunciado.
+   - A descrição é objetiva e cita segurança, vínculo de usuário, setup e execução, mas ainda contém instrução de pasta `/backend`, enquanto o projeto usa `cinelog/`.
+8. Registro de contribuição individual: parcial.
+   - `contribuicoes-individuais.md` não foi atualizado para a Sprint 3; o último registro explícito é da Sprint 2.
+   - O relatório da Sprint 3 não discrimina claramente o que cada integrante implementou, revisou, testou ou documentou.
+   - As contribuições foram analisadas pelo histórico `v0.2.0..v.0.3.0`.
+   - Gabriel: contribuiu com README, métricas, documentação C4 de arquitetura e commits de React. A nota reconhece a documentação arquitetural apresentada, mas é limitada pela menor participação comprovada no código central da Sprint 3.
+   - Isabella: tem a maior contribuição rastreável na Sprint 3, com commits de DTO, serviço, endpoint e tela de alteração de senha, além de métricas e documentação. Nota limitada pela documentação insuficiente, falta de testes da nova funcionalidade e fragilidades de segurança.
+   - Marcus: contribuiu com correções de CI/caminhos, ajustes de React/configuração e revisões/aprovações dos PRs da entrega. A participação é rastreável, mas limitada porque a documentação de contribuição individual não registra Sprint 3 e porque os ADRs não foram consolidados.
