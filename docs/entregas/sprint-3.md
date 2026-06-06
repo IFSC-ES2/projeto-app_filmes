@@ -29,3 +29,25 @@ Continuámos a utilizar o método de estimativa **Planning Poker com a sequênci
   * **Issue #16 (Mudar Senha):** 5 Story Points (Complexidade média/alta por ser uma funcionalidade Full-Stack com lógica de validação de dados em base de dados).
 
 **Análise técnica da Sprint:** O principal desafio desta sprint foi gerir o estado da sessão do utilizador entre tecnologias diferentes (o Login em React CDN e o Catálogo em Vanilla JS). A utilização de armazenamento local (`localStorage`) provou ser uma solução para contornar o problema sem a necessidade de introduzir bibliotecas pesadas de gerência de estado nesta fase do MVP.
+
+## 5. Ambiente de Publicação e Homologação 
+
+O incremento da Sprint 3 foi implantado e validado em um **Ambiente de Homologação Local Unificado**.
+
+* **Justificativa de Infraestrutura:** Como o CineLog utiliza o banco de dados H2 operando estritamente em memória (`in-memory`), a persistência é volatilizada a cada reinicialização do processo. Por este motivo técnico, a equipe optou por centralizar a homologação no ambiente local do servidor embutido do Spring Boot (porta `8080`), onde os artefatos do frontend e backend rodam acoplados.
+
+* **Processo de Homologação:** A Scrum Master (Isabella) e o Arquiteto (Gabriel) realizaram uma sessão de BVT (*Build Verification Testing*) simulando múltiplos cadastros de títulos e fluxos de alteração de senha para garantir que o estado do `localStorage` não sofria vazamento de escopo entre sessões de usuários diferentes.
+
+## 6. Garantia do Definition of Done (DoD)
+
+A conformidade com o *Definition of Done* da equipe foi auditada através das seguintes evidências:
+
+1. **Mecanismo de Revisão por Pares (Peer Review):** Nenhuma issue de código (como a #01 e a #16) foi integrada à branch principal (`main`) sem a abertura de um Pull Request formal e a revisão obrigatória de outro integrante da equipe, validando critérios de clean code e tratamento de exceções.
+
+2. **Validação de Restrições de Dados:** O Arquiteto de Software garantiu que o payload do frontend respeitasse rigidamente as anotações `@NotNull` e `@Size` do Spring Boot, prevenindo falhas de injeção de dados inválidos no banco de dados.
+
+## 7. Indicação de Entrega de Valor
+
+O estado estável e funcional do MVP ao término desta etapa foi documentado e versionado diretamente no sistema de controle de versão.
+
+* **Link Oficial da Release v0.3.0 (Sprint 3):** https://github.com/IFSC-ES2/projeto-app_filmes/tree/Entrega-7-(sprint-3) 
