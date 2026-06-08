@@ -61,16 +61,10 @@ function LoginPage() {
   return (
     <>
       <header>
-        <a className="logo" href="#">
+        <div className="logo">
           <div className="logo-icone">🍿</div>
           <span className="logo-texto">Cine<span>log</span></span>
-        </a>
-        <nav>
-          <a href="#">Filmes</a>
-          <a href="#">Séries</a>
-          <a href="#">Top 100</a>
-          <a href="#" className="nav-btn">Login</a>
-        </nav>
+        </div>
       </header>
 
       <div className="pagina">

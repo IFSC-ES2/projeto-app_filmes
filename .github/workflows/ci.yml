@@ -1,8 +1,11 @@
-name: CineLog CI - Sprint 2
+name: CineLog CI - Sprint 4
 
 on:
   pull_request:
     types: [opened, synchronize, reopened]
+  push:
+    branches:
+      - main
 
 jobs:
   quality-gate:
@@ -34,12 +37,13 @@ jobs:
       - name: Validação Sintática de arquivos YAML
         run: |
           npm install -g yaml-lint
-          find . -name "*.yml" -o -name "*.yaml" | xargs -I {} yamllint {}
-
+          find . -name "*.yml" -o -name "*.yaml" -print0 | xargs -0 -I {} npx yaml-lint {}
 
       - name: Verificação de Arquivos Obrigatórios
         run: |
           test -f README.md || (echo "Erro: README.md não encontrado" && exit 1)
           test -d .github/workflows/ || (echo "Erro: pasta de workflows não encontrada" && exit 1)
           test -f docs/riscos.md || (echo "Erro: documento de riscos não encontrado" && exit 1)
+          test -f docs/DEPLOY.md || (echo "Erro: documento de deploy não encontrado" && exit 1)
+          test -f docs/entregas/sprint-4.md || (echo "Erro: documento de Sprint 4 não encontrado" && exit 1)
           test -f .github/PULL_REQUEST_TEMPLATE.md || (echo "Erro: template de PR não encontrado" && exit 1)

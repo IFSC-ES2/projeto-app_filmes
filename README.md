@@ -15,13 +15,13 @@ O **CineLog** é uma aplicação web focada em cinéfilos que desejam organizar 
 ---
 
 ## 3. Stack Utilizada e Arquitetura
-A aplicação adota uma estratégia híbrida e leve de desenvolvimento para o MVP, eliminando a necessidade de builds complexos de frontend:
+A aplicação adota uma estratégia híbrida e leve de desenvolvimento para o MVP, mantendo o frontend estático integrado ao servidor e sem um build de frontend separado.
 
-**Frontend:** Interface SPA parcial construída com **React (via CDN)** para o fluxo de autenticação reativa, integrada com páginas dinâmicas em **Vanilla JavaScript**. A comunicação de estado e sessão entre os escopos é gerenciada de forma persistente através de localStorage.
+**Frontend:** HTML e JavaScript estático servidos pelo Spring Boot. O login usa **React via CDN** em `index.html`, enquanto o catálogo funciona com JavaScript puro e `localStorage` em `catalogo.html`.
 
-**Backend:** RESTful API robusta construída com **Spring Boot 3 (Java 21)**, aplicando padrões de validação de dados (jakarta.validation) e tratamento global de exceções.
+**Backend:** RESTful API construída com **Spring Boot 3 (Java 21)**, com validação de dados usando `jakarta.validation` e tratamento global de exceções.
 
-**Banco de Dados:** **H2 Database**, operando em memória para garantir rapidez no ciclo de desenvolvimento e testes.
+**Banco de Dados:** **H2 Database** em memória, para acelerar o desenvolvimento e a execução dos testes automatizados.
 
 ---
 
@@ -36,6 +36,8 @@ A aplicação adota uma estratégia híbrida e leve de desenvolvimento para o MV
 **Entrega 6 (Sprint 2):** [Relatório Sprint 2](docs/entregas/sprint-2.md) | [Arquitetura](docs/arquitetura.md) | [Definition of Done](docs/dod.md)
 
 **Entrega 7 (Sprint 3):** [Relatório Sprint 3](docs/entregas/sprint-3.md)
+
+**Entrega 8 (Sprint 4):** [Relatório Sprint 4](docs/entregas/sprint-4.md) | [Deploy](docs/DEPLOY.md)
 
 ---
 
@@ -53,28 +55,35 @@ Em resposta aos critérios de qualidade e governança arquitetural estabelecidos
 
 ## Como Executar o Projeto Localmente
 
-Como a interface é servida de forma estática e integrada ao ecossistema do servidor, você só precisa iniciar o ecossistema do Backend para que a aplicação completa fique disponível.
+A interface do CineLog é servida de forma estática pelo backend Spring Boot. Não existe uma pasta `/frontend` no repositório.
 
 ### 1. Inicializando o Servidor (Spring Boot)
 
-1. Abra o terminal na pasta raiz do backend /backend (ou cinelog).
-2. Execute o comando correspondente ao seu sistema operacional para compilar e subir o servidor:
->**No Linux / macOS:**
->
-ash
-> hmod +x gradlew
-> /gradlew bootRun
-> 
- *No Windows:**
-> 
-sh
-> .gradlew.bat bootRun
-> `
-. O backend e os arquivos estáticos do frontend subirão unificados na porta: `htp://localhost:8080`.
+Abra o terminal na pasta `cinelog` e execute o comando correspondente ao seu sistema operacional.
 
+**No Windows:**
+```powershell
+cd cinelog
+.\gradlew.bat bootRun
+```
+
+**No Linux / macOS:**
+```bash
+cd cinelog
+chmod +x ./gradlew
+./gradlew bootRun
+```
+
+O backend e os arquivos estáticos do frontend estarão disponíveis em `http://localhost:8080`.
 
 ### 2. Acessando a Aplicação
 
-*Com o servidor ativo, abra o seu navegador e aceda diretamente a: **`http://localhost:8080/index.html`**
+Abra no seu navegador:
 
-*Caso queira testar alterações visuais em tempo real no frontend sem reiniciar o servidor Java, você também pode abrir o arquivo `ndex.html`utilizando a extensão **Live Server** do VS Code.
+`http://localhost:8080/index.html`
+
+O catálogo estará disponível em:
+
+`http://localhost:8080/catalogo.html`
+
+> Para informações completas de deploy e validação, consulte `docs/DEPLOY.md`.

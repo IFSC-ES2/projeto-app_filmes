@@ -169,55 +169,61 @@
   </style>
 </head>
 
-<body>
+<body class="catalogo-page">
 
   <!-- exibido se o usuário acessar sem estar logado -->
   <div id="semSessao">
     <p>Você precisa estar logado para acessar o catálogo.</p>
-    <a href="login.html">Ir para o Login</a>
+    <a href="index.html">Ir para o Login</a>
   </div>
 
   <header>
-    <a class="logo" href="login.html">
+    <a class="logo" href="catalogo.html">
       <div class="logo-icone">🍿</div>
       <span class="logo-texto">Cine<span>log</span></span>
     </a>
-    <nav>
-      <span id="nomeUsuario" style="color: #aaa; font-size: 0.9rem;"></span>
-      <a href="login.html" class="nav-btn" id="btnSair">Sair</a>
+    <nav class="main-nav">
+      <a href="#" id="tabCatalogo" class="active">Catálogo</a>
+      <a href="#" id="tabPerfil">Meu Perfil</a>
     </nav>
+    <a href="index.html" class="nav-btn" id="btnSair">Sair</a>
   </header>
 
   <div class="catalogo-container">
-    <p class="saudacao">Sua biblioteca pessoal de filmes e séries.</p>
+    <section id="catalogoSection" class="page-section active">
+      <p class="saudacao">Sua biblioteca pessoal de filmes e séries.</p>
 
-    <div class="form-adicionar">
-      <h2>Adicionar título</h2>
-      <div class="form-row">
-        <input type="text" id="inputNome" placeholder="Nome do filme ou série" />
-        <select id="inputTipo">
-          <option value="FILME">Filme</option>
-          <option value="SERIE">Série</option>
-        </select>
-        <input type="number" id="inputNota" placeholder="Nota" min="1" max="5" />
+      <div class="form-adicionar">
+        <h2>Adicionar título</h2>
+        <div class="form-row">
+          <input type="text" id="inputNome" placeholder="Nome do filme ou série" />
+          <select id="inputTipo">
+            <option value="FILME">Filme</option>
+            <option value="SERIE">Série</option>
+          </select>
+          <input type="number" id="inputNota" placeholder="Nota" min="1" max="5" />
+        </div>
+        <div class="msg-feedback" id="msgAdicionar"></div>
+        <button class="btn-adicionar" onclick="adicionarTitulo()">Adicionar</button>
       </div>
-      <div class="msg-feedback" id="msgAdicionar"></div>
-      <button class="btn-adicionar" onclick="adicionarTitulo()">Adicionar</button>
-    </div>
-    <div class="form-adicionar">
-  <h2>Alterar Minha Senha</h2>
-  <div class="form-row">
-    <input type="password" id="inputSenhaAtual" placeholder="Senha Atual" style="flex: 1; min-width: 150px;" />
-    <input type="password" id="inputNovaSenha" placeholder="Nova Senha (mín. 6 caracteres)" style="flex: 1; min-width: 150px;" />
-    <button onclick="alterarSenha()" style="flex: 0 0 150px;">Atualizar Senha</button>
-  </div>
-  <div id="msgSenha" class="msg-feedback"></div>
-</div>
 
-    <div class="lista-titulos">
-      <h2>Títulos registrados</h2>
-      <div id="listagem"></div>
-    </div>
+      <div class="lista-titulos">
+        <h2>Títulos registrados</h2>
+        <div id="listagem"></div>
+      </div>
+    </section>
+
+    <section id="perfilSection" class="page-section">
+      <div class="form-adicionar" id="meuPerfil">
+        <h2>Alterar Minha Senha</h2>
+        <div class="form-row">
+          <input type="password" id="inputSenhaAtual" placeholder="Senha Atual" style="flex: 1; min-width: 150px;" />
+          <input type="password" id="inputNovaSenha" placeholder="Nova Senha (mín. 6 caracteres)" style="flex: 1; min-width: 150px;" />
+          <button onclick="alterarSenha()" style="flex: 0 0 150px;">Atualizar Senha</button>
+        </div>
+        <div id="msgSenha" class="msg-feedback"></div>
+      </div>
+    </section>
   </div>
 
   <script>
@@ -357,6 +363,35 @@ window.addEventListener('DOMContentLoaded', () => {
       el.textContent = texto;
       el.className = sucesso ? 'msg-feedback ok' : 'msg-feedback erro';
     }
+
+    function abrirSecao(secao) {
+      const catalogoSection = document.getElementById('catalogoSection');
+      const perfilSection = document.getElementById('perfilSection');
+      const tabCatalogo = document.getElementById('tabCatalogo');
+      const tabPerfil = document.getElementById('tabPerfil');
+
+      if (secao === 'perfil') {
+        catalogoSection.classList.remove('active');
+        perfilSection.classList.add('active');
+        tabCatalogo.classList.remove('active');
+        tabPerfil.classList.add('active');
+      } else {
+        catalogoSection.classList.add('active');
+        perfilSection.classList.remove('active');
+        tabCatalogo.classList.add('active');
+        tabPerfil.classList.remove('active');
+      }
+    }
+
+    document.getElementById('tabCatalogo').addEventListener('click', function (event) {
+      event.preventDefault();
+      abrirSecao('catalogo');
+    });
+
+    document.getElementById('tabPerfil').addEventListener('click', function (event) {
+      event.preventDefault();
+      abrirSecao('perfil');
+    });
 
     function escapeHtml(str) {
       const div = document.createElement('div');
