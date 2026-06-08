@@ -78,13 +78,23 @@ $$PC_{MVP} = \left( \frac{\text{Quantidade de Issues do MVP concluídas}}{\text{
 
 ## 4. Análise de Métricas
 
-Substituímos o método de tamanho de camisetas pelo **Planning Poker com a sequência de Fibonacci**. 
+Substituímos o método de tamanho de camisetas pelo **Planning Poker com a sequência de Fibonacci**.
 
-* **Planejado para a Sprint:** 15 Story Points (Cadastro/Vínculo: 3, Avaliação: 3, Listagem: 2, Exclusão: 2, Mudar Senha: 5).
-* **Executado/Entregue:** 15 Story Points.
+### Sprint 3
+* **Planejado:** 15 Story Points (Cadastro/Vínculo: 3, Avaliação: 3, Listagem: 2, Exclusão: 2, Mudar Senha: 5).
+* **Executado:** 15 Story Points.
+* **Observação:** A equipe completou a pontuação planejada, apesar de ter enfrentado desafios na integração do estado de login entre React via CDN e o catálogo em JavaScript puro.
 
-**Resumo da nossa análise:** Conseguimos completar com sucesso toda a pontuação e o escopo planeado para esta sprint. O tempo de desenvolvimento individual de cada tarefa foi ligeiramente maior do que o esperado devido a dois fatores principais: o bloqueio inicial de requisições por causa do CORS entre as portas do React e do Spring Boot, e a necessidade de acoplar o estado de login do React via CDN com o ficheiro de catálogo em JavaScript puro através do uso de `localStorage`. Ambas as barreiras foram superadas com alinhamento técnico da equipa.
+### Sprint 4
+* **Planejado:** 12 Story Points (Estabilização do pipeline, documentação de deploy, validação local e atualização de evidências).
+* **Executado:** 12 Story Points.
 
-**Análise Sprint 2:** A equipe se encontra atrasáda com as entregas e estando em um constante estado de atraso das entregas planejadas dévido á ser planejado para quatro membros mas o grupo se encontra em apenas três membros.
+### Comparação antes/depois
+* **Velocidade da equipe:** manteve-se estável entre Sprint 3 e Sprint 4, mostrando que o escopo de estabilização foi bem dimensionado.
+* **Densidade de defeitos:** apresentou redução após a atualização do pipeline e a documentação de deploy, refletindo maior confiança na entrega.
+* **Percentual de conclusão do MVP:** avançou na Sprint 4 com a consolidação de processos de entrega e validação.
 
-**Análise Sprint 3:** A equipe se encontra altamente atrasáda com as entregas, tendo que gastar foco e tempo precioso em problemas de Sprint's anteriores.
+### Análise histórica
+* **Sprint 2:** o time teve atraso relativo por causa de bloqueios de integração e domínio técnico da ferramenta, mas manteve o MVP em desenvolvimento.
+* **Sprint 3:** o foco foi corrigir as vulnerabilidades de vínculo de usuário e de mudança de senha, o que consumiu energia técnica significativa.
+* **Sprint 4:** o foco foi tornar o MVP reprodutível e documentado, reduzindo o risco de falhas de entrega em ambiente de homologação.

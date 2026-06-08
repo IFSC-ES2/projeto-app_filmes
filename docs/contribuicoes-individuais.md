@@ -45,3 +45,23 @@ Registrar de forma objetiva a contribuição de cada integrante da equipe para c
 - **Infraestrutura de CI:** Configuração do workflow do GitHub Actions (ci.yml) integrando etapas de build do Gradle, verificação sintática de arquivos YAML e checagem de existência dos arquivos obrigatórios no repositório.
 - **Desenvolvimento e Rotas:** Implementação dos endpoints REST correspondentes às rotas de listagem geral (GET) e remoção lógica por ID (DELETE) de mídias.
 - **Execução Local:** Atualização das diretrizes e comandos documentados no README.md explicando detalhadamente como os testes automatizados devem ser disparados em ambiente de desenvolvimento local.
+
+## Contribuições da Sprint 4 (Entrega 8)
+
+### Isabella Corrêa (Scrum Master)
+- Documentação de implantação: criação de `docs/DEPLOY.md` e atualização do `README.md` para refletir a pasta correta `cinelog` e os comandos de execução.
+- Validação do ambiente local de homologação e execução com `.\gradlew.bat bootRun`.
+- Revisão do workflow de CI e correção da validação de arquivos YAML.
+- Evidências: `docs/DEPLOY.md`, `.github/workflows/ci.yml`, `README.md`, `docs/entregas/sprint-4.md`.
+
+### Gabriel Ferreira de Souza da Silva (Arquiteto de Software)
+- Correção da documentação técnica e alinhamento do relatório da Sprint 4 com as entregas reais do MVP.
+- Participação na definição de critérios de validação local e na justificativa da alternativa de staging reprodutível.
+- Apoio na conservação da arquitetura híbrida do frontend estático com React via CDN.
+- Evidências: `docs/entregas/sprint-4.md`, `docs/adrs/ADR-0003.md`, `README.md`.
+
+### Marcus Jhuan Epifânio Lima (DevOps/Infra)
+- Atualização do workflow de CI para Sprint 4, adicionando a execução em `main` e a validação de documentação obrigatória.
+- Ajuste do pipeline para usar o comando `yaml-lint` corretamente.
+- Garantia de build e testes automatizados do projeto no backend.
+- Evidências: `.github/workflows/ci.yml`, `docs/DEPLOY.md`, `docs/contribuicoes-individuais.md`.
