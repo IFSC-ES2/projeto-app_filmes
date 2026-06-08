@@ -1,7 +1,7 @@
 # Registro de Contribuições Individuais
 
 ## Objetivo
-Registrar de forma objetiva a contribuição de cada integrante da equipe para cadaa Sprint, incluindo implementação, testes, documentação, revisão e organização do trabalho.
+Registrar de forma objetiva a contribuição de cada integrante da equipe para cada Sprint, incluindo implementação, testes, documentação, revisão e organização do trabalho.
 
 ## Critérios
 - Cada integrante indica o que implementou ou revisou.
@@ -49,19 +49,20 @@ Registrar de forma objetiva a contribuição de cada integrante da equipe para c
 ## Contribuições da Sprint 4 (Entrega 8)
 
 ### Isabella Corrêa (Scrum Master)
-- Documentação de implantação: criação de `docs/DEPLOY.md` e atualização do `README.md` para refletir a pasta correta `cinelog` e os comandos de execução.
-- Validação do ambiente local de homologação e execução com `.\gradlew.bat bootRun`.
-- Revisão do workflow de CI e correção da validação de arquivos YAML.
+- Documentação de implantação: criação de `docs/DEPLOY.md` e atualização do `README.md` para refletir a pasta correta `cinelog`, os comandos de execução corretos e a validação do ambiente local.
+- Valida��o do ambiente local de homologa��o com `.\gradlew.bat bootRun` e testes de acesso a `http://localhost:8080/index.html` e `http://localhost:8080/catalogo.html`.
+- Revisão do workflow de CI e correção da validação de arquivos YAML para garantir checklist de qualidade automatizada.
 - Evidências: `docs/DEPLOY.md`, `.github/workflows/ci.yml`, `README.md`, `docs/entregas/sprint-4.md`.
 
 ### Gabriel Ferreira de Souza da Silva (Arquiteto de Software)
 - Correção da documentação técnica e alinhamento do relatório da Sprint 4 com as entregas reais do MVP.
-- Participação na definição de critérios de validação local e na justificativa da alternativa de staging reprodutível.
-- Apoio na conservação da arquitetura híbrida do frontend estático com React via CDN.
+- Definição e documentação da arquitetura híbrida do projeto: backend Spring Boot servindo frontend estático, com login em React via CDN e catálogo em JavaScript puro.
+- Criação do ADR `docs/adrs/ADR-0003.md` para justificar a homologação local reprodutível e o estágio de deploy alternativo.
 - Evidências: `docs/entregas/sprint-4.md`, `docs/adrs/ADR-0003.md`, `README.md`.
 
 ### Marcus Jhuan Epifânio Lima (DevOps/Infra)
-- Atualização do workflow de CI para Sprint 4, adicionando a execução em `main` e a validação de documentação obrigatória.
-- Ajuste do pipeline para usar o comando `yaml-lint` corretamente.
-- Garantia de build e testes automatizados do projeto no backend.
-- Evidências: `.github/workflows/ci.yml`, `docs/DEPLOY.md`, `docs/contribuicoes-individuais.md`.
+- Atualização do workflow de CI para Sprint 4, adicionando execução automática em `main` e validação de artefatos obrigatórios.
+- Ajuste do pipeline para usar `yaml-lint` corretamente e manter o processo de build/testes do Gradle estável em `cinelog`.
+- Sincronização das correções de código no clone do Marcus, incluindo a validação do build do backend e a organização dos pacotes Java de modelo e repositório.
+- Registro das métricas da Sprint 4 e atualização do documento de contribuições individuais.
+- Evidências: `.github/workflows/ci.yml`, `docs/metricas.md`, `docs/contribuicoes-individuais.md`.

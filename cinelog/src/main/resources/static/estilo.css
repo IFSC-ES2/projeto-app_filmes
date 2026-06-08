@@ -11,18 +11,28 @@ header {
     width: 100%;
     background: #111;
     border-bottom: 1px solid rgba(255,255,255,0.07);
-     padding: 0 40px;
+    padding: 0;
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
     height: 60px;
     z-index: 100;
+}
+
+body.catalogo-page header {
+    justify-content: space-between;
+    padding: 0 32px;
+}
+
+body.catalogo-page .main-nav {
+    margin: 0 auto;
 }
 
 .logo {
     display: flex;
     align-items: center;
     gap: 10px;
+    color: #fff;
     text-decoration: none;
 }
 
@@ -63,6 +73,11 @@ nav a:hover {
   color: #fff; 
 }
 
+nav a.active {
+  color: #5382ff;
+  font-weight: 600;
+}
+
 .nav-btn {
     font-size: 13px;
     font-weight: 500;
@@ -70,6 +85,25 @@ nav a:hover {
     background: #5382ff;
     padding: 7px 16px;
     border-radius: 6px;
+}
+
+body.catalogo-page {
+  align-items: flex-start;
+  padding-top: 80px;
+}
+
+.catalogo-container {
+  width: min(100%, 900px);
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.page-section {
+  display: none;
+}
+
+.page-section.active {
+  display: block;
 }
 
 body {
