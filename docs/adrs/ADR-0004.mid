@@ -1,0 +1,71 @@
+# ADR 0004 — Aplicação de Padrões de Projeto no CineLog
+
+*  **Data:** 08 de junho de 2026
+*  **Status:** Aprovado
+*  **Responsáveis:** Marcus
+
+## 1. Contexto
+
+O CineLog já segue uma arquitetura em camadas com controllers, services, repositories e entidades JPA. Para a Sprint 4, foi identificada a necessidade de melhorar a organização da criação de objetos de domínio e justificar formalmente a aplicação de padrões de projeto orientados a objetos.
+
+Especificamente, a criação de objetos Titulo estava misturada com regras de validação e conversão dentro de TituloService, o que tornava o serviço mais denso e menos coeso.
+
+## 2. Decisão
+
+A decisão foi introduzir um padrão *Factory* para a criação de instâncias de Titulo e documentar o uso do padrão *Repository* já existente no projeto.
+
+### Alterações realizadas
+
+Criada a classe com.example.cinelog.factory.TituloFactory
+Movida a lógica de validação e criação de Titulo de TituloService para TituloFactory
+Mantido o TituloService responsável apenas pela regra de negócio e persistência
+Documentado o uso de padrões em docs/padroes-de-projeto.md
+
+## 3. Justificativa
+
+### Problema identificado
+A classe TituloService estava acumulando responsabilidade de construção de objeto de domínio, validação de entrada e persistência. Isso afetava a coesão da camada de serviço.
+
+### Padrão aplicado
+*Factory Pattern*: para encapsular a criação de objetos Titulo e centralizar validações de construção.
+*Repository Pattern*: já utilizado por meio de Spring Data JPA em UsuarioRepository e TituloRepository.
+
+### Por que o padrão é adequado
+
+O padrão Factory remove lógica de construção do serviço, deixando-o focado em regras de negócio e transações.
+A fábrica facilita testes unitários do processo de criação e mantém o serviço mais simples.
+O Repository garante desacoplamento entre o serviço e o mecanismo de persistência.
+
+## 4. Consequências
+
+### Benefícios
+
+*  **Maior coesão:** TituloService agora lida apenas com operações de negócio e persistência.
+*  **Isolamento da lógica de criação:** validação de campos como nota e conversão de tipo estão centralizadas em TituloFactory.
+*  **Documentação clara:** a equipe documentou explicitamente a aplicação dos padrões no projeto.
+*  **Facilidade de manutenção:** mudanças na construção de Titulo podem ser feitas apenas em TituloFactory.
+
+### Trade-offs
+
+*  **Mais classes:** a adição de TituloFactory aumenta a quantidade de classes no projeto.
+*  **Maior abstração:** há uma camada extra entre o serviço e a entidade, mas isso é compensado por melhor organização.
+
+## 5. Impacto na arquitetura e evolução futura
+
+A decisão reforça a arquitetura em camadas existente e favorece a evolução do projeto, pois:
+
+facilita a inclusão de novas regras de criação de domínio sem alterar o serviço;
+mantém a persistência separada da lógica de construção;
+torna o sistema mais preparado para evoluções futuras, como validações adicionais ou construção de títulos complexos.
+
+## 6. Alternativas consideradas
+
+Manter a criação de Titulo dentro de TituloService: rejeitada por reduzir coesão e dificultar teste.
+Usar um builder para Titulo: considerado desnecessário para o uso atual, pois não há construção complexa de objetos passo a passo.
+
+## 7. Referências
+
+com.example.cinelog.factory.TituloFactory
+com.example.cinelog.service.TituloService
+com.example.cinelog.repository.TituloRepository
+docs/padroes-de-projeto.md
