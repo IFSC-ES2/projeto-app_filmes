@@ -13,7 +13,6 @@ Este documento descreve como construir, executar e validar o CineLog em um ambie
 Nenhuma variável de ambiente obrigatória é exigida para esta versão do MVP.
 
 ## 4. Comandos de build
-
 ### Windows
 ```powershell
 cd cinelog
@@ -56,10 +55,8 @@ chmod +x ./gradlew
 4. Acesse `http://localhost:8080/index.html` para validação.
 
 ## 8. Reprodutibilidade
-
 O ambiente local documentado é a alternativa equivalente ao staging para esta aplicação. A utilização de H2 em memória e do frontend estático integrado ao backend torna a homologação local um método previsível e suficiente para validação do MVP.
 
 ## 9. Observações
-
 - Não há necessidade de instalar dependências de frontend com `npm` ou `package.json`.
 - O conjunto de arquivos do frontend é servido diretamente pelo Spring Boot a partir de `cinelog/src/main/resources/static/`.
