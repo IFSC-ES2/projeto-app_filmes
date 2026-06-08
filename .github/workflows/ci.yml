@@ -37,7 +37,7 @@ jobs:
       - name: Validação Sintática de arquivos YAML
         run: |
           npm install -g yaml-lint
-          find . -name "*.yml" -o -name "*.yaml" | xargs -I {} yaml-lint {}
+          find . -name "*.yml" -o -name "*.yaml" -print0 | xargs -0 -I {} npx yaml-lint {}
 
       - name: Verificação de Arquivos Obrigatórios
         run: |
