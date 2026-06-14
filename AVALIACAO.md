@@ -21,7 +21,9 @@
 | 8       | Gabriel Ferreira de Souza da Silva | 2f03fdd | 08/06/26 | 11/06/26 | 5,1  | 10   |
 | 8       | Isabella Corrêa                    | 2f03fdd | 08/06/26 | 11/06/26 | 5,0  | 10   |
 | 8       | Marcus Jhuan Epifânio Lima         | 2f03fdd | 08/06/26 | 11/06/26 | 5,4  | 10   |
-| 9       |                                    |         |          |          |      | 10   |
+| 9       | Gabriel Ferreira de Souza da Silva | 2f03fdd | 08/06/26 | 14/06/26 | 2,6  | 10   |
+| 9       | Isabella Corrêa                    | 2f03fdd | 08/06/26 | 14/06/26 | 2,5  | 10   |
+| 9       | Marcus Jhuan Epifânio Lima         | 2f03fdd | 08/06/26 | 14/06/26 | 2,7  | 10   |
 | 10      |                                    |         |          |          |      | 10   |
 | 11/12   |                                    |         |          |          |      | 30   |
 
@@ -29,9 +31,9 @@
 
 | aluno                              | nota parcial |
 | ---------------------------------- | ------------ |
-| Gabriel Ferreira de Souza da Silva | 4,9          |
-| Isabella Corrêa                    | 5,2          |
-| Marcus Jhuan Epifânio Lima         | 5,2          |
+| Gabriel Ferreira de Souza da Silva | 4,5          |
+| Isabella Corrêa                    | 4,7          |
+| Marcus Jhuan Epifânio Lima         | 4,8          |
 
 ## Comentários
 
@@ -259,41 +261,45 @@
    - `contribuicoes-individuais.md` não foi atualizado para a Sprint 3; o último registro explícito é da Sprint 2.
    - O relatório da Sprint 3 não discrimina claramente o que cada integrante implementou, revisou, testou ou documentou.
    - As contribuições foram analisadas pelo histórico `v0.2.0..v.0.3.0`.
-    - Gabriel: contribuiu com README, métricas, documentação C4 de arquitetura e commits de React. A nota reconhece a documentação arquitetural apresentada, mas é limitada pela menor participação comprovada no código central da Sprint 3.
-    - Isabella: tem a maior contribuição rastreável na Sprint 3, com commits de DTO, serviço, endpoint e tela de alteração de senha, além de métricas e documentação. Nota limitada pela documentação insuficiente, falta de testes da nova funcionalidade e fragilidades de segurança.
-    - Marcus: contribuiu com correções de CI/caminhos, ajustes de React/configuração e revisões/aprovações dos PRs da entrega. A participação é rastreável, mas limitada porque a documentação de contribuição individual não registra Sprint 3 e porque os ADRs não foram consolidados.
+   - Gabriel: contribuiu com README, métricas, documentação C4 de arquitetura e commits de React. A nota reconhece a documentação arquitetural apresentada, mas é limitada pela menor participação comprovada no código central da Sprint 3.
+   - Isabella: tem a maior contribuição rastreável na Sprint 3, com commits de DTO, serviço, endpoint e tela de alteração de senha, além de métricas e documentação. Nota limitada pela documentação insuficiente, falta de testes da nova funcionalidade e fragilidades de segurança.
+   - Marcus: contribuiu com correções de CI/caminhos, ajustes de React/configuração e revisões/aprovações dos PRs da entrega. A participação é rastreável, mas limitada porque a documentação de contribuição individual não registra Sprint 3 e porque os ADRs não foram consolidados.
 
-#### Recuperação
+#### Recuperação (submetida junto com a Entrega 8, commit 2f03fdd)
 
-1. Incremento funcional da Sprint 3: parcial.
-    - Senha continua armazenada e comparada em texto puro em `UsuarioService` (`usuario.getSenha().equals(senhaAtual)`, `usuario.setSenha(novaSenha)`), sem uso de BCrypt ou qualquer mecanismo de hash.
-    - Controle de identidade continua exclusivamente por `localStorage` (`usuarioId`) em `catalogo.html:230`, sem token, JWT ou sessão no backend.
-    - Endpoint `PUT /api/auth/{id}/mudar-senha` continua sem autenticação/autorização real, aceitando qualquer `id` na URL sem validação de identidade.
-    - `innerHTML` permanece como mecanismo principal de renderização dinâmica em `catalogo.html` (linhas 248, 250, 257, 261, 275), embora com função `escapeHtml()` para nomes de título.
-    - Inconsistências de nomenclatura de diretórios (`Model/` vs `model`, `Repository/` vs `repository`) não foram resolvidas.
-    - As instruções quebradas do README (`hmod +x gradlew`, `/gradlew bootRun`, `htp://localhost:8080`, `ndex.html`, referência a `/backend`) foram corrigidas e o README passou a refletir a estrutura real do projeto (`cinelog/`), mas isso não altera os problemas centrais do incremento funcional.
-2. Documentação da arquitetura: atendido.
-3. ADRs consolidados: não atendido.
-    - ADR-0003 (08/06) e ADR-0004 (08/06) foram criados, mas tratam exclusivamente de decisões da Sprint 4 (deploy/homologação e Factory Pattern).
-    - Nenhum ADR foi criado para as decisões da Sprint 3: uso de `localStorage` para sessão, unificação do frontend estático no Spring Boot, ou alteração de senha.
-    - ADR-0001 e ADR-0002 foram revisados em maio, antes da avaliação original, e não refletem o estado real do sistema.
-4. Atualização das métricas: parcial.
-    - `metricas.md` ainda afirma 15 Story Points planejados e executados na Sprint 3 (linhas 84-85).
-    - `sprint-3.md` relata 2 (Issue #01) + 5 (Issue #16) = 7 Story Points.
-    - A inconsistência interna de 15 vs 7 story points permanece sem explicação.
-    - Análise continua majoritariamente qualitativa.
-5. Testes automatizados integrados ao pipeline: parcial.
-    - `UsuarioServiceTests.java` não contém testes para `alterarSenha` — mesmo conjunto de 4 testes da Sprint 3.
-    - Nenhum teste de integração HTTP ou frontend foi adicionado.
-6. Integração contínua mínima: parcial.
-    - Workflow renomeado para "CineLog CI - Sprint 4".
-    - Validação YAML ajustada (usa `yaml-lint` corretamente).
-    - Ainda sem linter/checkstyle para Java, JS ou HTML.
-7. Release/tag do marco: parcial.
-    - A tag `v.0.3.0` não foi recriada ou substituída para seguir o padrão `v0.3.0`.
-    - Nenhuma tag de recuperação da Sprint 3 foi publicada.
-8. Registro de contribuição individual: parcial.
-    - `contribuicoes-individuais.md` foi atualizado para Sprint 4, mas não recebeu registro correspondente à Sprint 3.
+1. Incremento funcional (segurança): não corrigido.
+   - Senha continua armazenada e comparada em texto puro em `UsuarioService` (`usuario.getSenha().equals(senhaAtual)`, `usuario.setSenha(novaSenha)`), sem uso de BCrypt ou qualquer mecanismo de hash.
+   - Controle de identidade continua exclusivamente por `localStorage` (`usuarioId`) em `catalogo.html:230`, sem token, JWT ou sessão no backend.
+   - Endpoint `PUT /api/auth/{id}/mudar-senha` continua sem autenticação/autorização real, aceitando qualquer `id` na URL sem validação de identidade.
+   - `innerHTML` permanece como mecanismo principal de renderização dinâmica em `catalogo.html` (linhas 248, 250, 257, 261, 275), embora com função `escapeHtml()` para nomes de título.
+   - Inconsistências de nomenclatura de diretórios (`Model/` vs `model`, `Repository/` vs `repository`) não foram resolvidas.
+2. Documentação da arquitetura: já atendido anteriormente.
+3. ADRs consolidados: não corrigido.
+   - ADR-0003 (08/06) e ADR-0004 (08/06) foram criados, mas tratam exclusivamente de decisões da Sprint 4 (deploy/homologação e Factory Pattern).
+   - Nenhum ADR foi criado para as decisões da Sprint 3: uso de `localStorage` para sessão, unificação do frontend estático no Spring Boot, ou alteração de senha.
+   - ADR-0001 e ADR-0002 foram revisados em maio, antes da avaliação original, e não refletem o estado real do sistema.
+4. Atualização das métricas: não corrigido.
+   - `metricas.md` ainda afirma 15 Story Points planejados e executados na Sprint 3 (linhas 84-85).
+   - `sprint-3.md` relata 2 (Issue #01) + 5 (Issue #16) = 7 Story Points.
+   - A inconsistência interna de 15 vs 7 story points permanece sem explicação.
+   - Análise continua majoritariamente qualitativa.
+5. Testes automatizados: não corrigido.
+   - `UsuarioServiceTests.java` não contém testes para `alterarSenha` — mesmo conjunto de 4 testes da Sprint 3.
+   - Nenhum teste de integração HTTP ou frontend foi adicionado.
+6. Integração contínua: corrigido parcialmente.
+   - Workflow renomeado para "CineLog CI - Sprint 4".
+   - Validação YAML ajustada (usa `yaml-lint` corretamente).
+   - Ainda sem linter/checkstyle para Java, JS ou HTML.
+7. Release/tag: não corrigido.
+   - A tag `v.0.3.0` não foi recriada ou substituída para seguir o padrão `v0.3.0`.
+   - Nenhuma tag de recuperação da Sprint 3 foi publicada.
+8. Registro de contribuição individual: não corrigido.
+   - `contribuicoes-individuais.md` foi atualizado para Sprint 4, mas não recebeu registro correspondente à Sprint 3.
+9. README: corrigido.
+   - Instruções quebradas (`hmod +x gradlew`, `/gradlew bootRun`, `htp://localhost:8080`, `ndex.html`, referência a `/backend`) foram corrigidas e o README reflete a estrutura real do projeto (pasta `cinelog`).
+
+**Veredito:** A recuperação corrigiu itens superficiais (README e nomenclatura do CI), mas os problemas centrais — senha em texto puro, autenticação por `localStorage`, ausência de ADRs para Sprint 3, inconsistência de métricas, falta de testes da nova funcionalidade, e ausência de registro de contribuições da Sprint 3 — não foram endereçados.
+Notas da recuperação (7-R): Gabriel 4,4→4,7 | Isabella 4,9→5,1 | Marcus 4,5→4,8. O aumento reflete a correção do README (que estava com instruções quebradas) e da nomenclatura do workflow de CI, ambos apontados como problemas na avaliação original. As notas substituem as originais da Entrega 7.
 
 ### Entrega 8
 
@@ -309,10 +315,9 @@
    - Como a falha é de ambiente/configuração, a forma de resolver é instalar JDK 25 e configurar `JAVA_HOME`, ou corrigir o projeto para Java 21 de forma consistente em `build.gradle`, Dockerfile, CI e documentação.
    - A execução local do servidor foi interrompida conforme a regra da avaliação quando o problema de ambiente apareceu.
 3. Documentação de deploy: parcial.
-    - `DEPLOY.md` cobre URL pública, pré-requisitos, variáveis, comandos de build/execução, processo Railway e validação.
-    - O documento exige Java 25, enquanto o workflow configura JDK 21; o README não explicita essa exigência e o histórico anterior do projeto usava Java 21.
-    - Há erro textual em `Staging Railroad`, e a seção de infraestrutura informa Docker com JDK 25 sem alinhar essa decisão com o CI.
-    - O README final corrige parcialmente a arquitetura real ao indicar que o frontend é estático e servido pelo Spring Boot, sem pasta `/frontend`: React tem papel limitado, usado pontualmente via CDN no login, enquanto o catálogo usa JavaScript puro. Isso contradiz documentos anteriores como `docs/arquitetura.md` e `ADR-0001`, que descrevem uma SPA React desacoplada; portanto, React não é a arquitetura de frontend completa do projeto, mas apenas uma biblioteca usada em parte da interface.
+   - `DEPLOY.md` cobre URL pública, pré-requisitos, variáveis, comandos de build/execução, processo Railway e validação.
+   - O documento exige Java 25, enquanto o workflow configura JDK 21; o README não explicita essa exigência e o histórico anterior do projeto usava Java 21.
+   - Há erro textual em `Staging Railroad`, e a seção de infraestrutura informa Docker com JDK 25 sem alinhar essa decisão com o CI.
 4. Atualização das métricas do projeto: parcial.
    - `metricas.md` registra Sprint 4 com 12 story points planejados e 12 executados.
    - A comparação antes/depois é genérica: afirma redução de densidade de defeitos e avanço para 85% do MVP, mas não demonstra valores anteriores, cálculo, fonte verificável ou relação direta com a refatoração realizada.
@@ -334,7 +339,53 @@
    - `contribuicoes-individuais.md` foi atualizado para Sprint 4 e associa cada integrante a arquivos/evidências.
    - O histórico entre `v.0.3.0` e `v.0.4.1` confirma contribuições dos três integrantes, com maior volume de commits de Marcus na infraestrutura/deploy/documentação.
    - Há duplicidade de commits e merges na entrega, além de autores com nomes variados, o que dificulta a rastreabilidade fina.
-   - Contribuições individuais:
-      - Gabriel: contribuiu com README, relatório da Sprint 4 e ADR de homologação/deploy, mas a participação é mais documental e a entrega mantém inconsistências de tag, CI e segurança.
-      - Isabella: contribuiu com `DEPLOY.md`, README, CI e merge da entrega; a nota é limitada porque a parte de CI ficou tecnicamente inconsistente com Java 25 e não executou no ambiente de correção.
-      - Marcus: maior contribuição rastreável em CI, deploy Railway/Docker, métricas, contribuições e ADR de padrões; nota um pouco maior, mas limitada porque a mudança para Java 25 que viabiliza Docker/deploy quebrou a execução local/CI configurado com JDK 21 e porque as métricas antes/depois permanecem frágeis.
+     Notas individuais:
+   - Gabriel: contribuiu com README, relatório da Sprint 4 e ADR de homologação/deploy, mas a participação é mais documental e a entrega mantém inconsistências de tag, CI e segurança.
+   - Isabella: contribuiu com `DEPLOY.md`, README, CI e merge da entrega; a nota é limitada porque a parte de CI ficou tecnicamente inconsistente com Java 25 e não executou no ambiente de correção.
+   - Marcus: maior contribuição rastreável em CI, deploy Railway/Docker, métricas, contribuições e ADR de padrões; nota um pouco maior, mas limitada porque a mudança para Java 25 que viabiliza Docker/deploy quebrou a execução local/CI configurado com JDK 21 e porque as métricas antes/depois permanecem frágeis.
+
+### Entrega 9
+
+1. MVP completo e integrado: parcial.
+   - O MVP básico de catálogo pessoal está parcialmente implementado: registro/login, cadastro de títulos, listagem por usuário, exclusão e alteração de senha.
+   - O deploy público informado em `DEPLOY.md` respondeu HTTP 200 em `https://cinelog-production-6510.up.railway.app/index.html` e `https://cinelog-production-6510.up.railway.app/catalogo.html`.
+   - A integração funcional continua frágil para uma Release Candidate: o vínculo do usuário depende de `localStorage`, os endpoints aceitam `usuarioId` enviado pelo cliente e não há autenticação/autorização real no backend.
+   - Senhas continuam armazenadas e comparadas em texto puro em `UsuarioService`, inclusive no fluxo de alteração de senha.
+   - A documentação não traz fechamento final do backlog para a RC indicando itens concluídos, removidos, pendentes e critérios de aceitação atendidos ou justificados.
+2. Hardening do sistema: parcial.
+   - Há melhorias herdadas da Sprint 4: documentação de deploy, workflow ajustado, Docker/Railway, Factory para criação de títulos e correções de README.
+   - Não há evidência de hardening específico da Entrega 9; a maior tag é `v.0.4.1` (`2f03fdd`), já usada na Entrega 8, e no intervalo `v.0.4.1..main` há apenas o commit de avaliação anterior (`218f754`).
+   - Defeitos críticos apontados anteriormente permanecem: senha em texto puro, identidade manipulável por `localStorage`, alteração de senha por `id` na URL sem autorização, ausência de testes para esse fluxo e desalinhamento Java 21/25.
+3. Integração contínua obrigatória: parcial.
+   - `.github/workflows/ci.yml` está configurado para pull requests e push em `main`, com build/testes via Gradle, validação YAML e checagem de arquivos obrigatórios.
+   - O GitHub mostra PRs da Sprint 4 com aprovação e check `quality-gate` verde, como `#41` e `#42`.
+   - A configuração é inconsistente: o workflow instala JDK 21, enquanto o projeto exige Java 25 em `cinelog/build.gradle`.
+   - Localmente, `./gradlew test` falhou antes dos testes por ausência de JDK 25/toolchain configurada; portanto os testes automatizados não foram validados no ambiente de correção.
+   - Não há PRs/checks específicos da Entrega 9; as evidências são herdadas da Sprint 4.
+4. Testes de aceitação: não atendido.
+   - Não foram encontrados documentos, checklists, logs ou relatórios de testes de aceitação para a Release Candidate.
+   - `DEPLOY.md` lista passos manuais de validação, mas não registra execução, resultados, aprovação/reprovação, evidências ou associação explícita aos critérios de aceitação das histórias principais.
+   - Os testes existentes são unitários e não cobrem a alteração de senha, autorização, fluxo HTTP completo ou comportamento de frontend.
+5. Ambiente de execução acessível: parcial.
+   - O ambiente Railway está acessível e as páginas públicas de login e catálogo responderam HTTP 200.
+   - A documentação informa que não há credenciais predefinidas e orienta criar usuário pela tela de registro, o que é aceitável para demonstração inicial.
+   - A execução local documentada não funcionou no ambiente de correção por exigir Java 25 sem toolchain disponível; por isso a reprodutibilidade local fica comprometida.
+   - Há inconsistência documental: README declara backend Spring Boot com Java 21, enquanto `DEPLOY.md` e `build.gradle` exigem Java 25.
+6. Revisão final da documentação: parcial.
+   - README, DEPLOY, ADRs, arquitetura, métricas, riscos e contribuições existem, mas estão no estado da Sprint 4, sem revisão final de Release Candidate.
+   - Não há documento de RC nem indicação consolidada das limitações conhecidas para a apresentação final.
+   - `riscos.md` ainda termina no fechamento da Sprint 2, sem atualização final para os riscos concretos que permanecem na RC.
+   - `metricas.md` ainda é majoritariamente qualitativo e não registra coleta específica da Entrega 9.
+   - Há divergências relevantes: `entregas/sprint-4.md` afirma ausência de deploy remoto permanente, mas `DEPLOY.md` informa deploy Railway ativo.
+7. Release Candidate: não atendido.
+   - Não existe tag `v1.0.0-rc.1` nem release de Release Candidate.
+   - A maior tag encontrada é `v.0.4.1`, fora do padrão usual do projeto e referente à Entrega 8.
+   - A lista de releases contém `v0.2.0`, `v.0.3.0` e `v.0.4.1`, mas nenhuma release de RC.
+   - Não há descrição de RC com resumo das funcionalidades entregues, correções, melhorias, limitações conhecidas e ambiente de teste.
+
+Registro de contribuição individual: não atendido para a Entrega 9.
+
+- Não há commits, PRs, reviews, issues ou documentação de estudantes depois de `v.0.4.1` que caracterizem trabalho específico da Release Candidate.
+- Gabriel: nota limitada à base herdada da Sprint 4, com contribuição anterior em README, relatório e ADRs; não há evidência de atuação na Entrega 9 e a participação anterior foi mais documental.
+- Isabella: nota limitada à base herdada da Sprint 4, com contribuição anterior em DEPLOY, README, CI e merge da entrega; não há evidência de atuação na Entrega 9 e o desalinhamento Java 21/25 compromete execução local.
+- Marcus: nota um pouco maior pela maior contribuição rastreável anterior em CI, deploy, Docker, métricas e ADR de padrões; ainda assim sem evidência específica de Entrega 9 e com pendências técnicas relevantes não resolvidas.
