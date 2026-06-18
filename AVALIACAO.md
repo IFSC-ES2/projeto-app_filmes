@@ -1,5 +1,5 @@
-# Avaliação - Engenharia de Software II
 
+# Avaliação - Engenharia de Software II
 | entrega | aluno                              | commit  | data     | correção | nota | peso |
 | ------- | ---------------------------------- | ------- | -------- | -------- | ---- | ---- |
 | 1       | equipe                             | 511d282 | 16/03/26 | 20/03/26 | 5,5  | 2    |
@@ -12,28 +12,25 @@
 | 6       | Gabriel Ferreira de Souza da Silva | 292ccb5 | 17/05/26 | 27/05/26 | 2,4  | 10   |
 | 6       | Isabella Corrêa                    | 292ccb5 | 17/05/26 | 27/05/26 | 2,8  | 10   |
 | 6       | Marcus Jhuan Epifânio Lima         | 292ccb5 | 17/05/26 | 27/05/26 | 2,6  | 10   |
-| 7       | Gabriel Ferreira de Souza da Silva | 5254097 | 01/06/26 | 03/06/26 | 4,4  | 10   |
-| 7-R     | Gabriel Ferreira de Souza da Silva | 2f03fdd | 08/06/26 | 12/06/26 | 4,7  | 10   |
-| 7       | Isabella Corrêa                    | 5254097 | 01/06/26 | 03/06/26 | 4,9  | 10   |
-| 7-R     | Isabella Corrêa                    | 2f03fdd | 08/06/26 | 12/06/26 | 5,1  | 10   |
-| 7       | Marcus Jhuan Epifânio Lima         | 5254097 | 01/06/26 | 03/06/26 | 4,5  | 10   |
-| 7-R     | Marcus Jhuan Epifânio Lima         | 2f03fdd | 08/06/26 | 12/06/26 | 4,8  | 10   |
+| 7       | Gabriel Ferreira de Souza da Silva | 2f03fdd | 08/06/26 | 12/06/26 | 4,7  | 10   |
+| 7       | Isabella Corrêa                    | 2f03fdd | 08/06/26 | 12/06/26 | 5,1  | 10   |
+| 7       | Marcus Jhuan Epifânio Lima         | 2f03fdd | 08/06/26 | 12/06/26 | 4,8  | 10   |
 | 8       | Gabriel Ferreira de Souza da Silva | 2f03fdd | 08/06/26 | 11/06/26 | 5,1  | 10   |
 | 8       | Isabella Corrêa                    | 2f03fdd | 08/06/26 | 11/06/26 | 5,0  | 10   |
 | 8       | Marcus Jhuan Epifânio Lima         | 2f03fdd | 08/06/26 | 11/06/26 | 5,4  | 10   |
 | 9       | Gabriel Ferreira de Souza da Silva | 2f03fdd | 08/06/26 | 14/06/26 | 2,6  | 10   |
 | 9       | Isabella Corrêa                    | 2f03fdd | 08/06/26 | 14/06/26 | 2,5  | 10   |
 | 9       | Marcus Jhuan Epifânio Lima         | 2f03fdd | 08/06/26 | 14/06/26 | 2,7  | 10   |
-| 10      |                                    |         |          |          |      | 10   |
+| 10      | equipe                             | --      | 15/06/26 | 15/06/26 | 6,7  | 10   |
 | 11/12   |                                    |         |          |          |      | 30   |
 
 ## Nota parcial
 
 | aluno                              | nota parcial |
 | ---------------------------------- | ------------ |
-| Gabriel Ferreira de Souza da Silva | 4,5          |
-| Isabella Corrêa                    | 4,7          |
-| Marcus Jhuan Epifânio Lima         | 4,8          |
+| Gabriel Ferreira de Souza da Silva | 4,8          |
+| Isabella Corrêa                    | 5            |
+| Marcus Jhuan Epifânio Lima         | 5,1          |
 
 ## Comentários
 
@@ -389,3 +386,13 @@ Registro de contribuição individual: não atendido para a Entrega 9.
 - Gabriel: nota limitada à base herdada da Sprint 4, com contribuição anterior em README, relatório e ADRs; não há evidência de atuação na Entrega 9 e a participação anterior foi mais documental.
 - Isabella: nota limitada à base herdada da Sprint 4, com contribuição anterior em DEPLOY, README, CI e merge da entrega; não há evidência de atuação na Entrega 9 e o desalinhamento Java 21/25 compromete execução local.
 - Marcus: nota um pouco maior pela maior contribuição rastreável anterior em CI, deploy, Docker, métricas e ADR de padrões; ainda assim sem evidência específica de Entrega 9 e com pendências técnicas relevantes não resolvidas.
+
+### Entrega 10
+
+| critério                  | peso | nota |
+| ------------------------- | ---- | ---- |
+| Identificação do projeto  | 1    | 7    |
+| Resumo do MVP             | 2    | 7    |
+| Demonstração do sistema   | 4    | 7    |
+| Situação final do projeto | 1,5  | 4    |
+| Objetividade e perguntas  | 0,5  | 10   |
