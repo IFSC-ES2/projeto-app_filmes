@@ -1,5 +1,5 @@
-
 # Avaliação - Engenharia de Software II
+
 | entrega | aluno                              | commit  | data     | correção | nota | peso |
 | ------- | ---------------------------------- | ------- | -------- | -------- | ---- | ---- |
 | 1       | equipe                             | 511d282 | 16/03/26 | 20/03/26 | 5,5  | 2    |
@@ -22,15 +22,17 @@
 | 9       | Isabella Corrêa                    | 2f03fdd | 08/06/26 | 14/06/26 | 2,5  | 10   |
 | 9       | Marcus Jhuan Epifânio Lima         | 2f03fdd | 08/06/26 | 14/06/26 | 2,7  | 10   |
 | 10      | equipe                             | --      | 15/06/26 | 15/06/26 | 6,7  | 10   |
-| 11/12   |                                    |         |          |          |      | 30   |
+| 11/12   | Gabriel Ferreira de Souza da Silva | --      | 22/06/26 | 24/06/26 | 1    | 30   |
+| 11/12   | Isabella Corrêa                    | --      | 22/06/26 | 24/06/26 | 2,5  | 30   |
+| 11/12   | Marcus Jhuan Epifânio Lima         | --      | 22/06/26 | 24/06/26 | 1,5  | 30   |
 
-## Nota parcial
+## Nota final
 
-| aluno                              | nota parcial |
-| ---------------------------------- | ------------ |
-| Gabriel Ferreira de Souza da Silva | 4,8          |
-| Isabella Corrêa                    | 5            |
-| Marcus Jhuan Epifânio Lima         | 5,1          |
+| aluno                              | nota |
+| ---------------------------------- | ---- |
+| Gabriel Ferreira de Souza da Silva | 3,7  |
+| Isabella Corrêa                    | 4,7  |
+| Marcus Jhuan Epifânio Lima         | 4    |
 
 ## Comentários
 
@@ -396,3 +398,88 @@ Registro de contribuição individual: não atendido para a Entrega 9.
 | Demonstração do sistema   | 4    | 7    |
 | Situação final do projeto | 1,5  | 4    |
 | Objetividade e perguntas  | 0,5  | 10   |
+
+### Entrega 11/12
+
+1. MVP completo e integrado: parcial.
+   - O MVP básico de catálogo pessoal (registro/login, cadastro de títulos, listagem por usuário, exclusão e alteração de senha) permanece no mesmo estado da Entrega 8/9.
+   - A integração funcional continua frágil para uma defesa de RC: vínculo do usuário depende exclusivamente de `localStorage`, endpoints aceitam `usuarioId` enviado pelo cliente sem autenticação/autorização real, senhas armazenadas e comparadas em texto puro em `UsuarioService`.
+   - Não há evidência de trabalho adicional dos alunos após `v.0.4.1` (08/06/26); os únicos commits posteriores em `main` são da correção do professor.
+   - A equipe não produziu documento de fechamento do MVP, RC ou lista de limitações conhecidas para a defesa.
+
+2. Hardening do sistema: não atendido.
+   - Nenhum hardening específico foi realizado após a Entrega 9.
+   - Defeitos críticos apontados desde a Sprint 3 permanecem: senha em texto puro, identidade manipulável por `localStorage`, alteração de senha sem autorização real, ausência de testes de alteração de senha, desalinhamento Java 21/25 entre CI e build.gradle.
+   - Não há evidência de revisão de segurança, refatoração estrutural ou correção de débitos técnicos identificados.
+
+3. Integração contínua obrigatória: parcial.
+   - O workflow CI permanece configurado (CineLog CI - Sprint 4), com build/testes Gradle, validação YAML e checagem de documentos obrigatórios.
+   - A configuração continua inconsistente: workflow instala JDK 21, mas `cinelog/build.gradle` define toolchain Java 25. O build local falha com JDK 21 por essa incompatibilidade.
+   - Não há PRs, commits ou ajustes de CI específicos para a defesa.
+
+4. Testes de aceitação: não atendido.
+   - Não foram produzidos documentos, checklists ou relatórios de testes de aceitação para a Release Candidate ou defesa.
+   - `DEPLOY.md` lista passos manuais de validação, mas sem registro de execução, resultados ou aprovação/reprovação.
+   - Os testes unitários existentes (4 testes em `UsuarioServiceTests`, 2 em `TituloServiceTests`) não cobrem alteração de senha, autenticação/autorização, fluxos HTTP ou frontend.
+
+5. Ambiente de execução acessível: parcial.
+   - O deploy no Railway (`https://cinelog-production-6510.up.railway.app`) permanece acessível e respondeu HTTP 200.
+   - A execução local documentada não funciona no ambiente de correção por exigir Java 25 sem toolchain disponível.
+   - README declara Java 21, DEPLOY.md exige Java 25 e build.gradle força JDK 25 — inconsistência documental não resolvida.
+
+6. Revisão final da documentação: parcial.
+   - README, DEPLOY.md, ADRs, arquitetura, métricas, riscos e contribuições existem, mas estão parados no estado da Sprint 4.
+   - `riscos.md` termina no fechamento da Sprint 2, sem atualização para riscos concretos que persistem na RC.
+   - `metricas.md` segue qualitativo, sem coleta específica para a defesa e com inconsistência de story points (15 vs 7 na Sprint 3).
+   - ADRs não refletem decisões da Sprint 3 (localStorage para sessão, unificação frontend, alteração de senha).
+   - Não há documento de RC, release notes final ou limitações conhecidas consolidadas.
+
+7. Release Candidate: não atendido.
+   - Não existe tag `v1.0.0-rc.1` nem release de Release Candidate.
+   - A maior tag é `v.0.4.1` (fora do padrão `v0.4.x`), usada desde a Entrega 8.
+   - Nenhuma release foi publicada no GitHub para o período de defesa.
+
+8. Colaboração e contribuição individual: parcial.
+   - Não há commits, PRs, reviews ou documentação de alunos após `v.0.4.1` que caracterizem trabalho específico para a defesa.
+   - As contribuições analisadas refletem o histórico até a Sprint 4 (08/06/26):
+     - Gabriel Ferreira de Souza da Silva: contribuições documentais (README, métricas, relatório Sprint 4, ADR-0003) e commits de frontend/README. Participação consistente mas com menor volume de código central e sem atuação comprovada nas Sprints finais de defesa.
+     - Isabella Corrêa: maior contribuição rastreável no repositório (129 commits), com atuação em código (autenticação, títulos, alteração de senha), documentação (DEPLOY, README, CI, baseline, métricas, riscos) e revisões. A participação é a mais ampla da equipe, mas os problemas técnicos centrais (senha texto puro, localStorage, CI inconsistente) não foram resolvidos e não há trabalho específico para a defesa.
+     - Marcus Jhuan Epifânio Lima: contribuição forte em CI, deploy Railway/Docker, métricas, ADR de padrões e organização de PRs. Participação técnica relevante em infraestrutura, porém sem evidência de atuação na defesa e com as pendências de CI e segurança não resolvidas.
+
+**Riscos aceitos:**
+
+- Senha armazenada e comparada em texto puro em `UsuarioService.alterarSenha()` e `autenticarUsuario()`.
+- Controle de identidade via `localStorage` (`usuarioId`) sem token, JWT ou sessão no backend.
+- Endpoint `PUT /api/auth/{id}/mudar-senha` sem autenticação/autorização real.
+- CI configura JDK 21, mas build.gradle exige JDK 25 — build local e pipeline inconsistentes.
+- Ausência de tag `v1.0.0-rc.1` e de release de Release Candidate.
+- Nenhum trabalho de alunos após 08/06/26 para a defesa.
+
+#### Perguntas para a defesa
+
+Gabriel:
+
+1. Como Scrum Master, como você avaliaria a adesão da equipe ao fluxo de governança de repositório definido (branches, PRs com review, CI verde) e quais lacunes ainda existiam ao final do projeto?
+   - Resposta esperada: deve citar que o fluxo de trabalho definido em `fluxo-de-trabalho.md` prevê feature branches, PRs com revisão obrigatória e CI verde. Deve reconhecer que PRs foram abertos e revisados, mas que houve casos de merge com CI falhando (Sprint 2), inconsistência entre versão Java do CI e do build.gradle, e que a DoD nem sempre foi integralmente cumprida. Deve também reconhecer a ausência de trabalho da equipe após `v.0.4.1` e a falta de RC/defesa.
+2. A documentação de qualidade cita ISO 25010 com manutenibilidade, confiabilidade, usabilidade e desempenho. Como você relacionaria esses atributos às decisões reais do projeto, especialmente sobre senha em texto puro e autenticação por localStorage?
+   - Resposta esperada: deve reconhecer que senha em texto puro fere confiabilidade (integridade, confidencialidade) e segurança; que localStorage sem token compromete autenticidade e responsabilidade. Deve citar trade-offs aceitos no MVP e o que seria necessário para evoluir (BCrypt, JWT, sessão no backend).
+3. As métricas da Sprint 4 indicam 85% de conclusão do MVP. Como esse percentual foi calculado e qual a relação dele com as funcionalidades entregues e os riscos aceitos para a defesa?
+   - Resposta esperada: o percentual provavelmente veio de issues concluídas vs. planejadas no backlog. Deve reconhecer que a métrica é frágil porque funcionalidades entregues (cadastro, listagem, exclusão, login, alteração de senha) têm qualidade questionável (senha pura, localStorage) e porque não houve avanço da Sprint 4 até a defesa.
+
+Isabella:
+
+1. O pipeline de CI configura JDK 21, mas o build.gradle exige JDK 25. Considerando o pipeline canônico de Integração Contínua visto em aula, como esse desalinhamento deveria ter sido tratado e qual o impacto na qualidade e na definição de pronto?
+   - Resposta esperada: o pipeline canônico de CI exige que build, testes e verificações rodem consistentemente no mesmo ambiente da entrega. A incompatibilidade JDK 21 (CI) vs JDK 25 (build.gradle) quebra essa consistência: o CI aprova um build que não é o mesmo do ambiente local/Docker. A correção seria unificar a versão (reverter toolchain para 21 no build.gradle ou atualizar o CI para 25) e garantir que a DoD exija CI verde com a mesma configuração.
+2. Você foi responsável por `DEPLOY.md`, CI e merge das entregas. Como você garante rastreabilidade entre requisito, issue, PR, teste e funcionalidade entregue, e por que não há evidência de trabalho seu após a Sprint 4?
+   - Resposta esperada: deve explicar que a rastreabilidade se dá por issues com critérios de aceitação, PRs vinculados, commits com mensagens descritivas e documentação de sprint. Deve reconhecer que o projeto não produziu RC, release final ou documentação de fechamento, e que não há commits/PRs atribuídos à aluna após 08/06/26. A ausência de trabalho específico para a defesa enfraquece a evidência de contribuição final.
+3. O endpoint `PUT /api/auth/{id}/mudar-senha` aceita qualquer `id` na URL sem autenticação. Pela gestão de riscos (RMMM) vista em aula, como esse risco deveria ter sido tratado e por que não foi mitigado mesmo após ser apontado em avaliações anteriores?
+   - Resposta esperada: pela RMMM, o risco deveria ter sido identificado (Risco: alteração de senha sem autorização), analisado (probabilidade alta, impacto alto), priorizado (crítico), com plano de mitigação (ex: validar token/sessão no backend) e contingência. A não mitigação mesmo após as avaliações das Entregas 7, 8 e 9 indica que o plano de resposta não foi efetivo ou que o risco não foi priorizado adequadamente.
+
+Marcus:
+
+1. Como arquiteto, você documentou o padrão Factory para criação de `Titulo` e Repository para persistência. Considerando os padrões estruturais e arquiteturais vistos em aula, que outros padrões seriam aplicáveis para resolver os problemas de segurança do projeto (senha em texto puro, autenticação por localStorage)?
+   - Resposta esperada: deveria sugerir padrões como Proxy/Interceptor para autenticação, Strategy para hashing de senha (BCrypt), ou Template Method para validação de requisições. Deve relacionar a problemas de projeto concretos (controle de acesso, hash de credenciais) e como esses padrões melhorariam manutenibilidade e segurança, seguindo o que foi visto em aula sobre padrões estruturais/de segurança.
+2. O CI foi configurado por você com build/testes Gradle, validação YAML e checagem de documentos. Considerando o pipeline canônico de Integração Contínua, quais passos ainda faltam (ex.: análise estática, lint, segurança, cobertura mínima) e como isso afeta a qualidade e a DoD?
+   - Resposta esperada: deve citar que faltam análise estática (Checkstyle/PMD para Java), lint para JS/HTML, verificação de cobertura mínima de testes, validação de segurança (audit de dependências), e padronização da versão Java entre CI e build.gradle. Sem esses passos, a DoD não é totalmente verificável e o CI pode aprovar código que não atende critérios objetivos de qualidade.
+3. As métricas e riscos não foram atualizados após a Sprint 2 (riscos) e Sprint 4 (métricas). Pelo que foi visto em aula sobre métricas de software e gestão de riscos, como essas evidências deveriam ter evoluído até a defesa e qual o impacto da ausência delas na avaliação do processo?
+   - Resposta esperada: métricas deveriam ter sido coletadas e registradas ao final de cada sprint com data, valor, fonte, interpretação e decisão tomada. Riscos deveriam ter acompanhamento contínuo com status (ativo/mitigado/concretizado), ações tomadas e riscos novos identificados. A ausência dessas evidências na defesa impede avaliar a evolução do processo, a capacidade de resposta a problemas e o aprendizado da equipe ao longo do semestre.
